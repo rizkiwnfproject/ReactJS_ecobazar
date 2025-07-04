@@ -1,10 +1,9 @@
-import Navbar from "../../components/layouts/Navbar/Navbar"
-import News from "../../components/layouts/News/News";
-import Testimonials from "../../components/layouts/Testimonials/Testimonials";
-import Support from "../../components/layouts/Supports/Support";
-import { CategoriesProducts, FeaturedProducts, NewestProducts } from "../../components/layouts/Products/Products";
-import Banner from "../../components/layouts/Banner/Banner";
-import SectionWrapper from "../../components/fragments/Wrapper/Wrapper";
+import SectionWrapper from "../../components/fragments/Wrapper/Wrapper"
+import Banner from "../../components/sections/Banner/BannerSection"
+import NewsSection from "../../components/sections/News/NewsSection"
+import { CategoriesProducts, FeaturedProducts, NewestProducts } from "../../components/sections/Product/ProductsSection"
+import SupportSection from "../../components/sections/Support/SupportSection"
+import TestimonialSection from "../../components/sections/Testimonial/TestimonialSection"
 
 const LandingPage = () => {
   return (
@@ -34,16 +33,16 @@ const LandingPage = () => {
       </SectionWrapper>
 
       <SectionWrapper>
-        <News />
+        <NewsSection />
       </SectionWrapper>
 
       <SectionWrapper bg="bg-green-50" padding="py-10" classname="h-[400
       .px]">
-        <Testimonials />
+        <TestimonialSection />
       </SectionWrapper>
 
       <SectionWrapper padding="py-15">
-        <Support />
+        <SupportSection />
       </SectionWrapper>
     </>
   )

@@ -1,6 +1,6 @@
-import NewsFragment from "../../fragments/News/News";
+import NewsFragment from "../../fragments/News/NewsFragment";
 
-const News = () => {
+const NewsSection = () => {
     return (
         <>
             <NewsFragment>
@@ -10,4 +10,4 @@ const News = () => {
     )
 }
 
-export default News
+export default NewsSection

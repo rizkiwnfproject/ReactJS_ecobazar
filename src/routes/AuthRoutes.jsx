@@ -1,11 +1,12 @@
-import Login from "../pages/auth/Login";
-import Register from "../pages/auth/Register";
-
+import MainLayouts from "../layouts/MainLayouts";
+import LoginPage from "../pages/auth/LoginPage"
+import RegisterPage from "../pages/auth/RegisterPage"
 const AuthRoutes = {
   path: "/auth",
+  element: <MainLayouts />,
   children: [
-    { path: "login", element: <Login /> },
-    { path: "register", element: <Register /> },
+    { path: "login", element: <LoginPage /> },
+    { path: "register", element: <RegisterPage /> },
   ],
 };
 export default AuthRoutes

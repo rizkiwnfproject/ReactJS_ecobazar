@@ -1,6 +1,6 @@
 import FooterFragment from "../../fragments/Footer/FooterFragment"
 
-const Footer = () => {
+const FooterSection = () => {
   return (
     <>
       <FooterFragment classname="bg-gray-50" >
@@ -16,4 +16,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default FooterSection

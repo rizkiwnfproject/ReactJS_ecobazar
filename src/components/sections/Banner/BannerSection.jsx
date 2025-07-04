@@ -1,7 +1,7 @@
 import Advantages from "../../fragments/Advantages/Advantages";
 import BannerFragment from "../../fragments/Banner/BannerFragment";
 
-const Banner = (props) => {
+const BannerSection = (props) => {
     const { type } = props
     if (type === "big") {
         return (
@@ -26,4 +26,4 @@ const Banner = (props) => {
     }
 }
 
-export default Banner
+export default BannerSection

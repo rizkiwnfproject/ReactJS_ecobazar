@@ -1,5 +1,5 @@
-import ProductFragment from "../../fragments/Product/Product";
 import BannerFragment from "../../fragments/Banner/BannerFragment";
+import ProductFragment from "../../fragments/Product/ProductFragment";
 
 export const CategoriesProducts = () => {
   return (

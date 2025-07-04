@@ -6,6 +6,8 @@ import { HiOutlineMapPin, HiMagnifyingGlass, HiOutlineHeart, HiOutlineShoppingBa
 import TextCustom from "../../elements/Text/Text";
 import { Link } from "react-router";
 import { navbarData } from "../../../constants/Constant";
+import useRouteInfo from "../../../hooks/UseRouteInfo";
+
 
 const NavbarFragment = (props) => {
   const { children, height, color = "bg-white border-green-100" } = props
@@ -26,13 +28,6 @@ const NavbarTop = () => {
         <TextCustom type="body_xs_400">Store Location: Lincoln- 344, Illinois, Chicago, USA</TextCustom>
       </FlexCenter>
       <FlexCenter>
-        {/* <FlexCenter>
-          <FlexCenter classname="text-gray-700 text-xs">
-            <TextCustom type="body_xs_400">Eng</TextCustom>
-            <TextCustom type="body_xs_400">USD</TextCustom>
-          </FlexCenter>
-        </FlexCenter> */}
-        {/* border-l border-green-100 pl-2 */}
         <FlexCenter classname="text-gray-700 text-xs">
           <TextCustom type="body_xs_400"><Link to="/auth/login">Sign In</Link></TextCustom>
           <TextCustom type="body_xs_400">/</TextCustom>
@@ -62,7 +57,7 @@ const NavbarMiddle = () => {
             <h6 className="absolute top-0 right-3 bg-[#2C742F] border border-white w-4 h-4 rounded-full text-[10px] text-center text-white ">2</h6>
           </div>
           <div className="">
-            <TextCustom classname="text-[11px]" textColor = "text-gray-700">Shopping cart:</TextCustom>
+            <TextCustom classname="text-[11px]" textColor="text-gray-700">Shopping cart:</TextCustom>
             <TextCustom type="body_sm_500">$57.00</TextCustom>
           </div>
         </FlexCenter>
@@ -72,12 +67,26 @@ const NavbarMiddle = () => {
 }
 
 const NavbarBottom = () => {
+  const { isLandingPage } = useRouteInfo()
   return (
     <>
       <div className="navbar__end_menu">
         <ul className="flex gap-5 text-sm text-gray-400 font-medium">
           {navbarData.map((item, index) => (
-            <li key={index} className={`${index === 0 ? "text-white" : ""}`}><Link to={item.link}>{item.title}</Link></li>
+            <li
+              key={index}
+              className={`
+                ${isLandingPage
+                  ? index === 0
+                    ? "text-white"
+                    : "text-gray-400"
+                  : index === 0
+                    ? "text-green-success"
+                    : "text-gray-400"
+                }
+              `}>
+              <Link to={item.link}>{item.title}</Link>
+            </li>
           ))}
         </ul>
       </div>

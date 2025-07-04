@@ -4,6 +4,10 @@ import { BsFilterRight, BsTruck, BsHeadset, BsBagCheck, BsBoxSeam } from "react-
 // Navbar
 const navbarData = [
     {
+        title: "Home",
+        link: "",
+    },
+    {
         title: "Shop",
         link: "",
     },

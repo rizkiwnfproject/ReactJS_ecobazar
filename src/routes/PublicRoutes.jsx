@@ -1,9 +1,9 @@
-import LandingLayouts from "../components/layouts/Landing/LandingLayouts"
+import MainLayouts from "../layouts/MainLayouts"
 import LandingPage from "../pages/LandingPage/LandingPage"
 
 const PublicRoutes = {
     path: "/",
-    element: <LandingLayouts />,
+    element: <MainLayouts />,
     children: [
         { path: "", element: <LandingPage /> },
         // { path: "about", element: <About /> },

@@ -1,6 +1,6 @@
-import TestimonialFragment from "../../fragments/Testimonial/Testimonial"
+import TestimonialFragment from "../../fragments/Testimonial/TestimonialFragment"
 
-const Testimonials = () => {
+const TestimonialSection = () => {
   return (
     <>
       <TestimonialFragment>
@@ -12,4 +12,4 @@ const Testimonials = () => {
   )
 }
 
-export default Testimonials
+export default TestimonialSection

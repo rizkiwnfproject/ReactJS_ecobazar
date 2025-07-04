@@ -1,22 +1,43 @@
-import React from 'react'
-import { FlexCenter } from '../Flex/Flex'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router';
+import { BsHouseDoor } from "react-icons/bs";
+import ImageCustom from '../Image/Image'
 
-const Breadcrumb = (props) => {
-    const { label, to, isLast } = props
+const Breadcrumb = () => {
+    const location = useLocation();
+    const pathnames = location.pathname.split("/").filter((x) => x);
     return (
-        <FlexCenter classname="text-sm">
-            {!isLast ? (
-                <>
-                    <Link to={to} className="text-blue-600 hover:underline">
-                        {label}
-                    </Link>
-                    <ChevronRight className="mx-2 h-4 w-4 text-gray-400" />
-                </>
-            ) : (
-                <span className="text-gray-500">{label}</span>
-            )}
-        </FlexCenter>
+        <>
+        <div className="relative">
+            <ImageCustom path='breadcrumbs' image='image_1' name='breadcrumbs' />
+            <div className="absolute inset-0 flex items-center justify-start ml-30">
+                <nav className="text-white text-sm">
+                    <ol className="flex space-x-2">
+                        <li>
+                            <Link to="/" className="hover:underline"><BsHouseDoor size="1.2rem"/></Link>
+                        </li>
+                        {pathnames.map((value, index) => {
+                            const to = "/" + pathnames.slice(0, index + 1).join("/");
+                            const isLast = index === pathnames.length - 1;
+
+                            return (
+                                <li key={index} className="flex items-center space-x-2">
+                                    <span>{'>'}</span>
+                                    {isLast ? (
+                                        <span className="capitalize">{decodeURIComponent(value)}</span>
+                                    ) : (
+                                        <Link to={to} className="hover:underline capitalize">
+                                            {decodeURIComponent(value)}
+                                        </Link>
+                                    )}
+                                </li>
+                            );
+                        })}
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        </>
+
     )
 }
 
