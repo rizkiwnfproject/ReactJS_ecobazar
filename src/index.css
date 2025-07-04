@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+
+@theme {
+  --color-orange-warning: #FF8A00;
+  --color-red-error: #EA4B48;
+  --color-green-50: #EDF2EE;
+  --color-green-100: #DAE5DA;
+  --color-green-200: #B4CCB4;
+  --color-green-300: #96B297;
+  --color-green-400: #7A997C;
+  --color-green-500: #618062;
+  --color-green-600: #406B42;
+  --color-green-700: #2B572E;
+  --color-green-800: #173B1A;
+  --color-green-900: #002603;
+  --color-green-success: #00B207;
+  --color-green-success-dark: #2C742F;
+  --color-gray-50: #F2F2F2;
+  --color-gray-100: #E5E5E5;
+  --color-gray-200: #CCCCCC;
+  --color-gray-300: #B3B3B3;
+  --color-gray-400: #999999;
+  --color-gray-500: #808080;
+  --color-gray-600: #666666;
+  --color-gray-700: #4D4D4D;
+  --color-gray-800: #333333;
+  --color-gray-900: #1A1A1A;
+}
+
+* {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+  .custom-bullet {
+    @apply w-2.5 h-2.5 bg-gray-300 rounded-full transition-all duration-300;
+  }
+
+  .swiper-pagination-bullet-active.custom-bullet {
+    @apply w-8 bg-green-500 rounded-full;
+  }
