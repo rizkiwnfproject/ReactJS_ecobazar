@@ -3,7 +3,7 @@ import Button from "../../elements/Button/Button"
 import { FlexCenter, FlexStart } from "../../elements/Flex/Flex"
 import Grid from "../../elements/Grid/Grid"
 import ImageCustom from "../../elements/Image/Image"
-import Input from "../../elements/Input/Input"
+import InputCustom from "../../elements/Input/Input"
 import Logo from "../../elements/Logo/Logo"
 import TextCustom from "../../elements/Text/Text"
 
@@ -33,7 +33,7 @@ const FooterTop = () => {
                     <TextCustom type="body_sm_400" textColor="text-gray-400">Pellentesque eu nibh eget mauris congue mattis matti.</TextCustom>
                 </FlexStart>
                 <div className="col-span-2 w-[535px] relative">
-                    <Input classname="px-6 py-3" rounded="rounded-full" type="text" placeholder="Your email address" name="subscribe" />
+                    <InputCustom classname="px-6 py-3" rounded="rounded-full" type="text" placeholder="Your email address" name="subscribe" />
                     <Button category="input" classname="px-10 rounded-full">subscribe</Button>
                 </div>
             </Grid>

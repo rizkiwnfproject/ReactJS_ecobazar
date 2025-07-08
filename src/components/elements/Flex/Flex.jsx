@@ -1,5 +1,8 @@
-export const FlexCenter = (props) => {
-  const { children, gap = "gap-2", classname = ""} = props
+export const FlexCenter = ({
+  children,
+  gap = "gap-2",
+  classname
+}) => {
   return (
     <div className={`flex ${gap} items-center ${classname}`}>
       {children}
@@ -7,8 +10,11 @@ export const FlexCenter = (props) => {
   )
 }
 
-export const FlexStart = (props) => {
-  const { children, gap = "gap-2", classname = ""} = props
+export const FlexStart = ({
+  children,
+  gap = "gap-2",
+  classname = ""
+}) => {
   return (
     <div className={`flex ${gap} ${classname}`}>
       {children}

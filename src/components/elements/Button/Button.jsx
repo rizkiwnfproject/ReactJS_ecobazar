@@ -1,24 +1,18 @@
 import { BsArrowRight } from "react-icons/bs";
 
-const Button = (props) => {
-    return (
-        <ButtonType {...props} />
-    );
-};
-
-const ButtonType = (props) => {
-    const {
-        children,
-        classname,
-        category,
-        rounded = "rounded-full",
-        color = "bg-green-success",
-        onClick = () => { },
-        type = "button",
-        ref,
-        hover = false,
-        padding = "p-3",
-    } = props;
+const Button = ({
+    children,
+    classname,
+    category,
+    rounded = "rounded-full",
+    color = "bg-green-success",
+    onClick = () => { },
+    type = "button",
+    ref,
+    hover = false,
+    padding = "p-3",
+    shadow = "shadow-md"
+}) => {
     if (category === "input") {
         return (
             <button className={`absolute top-0 right-0 ${classname} h-full ${color} text-white font-semibold capitalize`} type={type} onClick={onClick}>{children}</button>
@@ -32,12 +26,12 @@ const ButtonType = (props) => {
         )
     } else {
         return (
-            <button ref={ref} className={`${classname} ${color} ${rounded} ${padding} shadow-md ${hover === true ? "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300" : ""} `}>
+            <button ref={ref} className={`${classname} ${color} ${rounded} ${padding} ${shadow} ${hover === true ? "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300" : ""} `}>
                 {children}
             </button>
         )
     }
-}
+};
 
 
 

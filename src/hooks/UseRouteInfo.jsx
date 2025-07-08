@@ -9,7 +9,7 @@ const useRouteInfo = () => {
         isLandingPage: pathname === "/",
         isAuthPage: pathname.startsWith("/auth"),
         isAdminPage: pathname.startsWith("/admin"),
-        isUserDashboard: pathname === "/user/dashboard",
+        isUserPage: pathname.startsWith("/user"),
     };
 };
 

@@ -1,4 +1,5 @@
 import MainLayouts from "../layouts/MainLayouts"
+import ErrorPage from "../pages/404"
 import LandingPage from "../pages/LandingPage/LandingPage"
 
 const PublicRoutes = {
@@ -9,6 +10,8 @@ const PublicRoutes = {
         // { path: "about", element: <About /> },
         // { path: "products", element: <Products /> },
         // { path: "faq", element: <FAQ /> },
+        { path: "*", element: <ErrorPage /> }
+
     ]
 }
 

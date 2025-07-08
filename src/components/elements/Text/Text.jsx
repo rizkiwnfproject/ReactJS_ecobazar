@@ -1,23 +1,15 @@
 import React from 'react'
 
-const TextCustom = (props) => {
-    return (
-        <TextType {...props} />
-    )
-}
-
-const TextType = (props) => {
-    const {
-        children,
-        type,
-        classname,
-        textColor = "text-gray-900",
-        bgColor,
-        isHover = false,
-        textTransform = "capitalize",
-        leading
-    } = props
-
+const TextCustom = ({
+    children,
+    type,
+    classname,
+    textColor = "text-gray-900",
+    bgColor,
+    isHover = false,
+    textTransform = "capitalize",
+    leading
+}) => {
     if (type === "title_reguler") {
         return (
             <p className={`text-7xl  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>

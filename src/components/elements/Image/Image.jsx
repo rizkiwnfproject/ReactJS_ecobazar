@@ -1,5 +1,6 @@
-const ImageCustom = (props) => {
-    const { classname, path, name, image, format = "png" } = props
+const ImageCustom = (
+    { classname, path, name, image, format = "png" }
+) => {
     return (
         <img src={`/assets/images/${path}/${image}.${format}`} alt={name} className={classname} />
     )

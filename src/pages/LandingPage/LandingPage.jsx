@@ -8,7 +8,7 @@ import TestimonialSection from "../../components/sections/Testimonial/Testimonia
 const LandingPage = () => {
   return (
     <>
-      <SectionWrapper maxWidth="max-w-11/12" padding="pt-0">
+      <SectionWrapper maxWidth="max-w-11/12" padding="pt-24">
         <Banner type="big" />
       </SectionWrapper>
 

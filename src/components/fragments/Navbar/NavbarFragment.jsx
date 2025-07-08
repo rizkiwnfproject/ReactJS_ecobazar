@@ -1,12 +1,12 @@
 import Button from "../../elements/Button/Button"
 import Logo from "../../elements/Logo/Logo"
 import { FlexCenter } from "../../elements/Flex/Flex"
-import Input from "../../elements/Input/Input"
 import { HiOutlineMapPin, HiMagnifyingGlass, HiOutlineHeart, HiOutlineShoppingBag, HiMiniPhoneArrowUpRight } from "react-icons/hi2";
 import TextCustom from "../../elements/Text/Text";
 import { Link } from "react-router";
 import { navbarData } from "../../../constants/Constant";
 import useRouteInfo from "../../../hooks/UseRouteInfo";
+import InputCustom from "../../elements/Input/Input";
 
 
 const NavbarFragment = (props) => {
@@ -31,7 +31,7 @@ const NavbarTop = () => {
         <FlexCenter classname="text-gray-700 text-xs">
           <TextCustom type="body_xs_400"><Link to="/auth/login">Sign In</Link></TextCustom>
           <TextCustom type="body_xs_400">/</TextCustom>
-          <TextCustom type="body_xs_400">Sign Up</TextCustom>
+          <TextCustom type="body_xs_400"><Link to="/auth/register">Sign Up</Link></TextCustom>
         </FlexCenter>
       </FlexCenter>
     </>
@@ -41,9 +41,9 @@ const NavbarTop = () => {
 const NavbarMiddle = () => {
   return (
     <>
-      <Logo />
+      <Link to="/"><Logo /></Link>
       <div className="navbar__middle_search w-[498px] relative">
-        <Input classname="px-12 py-3" type="text" placeholder="Search" />
+        <InputCustom classname="px-12 py-3" type="text" placeholder="Search" />
         <div className="navbar__middle_icon absolute top-3.5 left-4">
           <HiMagnifyingGlass size={"1.5rem"} color="" />
         </div>

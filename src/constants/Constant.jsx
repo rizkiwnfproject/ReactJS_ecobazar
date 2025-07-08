@@ -1,5 +1,5 @@
 import { FaPinterestP, FaXTwitter, FaFacebookF, FaInstagram } from "react-icons/fa6";
-import { BsFilterRight, BsTruck, BsHeadset, BsBagCheck, BsBoxSeam } from "react-icons/bs";
+import { BsFilterRight, BsTruck, BsHeadset, BsBagCheck, BsBoxSeam, BsGrid1X2Fill, BsArrowRepeat, BsHeart, BsHandbag, BsGear, BsBoxArrowRight } from "react-icons/bs";
 
 // Navbar
 const navbarData = [
@@ -427,6 +427,137 @@ const advantageData = [
   }
 ];
 
+const sidebarData = [
+    {
+        name: "dashboard",
+        icon: <BsGrid1X2Fill />,
+        link: "dashboard"
+    },
+    {
+        name: "order history",
+        icon: <BsArrowRepeat />,
+        link: "order-history"
+    },
+    {
+        name: "wishlist",
+        icon: <BsHeart />,
+        link: "wishlist"
+    },
+    {
+        name: "shopping cart",
+        icon: <BsHandbag />,
+        link: "shopping-cart"
+    },
+    {
+        name: "settings",
+        icon: <BsGear />,
+        link: "settings"
+    },
+    {
+        name: "log-out",
+        icon: <BsBoxArrowRight />,
+        link: "log-out"
+    },
+]
+
+const tableThead = [
+    {
+        title: "Order History",
+        element: [
+            {
+                name: "order id",
+            },
+            {
+                name: "date",
+            },
+            {
+                name: "total",
+            },
+            {
+                name: "status",
+            },
+            {
+                name: "",
+            },
+        ]
+    },
+    {
+        title: "Order Details",
+        element: [
+            {
+                name: "product",
+            },
+            {
+                name: "price",
+            },
+            {
+                name: "quantity",
+            },
+            {
+                name: "subtotal",
+            },
+        ]
+    },
+]
+
+const dashboardHistoryOrder = [
+  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+];
+
+const historyOrder = [
+  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+];
+
+const detailOrderItems = [
+  {
+    id: 1,
+    name: "Red Capsicum",
+    image: "image_1",
+    price: 14.0,
+    quantity: 5,
+    subtotal: 14.0 * 5,
+  },
+  {
+    id: 2,
+    name: "Green Capsicum",
+    image: "image_2",
+    price: 14.0,
+    quantity: 2,
+    subtotal: 14.0 * 2,
+  },
+  {
+    id: 3,
+    name: "Green Chili",
+    image: "image_3",
+    price: 26.7,
+    quantity: 10,
+    subtotal: 26.7 * 10,
+  },
+];
+
+const stepsOrder = [
+  { label: "Order received", number: "01" },
+  { label: "Processing", number: "02" },
+  { label: "On the way", number: "03" },
+  { label: "Delivered", number: "04" },
+];
+
 export {
     navbarData,
     countdownData,
@@ -439,4 +570,10 @@ export {
     newsData,
     supportData,
     advantageData,
+    sidebarData,
+    dashboardHistoryOrder,
+    tableThead,
+    historyOrder,
+    detailOrderItems,
+    stepsOrder
 }
