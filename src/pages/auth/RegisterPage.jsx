@@ -5,7 +5,7 @@ import RegisterFragment from '../../components/fragments/Auth/RegisterFragment'
 const Register = () => {
   return (
     <>
-      <SectionWrapper classname='pt-20'>
+      <SectionWrapper padding='py-15'>
         <AuthSection title="Create Account" type="register">
           <RegisterFragment />
         </AuthSection>

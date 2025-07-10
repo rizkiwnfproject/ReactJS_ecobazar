@@ -10,6 +10,7 @@ import { Link } from 'react-router'
 import { LuDot, LuFacebook, LuLink2, LuTwitter } from 'react-icons/lu'
 import { FaInstagram, FaPinterestP } from 'react-icons/fa6'
 import InputFormFragment from '../Input/InputFormFragment'
+import IconLabel from '../../elements/Text/IconLabel'
 
 export const ListBlogFragment = () => {
     return (
@@ -83,13 +84,15 @@ export const SingleBlogFragment = () => {
                         </FlexStart>
                         <TextCustom type="heading_5_500">Maecenas tempor urna sed quam mollis, a placerat dui fringill Suspendisse.</TextCustom>
                         <FlexCenter classname='justify-between'>
-                            <FlexCenter>
-                                <ImageCustom path="users" image="image_1" />
-                                <FlexStart classname='flex-col' gap=''>
-                                    <TextCustom type="body_md_500">Cameron Williamson</TextCustom>
-                                    <TextCustom type="body_sm_400" textColor='text-gray-500' classname="flex gap-1 items-center">4 April, 2021 <span><LuDot size="22px" /></span>6 min read</TextCustom>
-                                </FlexStart>
-                            </FlexCenter>
+                            <IconLabel
+                                title="Cameron Williamson"
+                                desc={<>4 April, 2021 <span><LuDot size="22px" /></span>6 min read</>}
+                                classname="flex items-center"
+                                size="w-13 h-13"
+                                iconColor="#00B207"
+                                path="users"
+                                icon="image_1"
+                            />
                             <FlexCenter>
                                 <Button hover={true} color='' shadow='' padding='' classname="h-10 w-10 flex justify-center items-center"><LuFacebook size="22px" /></Button>
                                 <Button hover={true} color='' shadow='' padding='' classname="h-10 w-10 flex justify-center items-center"><LuTwitter size="22px" /></Button>

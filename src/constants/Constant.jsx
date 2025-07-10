@@ -481,27 +481,27 @@ const footerCopyright = [
 ]
 
 const advantageData = [
-  {
-    icon: BsTruck,
-    overlay: BsFilterRight,
-    title: "Free Shipping",
-    desc: "Free shipping on all your order"
-  },
-  {
-    icon: BsHeadset,
-    title: "Customer Support 24/7",
-    desc: "Instant access to Support"
-  },
-  {
-    icon: BsBagCheck,
-    title: "100% Secure Payment",
-    desc: "We ensure your money is save"
-  },
-  {
-    icon: BsBoxSeam,
-    title: "Money-Back Guarantee",
-    desc: "30 Days Money-Back Guarantee"
-  }
+    {
+        icon: BsTruck,
+        overlay: BsFilterRight,
+        title: "Free Shipping",
+        desc: "Free shipping on all your order"
+    },
+    {
+        icon: BsHeadset,
+        title: "Customer Support 24/7",
+        desc: "Instant access to Support"
+    },
+    {
+        icon: BsBagCheck,
+        title: "100% Secure Payment",
+        desc: "We ensure your money is save"
+    },
+    {
+        icon: BsBoxSeam,
+        title: "Money-Back Guarantee",
+        desc: "30 Days Money-Back Guarantee"
+    }
 ];
 
 const sidebarData = [
@@ -578,82 +578,162 @@ const tableThead = [
 ]
 
 const dashboardHistoryOrder = [
-  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
-  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
-  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
-  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
-  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
-  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+    { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+    { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+    { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+    { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+    { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+    { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
 ];
 
 const historyOrder = [
-  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
-  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
-  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
-  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
-  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
-  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
-  { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
-  { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
-  { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
-  { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
-  { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
-  { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+    { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+    { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+    { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+    { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+    { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+    { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
+    { id: '#738', date: '8 Sep, 2020', total: '$135.00', products: 5, status: 'Processing' },
+    { id: '#703', date: '24 May, 2020', total: '$25.00', products: 1, status: 'On the way' },
+    { id: '#130', date: '22 Oct, 2020', total: '$250.00', products: 4, status: 'Completed' },
+    { id: '#561', date: '1 Feb, 2020', total: '$35.00', products: 1, status: 'Completed' },
+    { id: '#536', date: '21 Sep, 2020', total: '$578.00', products: 13, status: 'Completed' },
+    { id: '#492', date: '22 Oct, 2020', total: '$345.00', products: 7, status: 'Completed' },
 ];
 
 const detailOrderItems = [
-  {
-    id: 1,
-    name: "Red Capsicum",
-    image: "image_1",
-    price: 14.0,
-    quantity: 5,
-    subtotal: 14.0 * 5,
-  },
-  {
-    id: 2,
-    name: "Green Capsicum",
-    image: "image_2",
-    price: 14.0,
-    quantity: 2,
-    subtotal: 14.0 * 2,
-  },
-  {
-    id: 3,
-    name: "Green Chili",
-    image: "image_3",
-    price: 26.7,
-    quantity: 10,
-    subtotal: 26.7 * 10,
-  },
+    {
+        id: 1,
+        name: "Red Capsicum",
+        image: "image_1",
+        price: 14.0,
+        quantity: 5,
+        subtotal: 14.0 * 5,
+    },
+    {
+        id: 2,
+        name: "Green Capsicum",
+        image: "image_2",
+        price: 14.0,
+        quantity: 2,
+        subtotal: 14.0 * 2,
+    },
+    {
+        id: 3,
+        name: "Green Chili",
+        image: "image_3",
+        price: 26.7,
+        quantity: 10,
+        subtotal: 26.7 * 10,
+    },
 ];
 
 const stepsOrder = [
-  { label: "Order received", number: "01" },
-  { label: "Processing", number: "02" },
-  { label: "On the way", number: "03" },
-  { label: "Delivered", number: "04" },
+    { label: "Order received", number: "01" },
+    { label: "Processing", number: "02" },
+    { label: "On the way", number: "03" },
+    { label: "Delivered", number: "04" },
 ];
 
 const faqData = [
-  {
-    title: "In elementum est a ante sodales iaculis.",
-    content:
-      "Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros...",
-  },
-  {
-    title: "Etiam lobortis massa eu nibh tempor elementum.",
-    content: "Isi jawaban kedua...",
-  },
-  {
-    title: "Aenean quis quam nec lacus semper dignissim.",
-    content: "Isi jawaban ketiga...",
-  },
-  {
-    title: "Nulla tincidunt eros id tempus accumsan.",
-    content: "Isi jawaban keempat...",
-  },
+    {
+        title: "In elementum est a ante sodales iaculis.",
+        content:
+            "Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros...",
+    },
+    {
+        title: "Etiam lobortis massa eu nibh tempor elementum.",
+        content: "Isi jawaban kedua...",
+    },
+    {
+        title: "Aenean quis quam nec lacus semper dignissim.",
+        content: "Isi jawaban ketiga...",
+    },
+    {
+        title: "Nulla tincidunt eros id tempus accumsan.",
+        content: "Isi jawaban keempat...",
+    },
 ];
+
+const teamData = [
+    {
+        name: "Jenny Wilson",
+        role: "CEO & Founder",
+        image: "image_1",
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Jane Cooper",
+        role: "Worker",
+        image: "image_2",
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Cody Fisher",
+        role: "Security Guard",
+        image: "image_3",
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Robert Fox",
+        role: "Senior Farmer Manager",
+        image: "image_4", 
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Jane Cooper",
+        role: "Worker",
+        image: "image_2",
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Cody Fisher",
+        role: "Security Guard",
+        image: "image_3",
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+    {
+        name: "Robert Fox",
+        role: "Senior Farmer Manager",
+        image: "image_4", 
+        social: {
+            facebook: "#",
+            twitter: "#",
+            pinterest: "#",
+            instagram: "#",
+        },
+    },
+]
 
 export {
     navbarData,
@@ -673,5 +753,6 @@ export {
     historyOrder,
     detailOrderItems,
     stepsOrder,
-    faqData
+    faqData,
+    teamData
 }

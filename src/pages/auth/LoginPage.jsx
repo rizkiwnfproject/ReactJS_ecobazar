@@ -4,7 +4,7 @@ import AuthSection from '../../components/sections/Auth/AuthSection'
 
 const Login = () => {
   return (
-    <SectionWrapper classname='pt-20'>
+    <SectionWrapper classname='' padding='py-15'>
       <AuthSection title="Sign In" type="login"> 
         <LoginFragment />
       </AuthSection>

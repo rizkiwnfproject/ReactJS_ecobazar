@@ -34,7 +34,7 @@ const MainLayouts = () => {
           )}
         </main>
 
-        <div className="pt-20">
+        <div className="pt-0">
           <FooterSection />
         </div>
       </div>

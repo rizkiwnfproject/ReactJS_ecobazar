@@ -57,7 +57,7 @@ const TestimonialCard = () => {
                 >
                     {testimonialsData.map((data, index) => (
                         <SwiperSlide key={index}>
-                            <FlexStart gap="gap-4" classname="flex-col bg-white max-w-[415px] min-h-[254px] p-6 rounded-lg shadow">
+                            <FlexStart gap="gap-4" classname="flex-col bg-white max-w-[415px] min-h-[200px] p-6 my-2 rounded-lg shadow">
                                 <BiSolidQuoteAltRight size={32} className="text-green-success opacity-30" />
                                 <TextCustom type="body_sm_400" textColor="text-gray-700">{data.comment}</TextCustom>
                                 <FlexCenter classname="w-full justify-between">

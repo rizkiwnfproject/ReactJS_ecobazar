@@ -4,9 +4,7 @@ const TestimonialSection = () => {
   return (
     <>
       <TestimonialFragment>
-        <TestimonialFragment.TestimonialCard>
-            
-        </TestimonialFragment.TestimonialCard>
+        <TestimonialFragment.TestimonialCard/>
       </TestimonialFragment>
     </>
   )

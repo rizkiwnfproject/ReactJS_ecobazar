@@ -6,7 +6,7 @@ import UserSection from '../../components/sections/User/UserSection'
 
 const UserDashboardPage = () => {
   return (
-    <UserSection>
+    <UserSection padding='pb-15'>
       <FlexStart gap="gap-6">
         <UserProfileFragment type="dashboard" />
         <UserBillingFragment type="dashboard" />

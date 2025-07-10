@@ -4,7 +4,7 @@ import UserTableFragment from '../../components/fragments/User/UserTableFragment
 
 const UserOrderDetail = () => {
   return (
-    <UserSection>
+    <UserSection padding="pb-15">
       <UserTableFragment type="" title="Order Details" />
     </UserSection>
   )

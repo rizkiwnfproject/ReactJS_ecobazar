@@ -4,7 +4,7 @@ import BlogSection from '../../components/sections/Blog/BlogSection'
 
 const BlogPage = () => {
   return (
-    <SectionWrapper>
+    <SectionWrapper padding='py-15'>
         <BlogSection type="list"/>
     </SectionWrapper>
   )

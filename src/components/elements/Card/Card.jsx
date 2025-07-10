@@ -6,7 +6,8 @@ const Card = ({
   gap,
   type,
   padding = "pt-1", 
-  rounded = "rounded-md"
+  rounded = "rounded-md",
+  shadow
 }) => {
   if (type === "start") {
     return (
@@ -28,7 +29,7 @@ const Card = ({
   } else if (type === "center_basic") {
     return (
       <>
-        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding}`}>
+        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} ${shadow}`}>
           {children}
         </FlexCenter>
       </>
@@ -36,7 +37,7 @@ const Card = ({
   } else if (type === "start_basic") {
     return (
       <>
-        <FlexStart classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding}`}>
+        <FlexStart classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} ${shadow}`}>
           {children}
         </FlexStart>
       </>

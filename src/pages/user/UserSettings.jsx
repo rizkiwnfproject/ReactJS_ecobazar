@@ -1,4 +1,3 @@
-import React from 'react'
 import UserSection from '../../components/sections/User/UserSection'
 import UserCardFragment from '../../components/fragments/User/UserCardFragment'
 import { FlexStart } from '../../components/elements/Flex/Flex'
@@ -6,7 +5,7 @@ import { FlexStart } from '../../components/elements/Flex/Flex'
 const UserSettings = () => {
     return (
         <>
-            <UserSection>
+            <UserSection padding="pb-15">
                 <FlexStart classname="flex-col" gap="gap-5">
                     <UserCardFragment type="profile" classname="" title="Account Settings" />
                     <UserCardFragment type="billing" classname="" title="Billing Address" />
