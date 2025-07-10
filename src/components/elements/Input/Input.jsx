@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { BsEye, BsEyeSlash } from 'react-icons/bs';
+import { FlexCenter } from '../Flex/Flex';
+import TextCustom from '../Text/Text';
 
 const InputCustom = ({
     type,
@@ -8,12 +10,12 @@ const InputCustom = ({
     classname,
     rounded = "rounded-lg",
     ref,
-    padding = "px-4 py-3.5", 
+    padding = "px-4 py-3.5",
     bgColor = "bg-white",
-    border = "border border-green-100", 
-    focus = "focus:border-green-success focus:outline focus:outline-greensborder-green-success",
-    textColor = "text-gray-400"
-
+    border = "border border-green-100",
+    focus = "focus:border-green-success focus:outline focus:outline-green-success",
+    textColor = "text-gray-600",
+    label
 }) => {
     const [visible, setVisible] = useState(false);
 
@@ -23,7 +25,10 @@ const InputCustom = ({
         )
     } else if (type === "checkbox") {
         return (
-            <input type="checkbox" name={name} className={`${classname} ${padding} bg-white border w-4 h-4 `} />
+            <FlexCenter gap="gap-1">
+                <input type="checkbox" name={name} className={`${classname} ${padding} bg-white border w-4 h-4 `} />
+                <TextCustom type="body_sm_400" textColor="text-gray-500" classname="pt-0.5">{label}</TextCustom>
+            </FlexCenter>
         )
     } else if (type === "password") {
         return (
@@ -41,6 +46,10 @@ const InputCustom = ({
                     {visible ? <BsEyeSlash /> : <BsEye />}
                 </div>
             </div>
+        )
+    } else if (type === "textarea") {
+        return (
+            <textarea name={name} placeholder={placeholder} className={`max-h-50 min-h-24 ${classname} ${bgColor} ${border} ${focus} ${rounded} ${padding} ${textColor}`} />
         )
     }
 }

@@ -5,12 +5,13 @@ const Card = ({
   classname,
   gap,
   type,
-  padding = "pt-1"
+  padding = "pt-1", 
+  rounded = "rounded-md"
 }) => {
   if (type === "start") {
     return (
       <>
-        <FlexStart classname={`${classname} ${gap} ${padding} bg-white border border-gray-100 rounded-md hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
+        <FlexStart classname={`${classname} ${gap} ${padding} bg-white border border-gray-100 ${rounded} hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
           {children}
         </FlexStart>
       </>
@@ -19,7 +20,7 @@ const Card = ({
   else if (type === "center") {
     return (
       <>
-        <FlexCenter classname={`${classname} ${gap} border border-gray-100 rounded-md ${padding} hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
+        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
           {children}
         </FlexCenter>
       </>
@@ -27,7 +28,7 @@ const Card = ({
   } else if (type === "center_basic") {
     return (
       <>
-        <FlexCenter classname={`${classname} ${gap} border border-gray-100 rounded-md ${padding}`}>
+        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding}`}>
           {children}
         </FlexCenter>
       </>
@@ -35,7 +36,7 @@ const Card = ({
   } else if (type === "start_basic") {
     return (
       <>
-        <FlexStart classname={`${classname} ${gap} border border-gray-100 rounded-md ${padding}`}>
+        <FlexStart classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding}`}>
           {children}
         </FlexStart>
       </>

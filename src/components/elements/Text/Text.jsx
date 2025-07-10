@@ -54,6 +54,10 @@ const TextCustom = ({
         return (
             <p className={`text-[32px] ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
+    } else if (type === "heading_5_500") {
+        return (
+            <p className={`text-[32px] font-medium  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+        )
     } else if (type === "heading_5_600") {
         return (
             <p className={`text-[32px] font-semibold  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>

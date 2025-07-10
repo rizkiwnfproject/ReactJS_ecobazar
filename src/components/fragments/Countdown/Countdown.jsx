@@ -20,7 +20,7 @@ export const CountdownItem = ({ value, label }) => (
         <TextCustom
             type="custom"
             texttransform="uppercase"
-            color="text-white"
+            textColor="text-white"
             classname="text-2xl font-medium"
         >
             {value}
@@ -28,7 +28,7 @@ export const CountdownItem = ({ value, label }) => (
         <TextCustom
             type="custom"
             texttransform="uppercase"
-            color="text-white"
+            textColor="text-white"
             classname="text-xs opacity-80 font-light"
         >
             {label}

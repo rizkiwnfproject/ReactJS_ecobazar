@@ -5,7 +5,7 @@ const NavbarSection = () => {
   const { isLandingPage } = useRouteInfo()
   return (
     <>
-      <div className="navbar flex flex-col max-w-screen w-full fixed z-100">
+      <div className="navbar flex flex-col max-w-screen w-full fixed p-0 z-100">
         <NavbarFragment height="h-10">
           <NavbarFragment.NavbarTop />
         </NavbarFragment>

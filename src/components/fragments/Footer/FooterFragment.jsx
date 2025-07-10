@@ -1,3 +1,4 @@
+import { Link } from "react-router"
 import { footerCopyright, footerData } from "../../../constants/Constant"
 import Button from "../../elements/Button/Button"
 import { FlexCenter, FlexStart } from "../../elements/Flex/Flex"
@@ -56,7 +57,7 @@ const FooterBottom = () => {
                         <ul className="text-gray-400 text-sm">
                             {section.data.map((item, idx) => (
                                 <li className={`pt-3 cursor-pointer hover:text-white`} key={idx}>
-                                    <a>{item.name}</a>
+                                    <Link to={item.link}>{item.name}</Link>
                                 </li>
                             ))}
                         </ul>

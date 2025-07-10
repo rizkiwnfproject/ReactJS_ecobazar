@@ -26,7 +26,7 @@ const Button = ({
         )
     } else {
         return (
-            <button ref={ref} className={`${classname} ${color} ${rounded} ${padding} ${shadow} ${hover === true ? "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300" : ""} `}>
+            <button ref={ref} className={`${classname} ${color} ${rounded} ${padding} ${shadow} ${hover === true ? "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300" : ""}`} onClick={onClick}>
                 {children}
             </button>
         )

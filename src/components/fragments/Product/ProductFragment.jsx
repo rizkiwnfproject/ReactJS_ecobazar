@@ -36,10 +36,10 @@ const ProductCategories = (props) => {
   return (
     <>
       <TextCustom type="heading_3_600" classname="w-full text-center mb-10">Top Category</TextCustom>
-      <Button ref={prevRef} color="bg-white" classname="absolute left-0 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow"                 >
+      <Button ref={prevRef} color="bg-white" classname="absolute left-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100 shadow"                 >
         <BsArrowLeft />
       </Button>
-      <Button ref={nextRef} color="bg-white" classname="absolute right-0 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow">
+      <Button ref={nextRef} color="bg-white" classname="absolute right-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100 shadow">
         <BsArrowRight />
       </Button>
       <FlexStart classname=" max-w-7xl mx-auto" gap="gap-0">
@@ -81,7 +81,6 @@ const ProductCategories = (props) => {
           ))}
         </SwiperCustom>
       </FlexStart>
-
     </>
   )
 }
@@ -159,7 +158,7 @@ const ProductFeatureGroup = (props) => {
 }
 
 const ProductDeal = (props) => {
-  const {children} = props
+  const { children } = props
   const hotDeals = productsData.filter(item => item.category === "hot_deals");
   console.log(hotDeals)
   return (

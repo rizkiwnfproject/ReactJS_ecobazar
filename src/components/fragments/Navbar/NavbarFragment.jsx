@@ -3,7 +3,7 @@ import Logo from "../../elements/Logo/Logo"
 import { FlexCenter } from "../../elements/Flex/Flex"
 import { HiOutlineMapPin, HiMagnifyingGlass, HiOutlineHeart, HiOutlineShoppingBag, HiMiniPhoneArrowUpRight } from "react-icons/hi2";
 import TextCustom from "../../elements/Text/Text";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { navbarData } from "../../../constants/Constant";
 import useRouteInfo from "../../../hooks/UseRouteInfo";
 import InputCustom from "../../elements/Input/Input";
@@ -12,7 +12,7 @@ import InputCustom from "../../elements/Input/Input";
 const NavbarFragment = (props) => {
   const { children, height, color = "bg-white border-green-100" } = props
   return (
-    <div className={`w-full border-b ${color}`}>
+    <div className={`min-w-screen border-b ${color}`}>
       <div className={`flex justify-between mx-auto w-7xl items-center ${height}`}>
         {children}
       </div>
@@ -68,26 +68,31 @@ const NavbarMiddle = () => {
 
 const NavbarBottom = () => {
   const { isLandingPage } = useRouteInfo()
+  const location = useLocation()
+  const currentPath = location.pathname
+
   return (
     <>
       <div className="navbar__end_menu">
         <ul className="flex gap-5 text-sm text-gray-400 font-medium">
-          {navbarData.map((item, index) => (
-            <li
-              key={index}
-              className={`
-                ${isLandingPage
-                  ? index === 0
-                    ? "text-white"
-                    : "text-gray-400"
-                  : index === 0
-                    ? "text-green-success"
-                    : "text-gray-400"
-                }
+          {navbarData.map((item, index) => {
+            let isActive = currentPath.startsWith(item.link)
+            return (
+              <li
+                key={index}
+                className={`
+                ${isActive
+                    ? index
+                      ? "text-green-success"
+                      : "text-gray-400"
+                    : isLandingPage
+                      ? "text-white"
+                      : "text-gray-400"
+                  }
               `}>
-              <Link to={item.link}>{item.title}</Link>
-            </li>
-          ))}
+                <Link to={item.link}>{item.title}</Link>
+              </li>)
+          })}
         </ul>
       </div>
       <FlexCenter gap="gap-3" classname="justify-between text-white">

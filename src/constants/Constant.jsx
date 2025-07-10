@@ -5,27 +5,27 @@ import { BsFilterRight, BsTruck, BsHeadset, BsBagCheck, BsBoxSeam, BsGrid1X2Fill
 const navbarData = [
     {
         title: "Home",
-        link: "",
+        link: "/",
     },
     {
         title: "Shop",
-        link: "",
+        link: "/shop",
     },
     {
         title: "Pages",
-        link: "",
+        link: "/pages",
     },
     {
         title: "Blog",
-        link: "",
+        link: "/blog",
     },
     {
         title: "About Us",
-        link: "",
+        link: "/about-us",
     },
     {
         title: "Contact Us",
-        link: "",
+        link: "/contact-us",
     },
 ]
 
@@ -226,6 +226,83 @@ const newsData = [
         comments: 60,
         title: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
     },
+    {
+        image: "image_1",
+        date: {
+            day: 18,
+            month: "Nov",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 100,
+        title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    },
+    {
+        image: "image_2",
+        date: {
+            day: 29,
+            month: "Jan",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 89,
+        title: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
+    },
+    {
+        image: "image_3",
+        date: {
+            day: 14,
+            month: "Feb",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 60,
+        title: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
+    },
+    {
+        image: "image_1",
+        date: {
+            day: 18,
+            month: "Nov",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 100,
+        title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    },
+    {
+        image: "image_2",
+        date: {
+            day: 29,
+            month: "Jan",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 89,
+        title: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
+    },
+    {
+        image: "image_3",
+        date: {
+            day: 14,
+            month: "Feb",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 60,
+        title: "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
+    },
+    {
+        image: "image_1",
+        date: {
+            day: 18,
+            month: "Nov",
+        },
+        category: "Food",
+        user: "admin",
+        comments: 100,
+        title: "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
+    },
 ]
 
 // Testimonials
@@ -295,11 +372,11 @@ const footerData = [
         data: [
             {
                 name: "My Account",
-                link: ""
+                link: "/user/dashboard"
             },
             {
                 name: "Order History",
-                link: ""
+                link: "/user/order-history"
             },
             {
                 name: "Shoping Cart",
@@ -311,7 +388,7 @@ const footerData = [
             },
             {
                 name: "Settings",
-                link: ""
+                link: "/user/settings"
             },
         ]
     },
@@ -324,7 +401,7 @@ const footerData = [
             },
             {
                 name: "Faqs",
-                link: ""
+                link: "/faqs"
             },
             {
                 name: "Terms & Condition",
@@ -558,6 +635,26 @@ const stepsOrder = [
   { label: "Delivered", number: "04" },
 ];
 
+const faqData = [
+  {
+    title: "In elementum est a ante sodales iaculis.",
+    content:
+      "Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros...",
+  },
+  {
+    title: "Etiam lobortis massa eu nibh tempor elementum.",
+    content: "Isi jawaban kedua...",
+  },
+  {
+    title: "Aenean quis quam nec lacus semper dignissim.",
+    content: "Isi jawaban ketiga...",
+  },
+  {
+    title: "Nulla tincidunt eros id tempus accumsan.",
+    content: "Isi jawaban keempat...",
+  },
+];
+
 export {
     navbarData,
     countdownData,
@@ -575,5 +672,6 @@ export {
     tableThead,
     historyOrder,
     detailOrderItems,
-    stepsOrder
+    stepsOrder,
+    faqData
 }

@@ -1,11 +1,13 @@
-import React from 'react'
 import TextCustom from '../../elements/Text/Text'
 import Card from '../../elements/Card/Card'
 import { FlexCenter, FlexStart } from '../../elements/Flex/Flex'
 import ImageCustom from '../../elements/Image/Image'
 import Button from '../../elements/Button/Button'
 import InputFormFragment from '../Input/InputFormFragment'
-import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/components/dropdown'
+import { BsChevronDown } from "react-icons/bs";
+import {DropdownCustom} from '../../elements/Dropdown/Dropdown'
+import { useState } from 'react'
+
 
 
 const UserCardFragment = ({ classname, type, title }) => {
@@ -20,6 +22,8 @@ const UserCardFragment = ({ classname, type, title }) => {
 }
 
 const CardNavigation = ({ type }) => {
+    const [country, setCountry] = useState("")
+    const [state, setState] = useState("")
     if (type === "profile") {
         return (
             <>
@@ -43,6 +47,7 @@ const CardNavigation = ({ type }) => {
             </>
         )
     } else if (type === "billing") {
+        
         return (
             <>
                 <div className="p-5">
@@ -53,24 +58,23 @@ const CardNavigation = ({ type }) => {
                             <InputFormFragment label="company name" span="(optional)" type="text" name="company_name" placeholder="Microsoft" />
                         </FlexStart>
                         <InputFormFragment label="Street Address" type="text" name="address" placeholder="4140 Par|" />
-                        <FlexStart>
-                            <InputFormFragment label="Country / Region" type="text" name="country" placeholder="United States" />
-                            {/* <div className="">
-                                <Dropdown>
-                                    <DropdownButton outline>
-                                        Options
-                                        <ChevronDownIcon />
-                                    </DropdownButton>
-                                    <DropdownMenu>
-                                        <DropdownItem href="/users/1">View</DropdownItem>
-                                        <DropdownItem href="/users/1/edit">Edit</DropdownItem>
-                                        <DropdownItem onClick={() => ("")}>Delete</DropdownItem>
-                                    </DropdownMenu>
-                                </Dropdown>
-                            </div> */}
-                            <InputFormFragment label="States" type="text" name="states" placeholder="Washington DC" />
+                        <FlexCenter>
+                            <DropdownCustom
+                                label="Country / Region"
+                                options={["United States", "United Kingdom", "Indonesia", "Singapore"]}
+                                selected={country}
+                                onSelect={setCountry}
+                                placeholder="Choose Region"
+                            />
+                            <DropdownCustom
+                                label="States"
+                                options={["Washington DC", "Los Angeles", "Jakarta", "Mumbai"]}
+                                selected={state}
+                                onSelect={setState}
+                                placeholder="Choose State"
+                            />
                             <InputFormFragment label="ZIP code" type="number" name="zip" placeholder="20033" />
-                        </FlexStart>
+                        </FlexCenter>
                         <FlexStart>
                             <InputFormFragment label="email" type="email" name="email" placeholder="example@gmail.com" />
                             <InputFormFragment label="phone number" type="number" name="phone_number" placeholder="625894756122" />

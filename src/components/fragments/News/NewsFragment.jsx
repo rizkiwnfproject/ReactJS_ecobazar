@@ -5,6 +5,7 @@ import TextCustom from "../../elements/Text/Text";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
 import Button from "../../elements/Button/Button";
+import InfoItem from "../../elements/Text/InfoItem";
 
 const NewsFragment = (props) => {
     const { children } = props
@@ -16,16 +17,6 @@ const NewsFragment = (props) => {
         </>
     )
 }
-
-const InfoItem = (props) => {
-    const { icon, text } = props
-    return (
-        <FlexCenter gap="gap-2">
-            <TextCustom type="body_md_400" textColor="text-gray-300">{icon}</TextCustom>
-            <TextCustom type="body_small_400" textColor="text-gray-700">{text}</TextCustom>
-        </FlexCenter>
-    )
-};
 
 const NewsCard = () => {
     return (
