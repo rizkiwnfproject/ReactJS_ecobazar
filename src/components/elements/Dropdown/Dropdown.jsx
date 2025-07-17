@@ -3,15 +3,15 @@ import { BsChevronDown } from 'react-icons/bs'
 import TextCustom from '../Text/Text'
 
 export const DropdownCustom = ({
-    label,
+    label = "",
     options = [],
     selected,
     onSelect,
     placeholder = "Select option",
     widthClass = "w-full",
-    name,
+    name = "",
     flexDirection = "flex flex-col",
-    gap, 
+    gap = "", 
     padding = "py-3.5 px-4",
     margin = "mt-2"
 }) => {

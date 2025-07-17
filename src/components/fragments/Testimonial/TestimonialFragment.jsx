@@ -1,11 +1,11 @@
-import { SwiperSlide } from "swiper/react"
 import { BsArrowLeft, BsArrowRight } from 'react-icons/bs'
 import { BiSolidQuoteAltRight } from "react-icons/bi"
+import { useRef } from "react"
+import SwiperCustom from "../../elements/Swiper/Swiper"
+import { SwiperSlide } from "swiper/react"
 import "swiper/css"
 import "swiper/css/navigation"
 import "swiper/css/pagination"
-import { useRef } from "react"
-import SwiperCustom from "../../elements/Swiper/Swiper"
 import { testimonialsData } from "../../../constants/Constant"
 import { FlexCenter, FlexStart } from "../../elements/Flex/Flex"
 import TextCustom from "../../elements/Text/Text"
@@ -33,12 +33,26 @@ const TestimonialCard = () => {
             <FlexCenter classname="w-full justify-between">
                 <TextCustom type="heading_3_600" classname="w-full">Client Testimonials</TextCustom>
                 <FlexCenter classname="text-green-success font-medium w-28 capitalize">
-                    <Button ref={prevRef} padding="p-3" color="bg-white text-black" classname='swiper-button-prev-custom text-2xl shadow-md'>
-                        <BsArrowLeft />
-                    </Button>
-                    <Button ref={nextRef} padding="p-3" classname='swiper-button-next-custom  text-white text-2xl shadow-md'>
-                        <BsArrowRight />
-                    </Button>
+                    <Button
+                        typeButton="icon"
+                        ref={prevRef}
+                        padding="p-3"
+                        bgColor="bg-white"
+                        shadow="shadow-md"
+                        classname='swiper-button-prev-custom border border-gray-100'
+                        iconSize="25px"
+                        icon={BsArrowLeft}
+                    />
+                    <Button
+                        typeButton="icon"
+                        ref={nextRef}
+                        padding="p-3"
+                        textColor="text-white"
+                        shadow="shadow-md"
+                        classname='swiper-button-prev-custom '
+                        iconSize="25px"
+                        icon={BsArrowRight}
+                    />
                 </FlexCenter>
             </FlexCenter>
             <div className="mt-8 flex justify-between">

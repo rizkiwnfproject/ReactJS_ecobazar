@@ -1,7 +1,7 @@
 
 const UserSection = ({ children, classname, padding }) => {
     return (
-        <div className={`col-span-3 ${classname} ${padding}`}>
+        <div className={`${classname} ${padding}`}>
             {children}
         </div>
     )

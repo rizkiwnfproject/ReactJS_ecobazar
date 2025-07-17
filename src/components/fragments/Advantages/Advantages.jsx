@@ -5,7 +5,7 @@ import IconLabel from "../../elements/Text/IconLabel";
 
 const Advantages = () => {
     return (
-        <FlexCenter classname="w-full justify-between">
+        <FlexCenter width="w-full" justify="justify-between">
             {advantageData.map((item, idx) => (
                 <IconLabel
                     key={idx}

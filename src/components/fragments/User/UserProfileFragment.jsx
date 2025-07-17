@@ -8,7 +8,7 @@ const UserProfileFragment = ({type}) => {
     if(type === "dashboard"){
         return (
             <>
-                <Card type="center_basic" classname='w-1/2 justify-center flex-col' padding="py-7">
+                <Card type="flexCenter" classname='w-1/2 justify-center flex-col' padding="py-7">
                     <ImageCustom path='users' image='image_4' classname="w-32" />
                     <FlexCenter classname="flex-col" gap="gap-0.5">
                         <TextCustom type="body_xl_400" >dianne russel</TextCustom>

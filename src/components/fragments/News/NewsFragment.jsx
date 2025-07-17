@@ -5,7 +5,7 @@ import TextCustom from "../../elements/Text/Text";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
 import Button from "../../elements/Button/Button";
-import InfoItem from "../../elements/Text/InfoItem";
+import TextIcon from "../../elements/Text/textIcon";
 
 const NewsFragment = (props) => {
     const { children } = props
@@ -24,10 +24,10 @@ const NewsCard = () => {
             <TextCustom type="heading_3_600" classname="w-full text-center mb-10">Latest News</TextCustom>
             <FlexStart classname="justify-between">
                 {newsData.slice(0, 3).map((data, index) => (
-                    <Card key={index} type="start" classname="max-w-[415px] min-h-[494px] flex-col rounded-xl" padding="p-0">
+                    <Card key={index} type="flexStart" classname="max-w-[415px] min-h-[494px] flex-col rounded-xl" padding="p-0">
                         <div className="relative">
                             <ImageCustom path="news" image={data.image} alt={data.title} />
-                            <Button classname="absolute bottom-5 left-5 text-center w-[58px] h-[58px] flex flex-col justify-center" color="bg-white" rounded="rounded">
+                            <button className="absolute bottom-5 left-5 bg-white rounded text-center w-[58px] h-[58px] flex flex-col justify-center">
                                 <TextCustom
                                     type="body_xl_500">
                                     {data.date.day}
@@ -38,23 +38,36 @@ const NewsCard = () => {
                                     textColor="text-gray-500"
                                     classname='tracking-[3%]'>
                                     {data.date.month}</TextCustom>
-                            </Button>
+                            </button>
                         </div>
                         <FlexStart classname="flex-col p-6" gap="gap-4">
                             <FlexStart classname="flex-col">
                                 <FlexStart classname="flex-col" gap="gap-6">
-                                    <FlexStart gap="gap-3">
-                                        <InfoItem icon={<BsTag />} text={data.category} />
-                                        <InfoItem icon={<BsPerson />} text={<><span className="text-gray-500">by </span>{data.user}</>}>
-                                        </InfoItem>
-                                        <InfoItem icon={<BsChatSquare />} text={`${data.comments} comments`} />
+                                    <FlexStart gap="gap-3" width="w-full" justify="justify-start">
+                                        <TextIcon icon={BsTag} text={data.category} />
+                                        <TextIcon icon={BsPerson} text={<><span className="text-gray-500">by </span>{data.user}</>}>
+                                        </TextIcon>
+                                        <TextIcon icon={BsChatSquare} text={`${data.comments} comments`} />
                                     </FlexStart>
                                     <TextCustom type="body_lg_500" textColor="text-green-success-dark" leading="leading-6">
                                         {data.title}
                                     </TextCustom>
                                 </FlexStart>
                             </FlexStart>
-                            <Button color="bg-white text-green-success" padding="p-0" classname="shadow-none capitalize text-left flex items-center gap-3 font-semibold ">read more <BsArrowRight /></Button>
+                            <Button
+                                typeButton="textIcon"
+                                iconSize='1.2rem'
+                                textType='body_sm_500'
+                                textColor="text-green-success"
+                                label='read more'
+                                classname={`cursor-pointer`}
+                                bgColor="bg-white"
+                                icon={BsArrowRight}
+                                justify='w-full'
+                                reverse={true}
+                                shadow=""
+                                padding=""
+                            />
                         </FlexStart>
                     </Card>
                 ))}

@@ -4,15 +4,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-const SwiperCustom = (props) => {
-    const { children,
-        swiperRef,
-        prevRef,
-        nextRef,
-        withPagination = false,
-        paginationConfig = {},
-        swiperProps = {},
-    } = props
+const SwiperCustom = ({
+    children,
+    swiperRef,
+    prevRef,
+    nextRef,
+    withPagination = false,
+    paginationConfig = {},
+    swiperProps = {},
+}) => {
     return (
         <Swiper
             modules={[Navigation, Pagination]}

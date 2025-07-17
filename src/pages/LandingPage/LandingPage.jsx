@@ -1,13 +1,21 @@
+import { useEffect } from "react"
 import SectionWrapper from "../../components/fragments/Wrapper/Wrapper"
 import Banner from "../../components/sections/Banner/BannerSection"
 import NewsSection from "../../components/sections/News/NewsSection"
 import { CategoriesProducts, FeaturedProducts, NewestProducts } from "../../components/sections/Product/ProductsSection"
 import SupportSection from "../../components/sections/Support/SupportSection"
 import TestimonialSection from "../../components/sections/Testimonial/TestimonialSection"
+import ModalCustom from "../../components/elements/Modal/ModalCustom"
 
 const LandingPage = () => {
+  useEffect(() => {
+    const modal = document.getElementById("my_modal_2");
+    if (modal) modal.showModal();
+  }, []);
+
   return (
     <>
+      <ModalCustom />
       <SectionWrapper maxWidth="max-w-11/12" padding="pt-24">
         <Banner type="big" />
       </SectionWrapper>
@@ -36,7 +44,7 @@ const LandingPage = () => {
         <NewsSection />
       </SectionWrapper>
 
-      <SectionWrapper bg="bg-green-50" padding="py-10" classname="h-[400
+      <SectionWrapper bgColor="bg-green-50" padding="py-10" classname="h-[400
       .px]">
         <TestimonialSection />
       </SectionWrapper>

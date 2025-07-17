@@ -13,7 +13,7 @@ import StepsFragment from "../Steps/StepsFragment"
 const UserTableFragment = ({ type, title, classname }) => {
     return (
         <>
-            <Card type="start_basic" classname={`flex-col justify-between text-left ${classname}`} padding="" gap="">
+            <Card type="flexStart" hover={false} classname={`flex-col justify-between text-left ${classname}`} padding="" gap="">
                 <TableNavigation type={type} title={title} />
             </Card>
         </>
@@ -36,7 +36,7 @@ const TableNavigation = ({ type, title }) => {
             <>
                 <TextCustom type="body_xl_600" classname="p-3" >{title}</TextCustom>
                 <TableCustom thead="Order History" data={historyOrder} />
-                <FlexCenter classname="justify-center py-5">
+                <FlexCenter classname="justify-center">
                     <Button classname="cursor-pointer text-gray-300" shadow="" color="bg-gray-50"><BsArrowLeft /></Button>
                     <FlexCenter gap="">
                         <Button classname="cursor-pointer" shadow="" padding="py-2 px-4"><TextCustom type="body_md_500" textColor="text-white">1</TextCustom></Button>
@@ -62,7 +62,7 @@ const TableNavigation = ({ type, title }) => {
                         <Link to="/user/order-history"><TextCustom type="body_md_500" textColor="text-green-success">back to list</TextCustom></Link>
                     </FlexCenter>
                 </div>
-                <div className="p-6">
+                <div className="">
                     <Grid cols="grid-cols-3" gap="gap-6">
                         <div className="col-span-2">
                             <Card type="start_basic" padding="" classname="h-[280px]">
@@ -165,10 +165,10 @@ const TableNavigation = ({ type, title }) => {
                     </thead>
                     <tbody>
                         {detailOrderItems.map((item, index) => (
-                            <tr key={index} className={`${index === detailOrderItems.length-1 ? "" : "border-b border-b-gray-100"}`}>
+                            <tr key={index} className={`${index === detailOrderItems.length - 1 ? "" : "border-b border-b-gray-100"}`}>
                                 <td className="p-4">
                                     <FlexCenter>
-                                        <ImageCustom path="products" image={item.image} classname="w-[70px] h-[70px]"/>
+                                        <ImageCustom path="products" image={item.image} classname="w-[70px] h-[70px]" />
                                         <TextCustom type="body_sm_400">{item.name}</TextCustom>
                                     </FlexCenter>
                                 </td>

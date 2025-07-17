@@ -5,14 +5,14 @@ import ImageCustom from '../../elements/Image/Image'
 import Button from '../../elements/Button/Button'
 import InputFormFragment from '../Input/InputFormFragment'
 import { BsChevronDown } from "react-icons/bs";
-import {DropdownCustom} from '../../elements/Dropdown/Dropdown'
+import { DropdownCustom } from '../../elements/Dropdown/Dropdown'
 import { useState } from 'react'
 
 
 
 const UserCardFragment = ({ classname, type, title }) => {
     return (
-        <Card type="start_basic" classname={`flex-col justify-between text-left`} padding="" gap="">
+        <Card type="flexStart" hover={false} classname={`flex-col justify-between text-left`} padding="" gap="">
             <div className="border-b border-b-gray-100 p-5">
                 <TextCustom type="body_xl_500" classname="">{title}</TextCustom>
             </div>
@@ -38,16 +38,14 @@ const CardNavigation = ({ type }) => {
                         </FlexStart>
                         <FlexCenter classname="flex-col justify-center" gap='gap-4'>
                             <ImageCustom path="users" image="image_4" alt="user" />
-                            <Button classname="px-10 py-3 cursor-pointer" color="bg-transparent border-2 border-green-success" shadow=''>
-                                <TextCustom type="body_sm_600" textColor='text-green-success'>choose image</TextCustom>
-                            </Button>
+                            <Button typeButton='buttonBasic' classname="w-1/5" padding='py-6' textType='body_sm_500' textColor='text-white' label='save changes' />
                         </FlexCenter>
                     </FlexCenter>
                 </div>
             </>
         )
     } else if (type === "billing") {
-        
+
         return (
             <>
                 <div className="p-5">

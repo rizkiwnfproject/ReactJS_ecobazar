@@ -1,16 +1,17 @@
-import React from 'react'
 import SectionWrapper from '../../fragments/Wrapper/Wrapper'
-import AboutFragment from '../../fragments/About/AboutFragment'
+import AboutFirst from '../../fragments/About/AboutFirst'
+import AboutSecond from '../../fragments/About/AboutSecond'
+import AboutThird from '../../fragments/About/AboutThird'
 
 const AboutSection = () => {
     return (
         <>
             <SectionWrapper padding='py-15'>
-                <AboutFragment type="information-1" />
+                <AboutFirst />
             </SectionWrapper>
-            <AboutFragment type="information-2"  />
+            <AboutSecond />
             <SectionWrapper padding=''>
-                <AboutFragment type="" />
+                <AboutThird />
             </SectionWrapper>
         </>
     )

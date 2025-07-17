@@ -1,33 +1,73 @@
-import { BsArrowRight } from "react-icons/bs";
+import TextCustom from "../Text/Text";
+import TextIcon from "../Text/textIcon";
 
 const Button = ({
     children,
-    classname,
-    category,
-    rounded = "rounded-full",
-    color = "bg-green-success",
-    onClick = () => { },
+    classname = "",
+    height = "",
+    typeButton = "",
     type = "button",
+    rounded = "rounded-full",
+    bgColor = "bg-green-success",
+    textType = "",
+    textColor = "text-gray-900",
+    iconType = "",
+    iconColor = "",
+    onClick = () => { },
     ref,
     hover = false,
-    padding = "p-3",
-    shadow = "shadow-md"
+    padding = "py-4 px-8",
+    shadow = "shadow-md",
+    btn = "btn",
+    iconSize = "",
+    icon: Icon,
+    label = "",
+    reverse = false,
+    justify = "",
+    elementHover = "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300"
 }) => {
-    if (category === "input") {
+    if (typeButton === "input") {
         return (
-            <button className={`absolute top-0 right-0 ${classname} h-full ${color} text-white font-semibold capitalize`} type={type} onClick={onClick}>{children}</button>
-        )
-    } else if (category === "shop") {
-        return (
-            <button className={`${classname} ${color} flex justify-center items-center gap-2 font-semibold rounded-full py-4 px-8`}>
-                <h1 className="text-sm capitalize">{children}</h1>
-                <BsArrowRight size={"1.2rem"} />
+            <button className={`absolute top-0 right-0 ${height} ${classname} ${bgColor} ${rounded} ${padding}`} type={type} onClick={onClick}>
+                <TextCustom type={textType} textColor={textColor}>{children}</TextCustom>
             </button>
         )
-    } else {
+    } else if (typeButton === "textIcon") {
         return (
-            <button ref={ref} className={`${classname} ${color} ${rounded} ${padding} ${shadow} ${hover === true ? "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300" : ""}`} onClick={onClick}>
+            <button className={`${classname} ${bgColor} ${textColor} ${rounded} ${padding}`}>
+                <TextIcon
+                    justify={justify}
+                    type={textType}
+                    iconType={iconType}
+                    textType={textType}
+                    textColor={textColor}
+                    iconSize={iconSize}
+                    iconColor={iconColor}
+                    icon={Icon}
+                    text={label}
+                    reverse={reverse}
+                />
+            </button>
+        )
+    } else if (typeButton === "icon") {
+        return (
+            <button
+                onClick={onClick}
+                ref={ref}
+                className={`${classname} ${bgColor} ${textColor} ${rounded} ${padding} w-10 h-10 flex justify-center items-center ${hover ? `${elementHover}` : ""}`}>
+                <Icon size={iconSize} className="shrink-0" />
+            </button>
+        )
+    } else if (typeButton === "hoverButton") {
+        return (
+            <button ref={ref} className={`${btn} ${classname} ${bgColor} ${textColor} ${rounded} ${padding} ${shadow} ${hover === true ? `${elementHover}` : ""}`} onClick={onClick}>
                 {children}
+            </button>
+        )
+    } else if (typeButton === "buttonBasic") {
+        return (
+            <button ref={ref} className={`${btn} ${classname} ${bgColor} ${rounded} ${padding} ${shadow}`} onClick={onClick}>
+                <TextCustom type={textType} textColor={textColor}>{label}</TextCustom>
             </button>
         )
     }

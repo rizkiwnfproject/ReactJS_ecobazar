@@ -1,4 +1,3 @@
-import React from 'react'
 import ImageCustom from '../components/elements/Image/Image'
 import TextCustom from '../components/elements/Text/Text'
 import { FlexCenter } from '../components/elements/Flex/Flex'

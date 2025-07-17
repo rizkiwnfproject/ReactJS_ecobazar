@@ -1,10 +1,13 @@
 export const FlexCenter = ({
   children,
   gap = "gap-2",
-  classname
+  classname = "",
+  justify = "",
+  width = "",
+  alignItems = "items-center"
 }) => {
   return (
-    <div className={`flex ${gap} items-center ${classname}`}>
+    <div className={`flex ${gap} ${alignItems}  ${classname} ${justify} ${width}`}>
       {children}
     </div>
   )
@@ -13,10 +16,12 @@ export const FlexCenter = ({
 export const FlexStart = ({
   children,
   gap = "gap-2",
-  classname = ""
+  classname = "",
+  justify = "",
+  width = ""
 }) => {
   return (
-    <div className={`flex ${gap} ${classname}`}>
+    <div className={`flex ${gap} ${classname} ${justify} ${width}`}>
       {children}
     </div>
   )

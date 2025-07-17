@@ -4,10 +4,11 @@ import { FlexCenter } from '../Flex/Flex';
 import TextCustom from '../Text/Text';
 
 const InputCustom = ({
-    type,
-    placeholder,
-    name,
-    classname,
+    type = "",
+    gap = "gap-2",
+    placeholder = "",
+    name = "",
+    classname = "",
     rounded = "rounded-lg",
     ref,
     padding = "px-4 py-3.5",
@@ -15,7 +16,8 @@ const InputCustom = ({
     border = "border border-green-100",
     focus = "focus:border-green-success focus:outline focus:outline-green-success",
     textColor = "text-gray-600",
-    label
+    textType = "body_sm_400",
+    label = "",
 }) => {
     const [visible, setVisible] = useState(false);
 
@@ -25,10 +27,24 @@ const InputCustom = ({
         )
     } else if (type === "checkbox") {
         return (
-            <FlexCenter gap="gap-1">
-                <input type="checkbox" name={name} className={`${classname} ${padding} bg-white border w-4 h-4 `} />
-                <TextCustom type="body_sm_400" textColor="text-gray-500" classname="pt-0.5">{label}</TextCustom>
+            <FlexCenter gap={gap}>
+                <input
+                    type="checkbox"
+                    className={`${classname} ${padding} checkbox w-4 h-4 rounded-xs checked:border-green-success-dark checked:bg-green-success checked:text-white`}
+                />
+                <TextCustom type={textType} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
             </FlexCenter>
+        )
+    } else if (type === "radio") {
+        return (
+            <FlexCenter gap="gap-1">
+                <input type="radio" name="radio-5" className="radio radio-xs border-green-400 checked:text-green-success" />
+                <TextCustom type={textType} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
+            </FlexCenter>
+        )
+    } else if (type === "range") {
+        return (
+            <input type="range" min={0} max="100" value="40" className="range text-blue-300 [--range-bg:orange] [--range-thumb:blue] [--range-fill:0]" />
         )
     } else if (type === "password") {
         return (

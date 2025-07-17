@@ -2,44 +2,29 @@ import { FlexCenter, FlexStart } from "../Flex/Flex"
 
 const Card = ({
   children,
-  classname,
-  gap,
-  type,
-  padding = "pt-1", 
+  classname = "",
+  gap = "",
+  type = "",
+  padding = "pt-1",
   rounded = "rounded-md",
-  shadow
+  shadow = "",
+  hover = true
 }) => {
-  if (type === "start") {
+  if (type === "flexStart") {
     return (
       <>
-        <FlexStart classname={`${classname} ${gap} ${padding} bg-white border border-gray-100 ${rounded} hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
+        <FlexStart classname={`${classname} ${padding} bg-white border border-gray-100 ${rounded} ${shadow} ${hover ? "hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300" : ""}`} gap={gap}>
           {children}
         </FlexStart>
       </>
     )
   }
-  else if (type === "center") {
+  else if (type === "flexCenter") {
     return (
       <>
-        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300`}>
+        <FlexCenter classname={`${classname} ${padding} bg-white border border-gray-100 ${rounded} ${hover ? "hover:border-green-success hover:scale-101  hover:drop-shadow-green-success hover:shadow-md transition-all duration-300" : ""}`} gap={gap}>
           {children}
         </FlexCenter>
-      </>
-    )
-  } else if (type === "center_basic") {
-    return (
-      <>
-        <FlexCenter classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} ${shadow}`}>
-          {children}
-        </FlexCenter>
-      </>
-    )
-  } else if (type === "start_basic") {
-    return (
-      <>
-        <FlexStart classname={`${classname} ${gap} border border-gray-100 ${rounded} ${padding} ${shadow}`}>
-          {children}
-        </FlexStart>
       </>
     )
   }

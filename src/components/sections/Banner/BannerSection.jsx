@@ -1,27 +1,22 @@
 import Advantages from "../../fragments/Advantages/Advantages";
-import BannerFragment from "../../fragments/Banner/BannerFragment";
+import BannerBig from "../../fragments/Banner/BannerBig";
+import BannerMedium from "../../fragments/Banner/BannerMedium";
+import BannerSmall from "../../fragments/Banner/BannerSmall";
 
-const BannerSection = (props) => {
-    const { type } = props
+const BannerSection = ({ type }) => {
     if (type === "big") {
         return (
-            <BannerFragment>
-                <BannerFragment.BannerBig>
-                    <Advantages />
-                </BannerFragment.BannerBig>
-            </BannerFragment>
+            <BannerBig>
+                <Advantages />
+            </BannerBig>
         )
     } else if (type === "small") {
         return (
-            <BannerFragment>
-                <BannerFragment.BannerSmall />
-            </BannerFragment>
+            <BannerSmall />
         )
     } else {
         return (
-            <BannerFragment> 
-                <BannerFragment.BannerMedium />
-            </BannerFragment>
+            <BannerMedium />
         )
     }
 }

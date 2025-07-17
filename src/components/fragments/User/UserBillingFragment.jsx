@@ -7,7 +7,7 @@ const UserBillingFragment = ({type}) => {
     if(type === "dashboard"){
         return (
             <>
-                <Card type="start_basic" classname='w-1/2 max-h-[278px] flex-col justify-between text-left' padding="py-7 px-4">
+                <Card type="flexStart" classname='w-1/2 max-h-[278px] flex-col justify-between text-left' padding="py-7 px-4">
                     <TextCustom type="body_sm_500" textColor="text-gray-400" textTransform="uppercase" classname="tracking-wide">Billing Address</TextCustom>
                     <FlexStart classname="pt-2 flex-col w-[264px]">
                         <TextCustom type="body_lg_500">dainne russel</TextCustom>

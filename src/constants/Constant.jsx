@@ -1,5 +1,6 @@
 import { FaPinterestP, FaXTwitter, FaFacebookF, FaInstagram } from "react-icons/fa6";
 import { BsFilterRight, BsTruck, BsHeadset, BsBagCheck, BsBoxSeam, BsGrid1X2Fill, BsArrowRepeat, BsHeart, BsHandbag, BsGear, BsBoxArrowRight } from "react-icons/bs";
+import { LuHeadset, LuLeaf, LuPackage, LuShoppingBag, LuStar, LuTruck } from "react-icons/lu";
 
 // Navbar
 const navbarData = [
@@ -440,6 +441,7 @@ const footerData = [
     },
 ]
 
+// Footer Copyright
 const footerCopyright = [
     {
         name: "Icon",
@@ -480,6 +482,7 @@ const footerCopyright = [
     }
 ]
 
+// Advantage
 const advantageData = [
     {
         icon: BsTruck,
@@ -504,6 +507,7 @@ const advantageData = [
     }
 ];
 
+// Sidebar User
 const sidebarData = [
     {
         name: "dashboard",
@@ -692,7 +696,7 @@ const teamData = [
     {
         name: "Robert Fox",
         role: "Senior Farmer Manager",
-        image: "image_4", 
+        image: "image_4",
         social: {
             facebook: "#",
             twitter: "#",
@@ -725,7 +729,7 @@ const teamData = [
     {
         name: "Robert Fox",
         role: "Senior Farmer Manager",
-        image: "image_4", 
+        image: "image_4",
         social: {
             facebook: "#",
             twitter: "#",
@@ -735,6 +739,61 @@ const teamData = [
     },
 ]
 
+const blogTagCategories = [
+    { id: 1, name: "Healthy" },
+    { id: 2, name: "Low fat" },
+    { id: 3, name: "Vegetarian" },
+    { id: 4, name: "Bread" },
+    { id: 5, name: "Kid foods" },
+    { id: 6, name: "Vitamins" },
+    { id: 7, name: "Snacks" },
+    { id: 8, name: "Tiffin" },
+    { id: 9, name: "Meat" },
+    { id: 10, name: "Launch" },
+    { id: 11, name: "Dinner" }
+]
+const filterTopCategories = [
+    { name: "Fresh Fruit", count: 150 },
+    { name: "Vegetables", count: 54 },
+    { name: "Cooking", count: 47 },
+    { name: "Snacks", count: 43 },
+    { name: "Beverages", count: 38 },
+    { name: "Beauty & Health", count: 134 },
+    { name: "Bread & Bakery", count: 15 },
+];
+
+const iconAboutPage = [
+    {
+        title: "100% Organic food",
+        desc: "100% healthy & Fresh food.",
+        icon: LuLeaf,
+    },
+    {
+        title: "Great Support 24/7",
+        desc: "Instant access to Contact",
+        icon: LuHeadset,
+    },
+    {
+        title: "Customer Feedback",
+        desc: "Our happy customer",
+        icon: LuStar,
+    },
+    {
+        title: "100% Sucure Payment",
+        desc: "We ensure your money is save",
+        icon: LuShoppingBag,
+    },
+    {
+        title: "Free Shipping",
+        desc: "Free shipping with discount",
+        icon: LuTruck,
+    },
+    {
+        title: "100% Organic Food",
+        desc: "100% healthy & Fresh food.",
+        icon: LuPackage,
+    },
+];
 export {
     navbarData,
     countdownData,
@@ -754,5 +813,8 @@ export {
     detailOrderItems,
     stepsOrder,
     faqData,
-    teamData
+    teamData,
+    blogTagCategories,
+    filterTopCategories,
+    iconAboutPage
 }

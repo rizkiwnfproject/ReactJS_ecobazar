@@ -2,13 +2,13 @@ import React from 'react'
 
 const TextCustom = ({
     children,
-    type,
-    classname,
+    type  = "",
+    classname  = "",
     textColor = "text-gray-900",
-    bgColor,
+    bgColor  = "",
     isHover = false,
     textTransform = "capitalize",
-    leading
+    leading  = "",
 }) => {
     if (type === "title_reguler") {
         return (
@@ -20,7 +20,7 @@ const TextCustom = ({
         )
     } else if (type === "heading_1_400") {
         return (
-            <p className={`text-[56px]  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-[56px] font-normal  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "heading_1_600") {
         return (
@@ -28,7 +28,7 @@ const TextCustom = ({
         )
     } else if (type === "heading_2_400") {
         return (
-            <p className={`text-5xl  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-5xl  font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "heading_2_600") {
         return (
@@ -36,7 +36,7 @@ const TextCustom = ({
         )
     } else if (type === "heading_3_400") {
         return (
-            <p className={`text-[40px] ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-[40px] font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "heading_3_600") {
         return (
@@ -44,7 +44,7 @@ const TextCustom = ({
         )
     } else if (type === "heading_4_400") {
         return (
-            <p className={`text-4xl ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-4xl font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "heading_4_600") {
         return (
@@ -52,7 +52,7 @@ const TextCustom = ({
         )
     } else if (type === "heading_5_400") {
         return (
-            <p className={`text-[32px] ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-[32px] font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "heading_5_500") {
         return (
@@ -64,7 +64,7 @@ const TextCustom = ({
         )
     } else if (type === "body_xxl_400") {
         return (
-            <p className={`text-2xl ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-2xl font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_xxl_500") {
         return (
@@ -72,11 +72,11 @@ const TextCustom = ({
         )
     } else if (type === "body_xxl_600") {
         return (
-            <p className={`text-2xl font-semibold  ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-2xl font-semibold ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_xl_400") {
         return (
-            <p className={`text-xl ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-xl font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_xl_500") {
         return (
@@ -88,7 +88,7 @@ const TextCustom = ({
         )
     } else if (type === "body_lg_400") {
         return (
-            <p className={`text-lg ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-lg font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_lg_500") {
         return (
@@ -100,7 +100,7 @@ const TextCustom = ({
         )
     } else if (type === "body_md_400") {
         return (
-            <p className={`text-base ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-base font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_md_500") {
         return (
@@ -112,7 +112,7 @@ const TextCustom = ({
         )
     } else if (type === "body_sm_400") {
         return (
-            <p className={`text-sm ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-sm font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_sm_500") {
         return (
@@ -124,7 +124,7 @@ const TextCustom = ({
         )
     } else if (type === "body_xs_400") {
         return (
-            <p className={`text-xs ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
+            <p className={`text-xs font-normal ${classname} ${textColor} ${bgColor} ${leading} ${textTransform} ${isHover}`} >{children}</p>
         )
     } else if (type === "body_xs_500") {
         return (

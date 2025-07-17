@@ -3,7 +3,7 @@ import UserSection from "../../components/sections/User/UserSection"
 
 const UserOrderHistory = () => {
   return (
-    <UserSection padding="pb-15">
+    <UserSection >
       <UserTableFragment type="history" title="Order History" />
     </UserSection>
   )

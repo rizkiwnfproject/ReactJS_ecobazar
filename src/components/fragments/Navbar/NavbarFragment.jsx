@@ -1,5 +1,4 @@
 import Button from "../../elements/Button/Button"
-import Logo from "../../elements/Logo/Logo"
 import { FlexCenter } from "../../elements/Flex/Flex"
 import { HiOutlineMapPin, HiMagnifyingGlass, HiOutlineHeart, HiOutlineShoppingBag, HiMiniPhoneArrowUpRight } from "react-icons/hi2";
 import TextCustom from "../../elements/Text/Text";
@@ -7,6 +6,7 @@ import { Link, useLocation } from "react-router";
 import { navbarData } from "../../../constants/Constant";
 import useRouteInfo from "../../../hooks/UseRouteInfo";
 import InputCustom from "../../elements/Input/Input";
+import ImageLogo from "../../elements/Image/ImageLogo";
 
 
 const NavbarFragment = (props) => {
@@ -41,26 +41,30 @@ const NavbarTop = () => {
 const NavbarMiddle = () => {
   return (
     <>
-      <Link to="/"><Logo /></Link>
+      <Link to="/"><ImageLogo /></Link>
       <div className="navbar__middle_search w-[498px] relative">
         <InputCustom classname="px-12 py-3" type="text" placeholder="Search" />
         <div className="navbar__middle_icon absolute top-3.5 left-4">
           <HiMagnifyingGlass size={"1.5rem"} color="" />
         </div>
-        <Button category="input" classname="rounded-r-xl px-6">search</Button>
-      </div>
+        <Button typeButton="input" rounded="rounded-r-lg" height="h-full" padding="px-6" textType="body_sm_600" textColor="text-white">search</Button>
+      </div >
       <FlexCenter classname="text-green-900">
-        <HiOutlineHeart size={"2rem"} color="#002603" />
-        <FlexCenter>
-          <div className="relative border-l-2 border-l-green-50 px-3 ml-3">
-            <HiOutlineShoppingBag size={"2rem"} color="#002603" />
-            <h6 className="absolute top-0 right-3 bg-[#2C742F] border border-white w-4 h-4 rounded-full text-[10px] text-center text-white ">2</h6>
-          </div>
-          <div className="">
-            <TextCustom classname="text-[11px]" textColor="text-gray-700">Shopping cart:</TextCustom>
-            <TextCustom type="body_sm_500">$57.00</TextCustom>
-          </div>
-        </FlexCenter>
+        <Link to="/user/wishlist">
+          <HiOutlineHeart size={"2rem"} color="#002603" />
+        </Link>
+        <Link to="/user/shopping-cart" >
+          <FlexCenter>
+            <div className="relative border-l-2 border-l-green-50 px-3 ml-3">
+              <HiOutlineShoppingBag size={"2rem"} color="#002603" />
+              <TextCustom type="span" textColor="text-white" classname="absolute top-0 right-3 bg-[#2C742F] border border-white w-4 h-4 rounded-full text-[10px] text-center ">2</TextCustom>
+            </div>
+            <div className="">
+              <TextCustom classname="text-[11px]" textColor="text-gray-700">Shopping cart:</TextCustom>
+              <TextCustom type="body_sm_500">$57.00</TextCustom>
+            </div>
+          </FlexCenter>
+        </Link>
       </FlexCenter>
     </>
   )

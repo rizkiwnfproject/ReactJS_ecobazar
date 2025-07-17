@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DropdownCustom } from "../../elements/Dropdown/Dropdown";
-import { FlexCenter, FlexStart } from "../../elements/Flex/Flex";
+import { FlexStart } from "../../elements/Flex/Flex";
 import TextCustom from "../../elements/Text/Text"
 import { LuCalendar, LuSettings2 } from "react-icons/lu";
 import InputCustom from "../../elements/Input/Input";
@@ -8,7 +8,10 @@ import { HiMagnifyingGlass } from "react-icons/hi2";
 import Button from "../../elements/Button/Button";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
-import { BsCalendar } from "react-icons/bs";
+import { blogTagCategories, filterTopCategories } from "../../../constants/Constant";
+import { Range } from "react-range";
+import { BsStar, BsStarFill } from "react-icons/bs";
+import { ProductFeatureGroup } from "../Product/ProductFeature";
 
 const FilterFragment = ({ children }) => {
     return (
@@ -19,27 +22,27 @@ const FilterFragment = ({ children }) => {
         </>
     )
 }
-export const FilterTop = () => {
+export const FilterTop = ({ options, marginFilter, grid = "grid-cols-6", colSpan = "col-span-4" }) => {
     const [sort, setSort] = useState("")
     return (
         <>
-            <div className="grid grid-cols-6 mb-8">
+            <div className={`grid ${grid} mb-8`}>
                 <div className="col-span-2">
                     <div className="w-32 bg-green-success px-8 py-3.5 rounded-full ">
                         <TextCustom type="body_sm_600" textColor="text-white" classname="flex items-center justify-between">filter <LuSettings2 size="20px" /></TextCustom>
                     </div>
                 </div>
-                <div className="col-span-4 flex justify-between items-center">
+                <div className={`${colSpan} flex justify-between items-center`}>
                     <DropdownCustom
                         label="sort by:"
-                        options={["latest", "oldest", "A → Z", "Singapore"]}
+                        options={options}
                         selected={sort}
                         onSelect={setSort}
                         placeholder="Filter"
                         widthClass="min-w-[120px]"
                         padding="py-2 px-3"
                         flexDirection="flex flex-row items-center gap-x-2"
-                        margin="mt-52"
+                        margin={marginFilter}
                     />
                     <TextCustom type="body_md_400" textColor="text-gray-600"> <span className="font-semibold text-gray-900">52</span> Results Found</TextCustom>
                 </div>
@@ -60,38 +63,125 @@ export const FilterSearch = () => {
         </>
     )
 }
-export const FilterCategories = () => {
+export const FilterCategories = ({ type }) => {
+    const flexFilter = type === "blog" ? "flex justify-between items-center" : "";
     return (
         <>
             <div className=" pb-7 border-b border-gray-100">
                 <FlexStart gap="gap-4" classname="flex-col">
                     <TextCustom type="body_xl_500">Top Categories</TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Fresh Fruit<span className="text-gray-500">(150)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Vegetables<span className="text-gray-500">(54)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Cooking<span className="text-gray-500">(47)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Snacks<span className="text-gray-500">(43)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Beverages<span className="text-gray-500">(38)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Beauty & Health<span className="text-gray-500">(134)</span></TextCustom>
-                    <TextCustom type="body_sm_400" classname="flex justify-between items-center">Bread & Bakery<span className="text-gray-500">(15)</span></TextCustom>
+                    {filterTopCategories.map((item, index) => {
+                        if (type === "blog") {
+                            return (
+                                <TextCustom key={index} type="body_sm_400" classname={flexFilter}>
+                                    {item.name}
+                                    <span className="text-gray-500">({item.count})</span>
+                                </TextCustom>
+                            )
+                        } else {
+                            return (
+                                <InputCustom key={index} type="radio" name="" textColor="text-gray-900" label={
+                                    <>
+                                        {item.name} <span className="text-gray-500">({item.count})</span>
+                                    </>
+                                } />
+                            )
+                        }
+                    })}
                 </FlexStart>
             </div>
         </>
     )
 }
+
+export const FilterRange = () => {
+    const STEP = 1;
+    const MIN = 0;
+    const MAX = 1000;
+
+    const [values, setValues] = useState([0, 1000]);
+
+    return (
+        <FlexStart classname="w-full flex-col pb-7 border-b border-gray-100" gap="gap-4">
+            <TextCustom type="body_xl_500">Top Categories</TextCustom>
+            <Range
+                step={STEP}
+                min={MIN}
+                max={MAX}
+                values={values}
+                onChange={(values) => setValues(values)}
+                renderTrack={({ props, children }) => (
+                    <div
+                        {...props}
+                        className="h-2 w-full bg-green-success rounded-full"
+                        style={{
+                            background: `linear-gradient(
+                            to right, 
+                            #E5E5E5 ${((values[0] - MIN) / (MAX - MIN)) * 100}%, 
+                            #00B207 ${((values[0] - MIN) / (MAX - MIN)) * 100}%, 
+                            #00B207 ${((values[1] - MIN) / (MAX - MIN)) * 100}%, 
+                            #E5E5E5 ${((values[1] - MIN) / (MAX - MIN)) * 100}%)`,
+                        }}
+                    >
+                        {children}
+                    </div>
+                )}
+                renderThumb={({ props }) => (
+                    <div
+                        {...props}
+                        className="h-5 w-5 bg-white border-2 border-green-success rounded-full shadow "
+                    />
+                )}
+            />
+
+            <FlexStart classname="text-sm mt-3">
+                <TextCustom type="body_sm_400">Price : </TextCustom>
+                <TextCustom type="body_sm_500">{values[0].toLocaleString("id-ID")} <span> — </span> {values[1].toLocaleString("id-ID")}</TextCustom>
+            </FlexStart>
+        </FlexStart>
+    );
+};
+
+export const FilterRating = () => {
+    const ratings = [5, 4, 3, 2, 1];
+    return (
+        <>
+            <FlexStart classname="flex-col" gap="gap-5">
+                <TextCustom type="body_xl_500">Rating</TextCustom>
+                <FlexStart classname="flex-col">
+                    {ratings.map((rating, index) => {
+                        const stars = Array.from({ length: 5 }, (_, i) =>
+                            i < rating ? (
+                                <BsStarFill key={i} className="text-orange-warning" />
+                            ) : (
+                                <BsStar key={i} className="text-gray-300" />
+                            )
+                        );
+                        return (
+                            <InputCustom
+                                key={index}
+                                type="checkbox"
+                                name={`rating-${rating}`}
+                                padding=""
+                                classname="checked:bg-green-success checked:text-white"
+                                label={
+                                    <div className="flex items-center gap-1">
+                                        {stars}
+                                        <TextCustom type="body_sm_400" classname="ml-2">
+                                            {rating}.0 & up
+                                        </TextCustom>
+                                    </div>
+                                }
+                            />
+                        );
+                    })}
+                </FlexStart>
+            </FlexStart>
+        </>
+    )
+}
+
 export const FilterTags = () => {
-    const foodCategories = [
-        { id: 1, name: "Healthy" },
-        { id: 2, name: "Low fat" },
-        { id: 3, name: "Vegetarian" },
-        { id: 4, name: "Bread" },
-        { id: 5, name: "Kid foods" },
-        { id: 6, name: "Vitamins" },
-        { id: 7, name: "Snacks" },
-        { id: 8, name: "Tiffin" },
-        { id: 9, name: "Meat" },
-        { id: 10, name: "Launch" },
-        { id: 11, name: "Dinner" }
-    ]
     const [tag, setTag] = useState("")
     console.log(tag)
     console.log(setTag)
@@ -101,15 +191,23 @@ export const FilterTags = () => {
                 <FlexStart gap="gap-4" classname="flex-col">
                     <TextCustom type="body_xl_500">Popular Tag</TextCustom>
                     <FlexStart classname="flex-wrap">
-                        {foodCategories.map((item, index) => {
+                        {blogTagCategories.map((item, index) => {
                             let isActive = tag === item.name;
                             console.log("clicked:", item.name)
                             console.log("isActive:", isActive)
                             console.log("selected tag:", tag)
                             return (
-                                < Button key={index} classname="cursor-pointer" color={`${isActive ? "bg-green-success" : "bg-gray-50"}`} shadow="" padding="px-4 py-2.5" onClick={() => setTag(item.name)}>
-                                    <TextCustom type="body_sm_400" textColor={`${isActive ? "text-white" : "text-gray-900"}`}>{item.name}</TextCustom>
-                                </Button>
+                                <Button
+                                    typeButton="buttonBasic"
+                                    key={index}
+                                    classname="cursor-pointer"
+                                    bgColor={`${isActive ? "bg-green-success" : "bg-gray-50"}`}
+                                    shadow=""
+                                    padding="px-4 py-2.5"
+                                    onClick={() => setTag(item.name)} label={item.name}
+                                    textColor={`${isActive ? "text-white" : "text-gray-900"}`}
+                                    textType="body_sm_400"
+                                />
                             )
                         })}
                     </FlexStart>
@@ -118,13 +216,14 @@ export const FilterTags = () => {
         </>
     )
 }
+
 export const FilterRecentlyAdd = () => {
     const blogPosts = [
         {
             id: 1,
             title: "Curabitur porttitor orci eget neque accumsan.",
             date: "Apr 25, 2021",
-            image: "image_1", // pastikan path sesuai folder kamu
+            image: "image_1", 
         },
         {
             id: 2,
@@ -145,7 +244,7 @@ export const FilterRecentlyAdd = () => {
                 <FlexStart gap="gap-4" classname="flex-col">
                     <TextCustom type="body_xl_500">Popular Tag</TextCustom>
                     {blogPosts.map((item, index) => (
-                        <Card key={index} type="center" padding="p-1" rounded="rounded-lg">
+                        <Card key={index} type="flexCenter" padding="p-1" rounded="rounded-lg" gap="gap-1.5">
                             <ImageCustom path="blog" image={item.image} />
                             <FlexStart classname="flex-col justify-start">
                                 <TextCustom type="body_md_500">{item.title}</TextCustom>
@@ -158,6 +257,14 @@ export const FilterRecentlyAdd = () => {
                     ))}
                 </FlexStart>
             </div >
+        </>
+    )
+}
+
+export const FilterSaleProduct = () => {
+    return (
+        <>
+            <ProductFeatureGroup title="Best Seller" category="best_sellers" limit={3} />
         </>
     )
 }

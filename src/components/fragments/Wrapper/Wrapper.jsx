@@ -1,11 +1,16 @@
 import { FlexStart } from "../../elements/Flex/Flex";
 
-const SectionWrapper = ({ children, classname = "", maxWidth = "max-w-10/12", padding = "pt-15", bg = "bg-white" }) => {
+const SectionWrapper = ({
+  children,
+  classname = "",
+  maxWidth = "max-w-10/12",
+  padding = "py-15",
+  bgColor = "bg-white" }) => {
   return (
-    <div className={`${bg} ${padding}`}>
-      <div className={`flex flex-col mx-auto ${maxWidth} ${classname}`}>
+    <div className={`${bgColor} ${padding}`}>
+      <FlexStart width={maxWidth} classname={`flex-col mx-auto ${classname}`}>
         {children}
-      </div>
+      </FlexStart>
     </div>
   );
 };
