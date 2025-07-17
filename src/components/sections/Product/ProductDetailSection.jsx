@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
-import { LuHeart, LuMinus, LuPlus } from "react-icons/lu";
 import SingleProductView from "../../fragments/Product/SingleProductView";
 import TabFragment from "../../fragments/Tabs/TabFragment";
 import RelatedProduct from "../../fragments/Product/RelatedProduct";

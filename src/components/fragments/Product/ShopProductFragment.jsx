@@ -6,16 +6,17 @@ import { FlexCenter, FlexStart } from '../../elements/Flex/Flex'
 import ImageCustom from '../../elements/Image/Image'
 import Rating from '../../elements/Rating/Rating'
 import TextCustom from '../../elements/Text/Text'
-import ModalCustom from '../../elements/Modal/ModalCustom'
+import ModalCustom from '../../elements/Modal/ModalNewsLetter'
 import { Link } from 'react-router'
 import { BsEye } from 'react-icons/bs'
+import ModalPreviewProduct from '../../elements/Modal/ModalPreviewProduct'
 const ShopProductFragment = () => {
     return (
         <>
             <div className="grid grid-cols-3 gap-2">
                 {productsData.map((data, index) => (
-                    <Link to="produk-detail">
-                        <Card type="flexStart" key={index} classname="group relative h-[339px] flex-col justify-start">
+                    <Card type="flexStart" key={index} classname="group relative h-[339px] flex-col justify-start">
+                        <Link to="produk-detail">
                             <ImageCustom
                                 path="products"
                                 image={data.image}
@@ -35,16 +36,16 @@ const ShopProductFragment = () => {
                                     <Rating rate={data.rate} />
                                 </FlexStart>
                                 <Button typeButton="icon" bgColor="bg-gray-50" hover={true} iconSize="1.5rem" padding="" icon={HiOutlineShoppingBag} />
-                                <div className="absolute top-3 right-3 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <Button typeButton="icon" bgColor="bg-white" padding="" classname='border border-gray-100' hover={true} iconSize="1.5rem" icon={HiOutlineHeart} />
-                                    <Button typeButton="icon" bgColor="bg-white" padding="" classname='z-10 border border-gray-100' hover={true} iconSize="1.5rem" icon={BsEye} onClick={() => document.getElementById('my_modal_2').showModal()} />
-                                </div>
                             </FlexCenter>
-                        </Card>
-                    </Link>
+                        </Link>
+                        <div className="absolute top-3 right-3  flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <Button typeButton="icon" bgColor="bg-white" padding="" classname='border border-gray-100' hover={true} iconSize="1.5rem" icon={HiOutlineHeart} />
+                            <Button typeButton="icon" bgColor="bg-white" padding="" classname='z-10 border border-gray-100' hover={true} iconSize="1.5rem" icon={BsEye} onClick={() => document.getElementById('preview_product').showModal()} />
+                        </div>
+                    </Card>
                 ))}
             </div>
-            <ModalCustom type="product" />
+            <ModalPreviewProduct />
         </>
     )
 }

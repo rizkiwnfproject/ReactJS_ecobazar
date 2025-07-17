@@ -8,7 +8,7 @@ import Button from '../../elements/Button/Button'
 import { HiOutlineHeart, HiOutlineShoppingBag } from 'react-icons/hi2'
 import { BsEye } from 'react-icons/bs'
 import Rating from '../../elements/Rating/Rating'
-import ModalCustom from '../../elements/Modal/ModalCustom'
+import ModalPreviewProduct from '../../elements/Modal/ModalPreviewProduct'
 
 const RelatedProduct = () => {
     return (
@@ -39,7 +39,7 @@ const RelatedProduct = () => {
                     ))}
                 </FlexStart>
             </FlexStart>
-            <ModalCustom type="product" />
+            <ModalPreviewProduct />
         </>
     )
 }

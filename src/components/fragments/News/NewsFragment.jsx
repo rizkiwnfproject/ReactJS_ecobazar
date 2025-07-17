@@ -6,6 +6,7 @@ import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
 import Button from "../../elements/Button/Button";
 import TextIcon from "../../elements/Text/TextIcon";
+import { Link } from "react-router";
 
 const NewsFragment = (props) => {
     const { children } = props
@@ -54,20 +55,22 @@ const NewsCard = () => {
                                     </TextCustom>
                                 </FlexStart>
                             </FlexStart>
-                            <Button
-                                typeButton="textIcon"
-                                iconSize='1.2rem'
-                                textType='body_sm_500'
-                                textColor="text-green-success"
-                                label='read more'
-                                classname={`cursor-pointer`}
-                                bgColor="bg-white"
-                                icon={BsArrowRight}
-                                justify='w-full'
-                                reverse={true}
-                                shadow=""
-                                padding=""
-                            />
+                            <Link to="blog/1">
+                                <Button
+                                    typeButton="textIcon"
+                                    iconSize='1.2rem'
+                                    textType='body_sm_500'
+                                    textColor="text-green-success"
+                                    label='read more'
+                                    classname={`cursor-pointer`}
+                                    bgColor="bg-white"
+                                    icon={BsArrowRight}
+                                    justify='w-full'
+                                    reverse={true}
+                                    shadow=""
+                                    padding=""
+                                />
+                            </Link>
                         </FlexStart>
                     </Card>
                 ))}

@@ -5,17 +5,17 @@ import NewsSection from "../../components/sections/News/NewsSection"
 import { CategoriesProducts, FeaturedProducts, NewestProducts } from "../../components/sections/Product/ProductsSection"
 import SupportSection from "../../components/sections/Support/SupportSection"
 import TestimonialSection from "../../components/sections/Testimonial/TestimonialSection"
-import ModalCustom from "../../components/elements/Modal/ModalCustom"
+import ModalNewsLetter from "../../components/elements/Modal/ModalNewsLetter"
 
 const LandingPage = () => {
   useEffect(() => {
-    const modal = document.getElementById("my_modal_2");
+    const modal = document.getElementById("newsletter");
     if (modal) modal.showModal();
   }, []);
 
   return (
     <>
-      <ModalCustom />
+      <ModalNewsLetter />
       <SectionWrapper maxWidth="max-w-11/12" padding="pt-24">
         <Banner type="big" />
       </SectionWrapper>
