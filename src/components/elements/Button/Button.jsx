@@ -1,5 +1,5 @@
 import TextCustom from "../Text/Text";
-import TextIcon from "../Text/textIcon";
+import TextIcon from "../Text/TextIcon";
 
 const Button = ({
     children,
