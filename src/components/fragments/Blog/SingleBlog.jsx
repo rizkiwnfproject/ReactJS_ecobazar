@@ -7,7 +7,7 @@ import { LuDot, LuFacebook, LuLink2, LuTwitter } from 'react-icons/lu'
 import { FaInstagram, FaPinterestP } from 'react-icons/fa6'
 import InputFormFragment from '../Input/InputFormFragment'
 import IconLabel from '../../elements/Text/IconLabel'
-import TextIcon from '../../elements/Text/textIcon'
+import TextIcon from '../../elements/Text/TextIcon'
 import InputCustom from '../../elements/Input/Input'
 
 const SingleBlog = () => {

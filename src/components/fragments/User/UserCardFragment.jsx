@@ -4,7 +4,6 @@ import { FlexCenter, FlexStart } from '../../elements/Flex/Flex'
 import ImageCustom from '../../elements/Image/Image'
 import Button from '../../elements/Button/Button'
 import InputFormFragment from '../Input/InputFormFragment'
-import { BsChevronDown } from "react-icons/bs";
 import { DropdownCustom } from '../../elements/Dropdown/Dropdown'
 import { useState } from 'react'
 

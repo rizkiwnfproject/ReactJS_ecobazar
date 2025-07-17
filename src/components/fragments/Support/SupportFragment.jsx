@@ -1,4 +1,3 @@
-import React from 'react'
 import { supportData } from '../../../constants/Constant'
 import { FlexCenter } from '../../elements/Flex/Flex'
 import ImageCustom from '../../elements/Image/Image'

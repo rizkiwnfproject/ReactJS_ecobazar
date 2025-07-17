@@ -8,7 +8,6 @@ import Button from "../../elements/Button/Button"
 import { Link } from "react-router"
 import Grid from "../../elements/Grid/Grid"
 import ImageCustom from "../../elements/Image/Image"
-import StepsFragment from "../Steps/StepsFragment"
 
 const UserTableFragment = ({ type, title, classname }) => {
     return (

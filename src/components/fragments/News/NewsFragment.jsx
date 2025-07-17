@@ -5,7 +5,7 @@ import TextCustom from "../../elements/Text/Text";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
 import Button from "../../elements/Button/Button";
-import TextIcon from "../../elements/Text/textIcon";
+import TextIcon from "../../elements/Text/TextIcon";
 
 const NewsFragment = (props) => {
     const { children } = props

@@ -5,7 +5,7 @@ import Card from "../../elements/Card/Card"
 import { FlexCenter, FlexStart } from "../../elements/Flex/Flex"
 import ImageCustom from "../../elements/Image/Image"
 import TextCustom from "../../elements/Text/Text"
-import TextIcon from "../../elements/Text/textIcon"
+import TextIcon from "../../elements/Text/TextIcon"
 import { Link } from "react-router"
 
 const ListBlog = () => {
