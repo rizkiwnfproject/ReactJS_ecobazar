@@ -13,7 +13,7 @@ const MainLayouts = () => {
         <div className="flex flex-col max-w-screen w-full h-full">
           {
             !isLandingPage && (
-              <div className="w-full bg-gray-100 mt-46">
+              <div className="w-full bg-gray-100 mt-20 md:mt-46">
                 <Breadcrumb />
               </div>
             )

@@ -1,15 +1,13 @@
-import { LuLeaf, LuTicketPercent } from "react-icons/lu";
-import ImageCustom from "../../elements/Image/Image";
 import TextCustom from "../../elements/Text/Text";
-import IconLabel from "../../elements/Text/IconLabel";
+import InfoOnTab from "./InfoOnTab";
 
 const AdditionalInfoProduct = () => {
     return (
         <>
-            <div className="grid grid-cols-8 max-w-10/12 mx-auto">
-                <table className="col-span-4 table-auto text-left max-w-full h-[200px]">
+            <div className="grid grid-cols-1 md:grid-cols-8 mx-auto">
+                <table className="col-span-4 table-auto text-left h-[200px]">
                     <tbody >
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Weight:
@@ -21,7 +19,7 @@ const AdditionalInfoProduct = () => {
                                 </TextCustom>
                             </td>
                         </tr>
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Color:
@@ -33,7 +31,7 @@ const AdditionalInfoProduct = () => {
                                 </TextCustom>
                             </td>
                         </tr>
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Type:
@@ -45,7 +43,7 @@ const AdditionalInfoProduct = () => {
                                 </TextCustom>
                             </td>
                         </tr>
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Category:
@@ -57,7 +55,7 @@ const AdditionalInfoProduct = () => {
                                 </TextCustom>
                             </td>
                         </tr>
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Stock Status:
@@ -69,7 +67,7 @@ const AdditionalInfoProduct = () => {
                                 </TextCustom>
                             </td>
                         </tr>
-                        <tr className="h-5">
+                        <tr className="h-9 md:h-5">
                             <td className="">
                                 <TextCustom type="body_sm_400" classname="pr-4">
                                     Tags:
@@ -84,33 +82,7 @@ const AdditionalInfoProduct = () => {
                     </tbody>
                 </table>
                 <div className=""></div>
-                <div className="col-span-3">
-                    <div className="flex items-start justify-end">
-                        <ImageCustom path="banner" image="Bannar_9" />
-                    </div>
-                    <div className="border border-gray-100 rounded-lg px-4 py-5 mt-5 flex justify-between">
-                        <IconLabel
-                            title="64% Discount"
-                            desc="Save your 64% money with us"
-                            classname="flex items-center"
-                            size="2rem"
-                            iconColor="#00B207"
-                            typeTitleText="body_sm_500"
-                            typeSubTitleText="body_xs_400"
-                            icon={LuTicketPercent}
-                        />
-                        <IconLabel
-                            title="100% Organic"
-                            desc="100% Organic Vegetables"
-                            classname="flex items-center"
-                            size="2rem"
-                            iconColor="#00B207"
-                            typeTitleText="body_sm_500"
-                            typeSubTitleText="body_xs_400"
-                            icon={LuLeaf}
-                        />
-                    </div>
-                </div>
+                <InfoOnTab />
             </div>
         </>
     )

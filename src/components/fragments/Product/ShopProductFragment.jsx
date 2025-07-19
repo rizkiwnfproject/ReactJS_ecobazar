@@ -13,26 +13,28 @@ import ModalPreviewProduct from '../../elements/Modal/ModalPreviewProduct'
 const ShopProductFragment = () => {
     return (
         <>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
                 {productsData.map((data, index) => (
-                    <Card type="flexStart" key={index} classname="group relative h-[339px] flex-col justify-start">
+                    <Card type="flexStart" key={index} classname="group relative md:h-[339px] flex-col justify-start">
                         <Link to="produk-detail">
                             <ImageCustom
                                 path="products"
                                 image={data.image}
                                 name={data.name}
-                                classname='h-[246px] flex items-center justify-center object-cover' />
+                                classname='h-[150px] md:h-[246px] flex items-center justify-center object-cover' />
                             <FlexCenter classname="justify-between px-3 py-2">
                                 <FlexStart classname="flex-col" gap="gap-1">
                                     <TextCustom
-                                        type="body_sm_400"
+                                        type="body_sm_400" respText='text-sm'
                                         textColor="text-gray-700">
                                         {data.name}
                                     </TextCustom>
                                     <TextCustom
-                                        type="body_md_500">
-                                        {data.price}
-                                        <TextCustom type="span" textColor='text-gray-400' classname='text-base line-through'>$20.99</TextCustom></TextCustom>
+                                        type="body_md_500"
+                                        respText='text-sm'
+                                        > 
+                                        {data.price} 
+                                        <TextCustom type="span" textColor='text-gray-400' classname='text-sm md:text-base line-through'>$20.99</TextCustom></TextCustom>
                                     <Rating rate={data.rate} />
                                 </FlexStart>
                                 <Button typeButton="icon" bgColor="bg-gray-50" hover={true} iconSize="1.5rem" padding="" icon={HiOutlineShoppingBag} />

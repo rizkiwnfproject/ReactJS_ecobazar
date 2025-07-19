@@ -18,11 +18,10 @@ const NavbarBottom = () => {
         <>
             <div className="navbar__end_menu w-full">
                 <FlexCenter classname="min-w-screen p-5 md:hidden justify-between">
-                    <Link to="/"><ImageLogo respText="text-3xl" textColor="text-white" /></Link>
-                    <Button typeButton="icon" icon={LuMenu} bgColor="" padding="" iconColor="text-white" iconSize="25px" onClick={() => setOpen(!open)} />
+                    <Link to="/"><ImageLogo respText="text-3xl" textColor={isLandingPage ? "text-white" : ""} /></Link>
+                    <Button typeButton="icon" icon={LuMenu} bgColor="" padding="" iconColor={isLandingPage ? "text-white" : ""} iconSize="25px" onClick={() => setOpen(!open)} />
                 </FlexCenter>
                 <div className={`overflow-hidden transition-[max-height] duration-500 ease-in-out md:overflow-visible md:max-h-full ${open ? "max-h-[500px]" : "max-h-0"} md:flex`}>
-
                     <ul className="flex flex-col md:flex md:flex-row py-5 md:py-0 pl-5 md:pl-0 gap-4 md:gap-5 text-sm text-gray-400 font-medium">
                         {navbarData.map((item, index) => {
                             let isActive = currentPath.startsWith(item.link)

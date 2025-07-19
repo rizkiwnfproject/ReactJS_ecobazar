@@ -5,9 +5,9 @@ const ShopSection = () => {
     return (
         <>
             <div className="">
-                <FilterTop options={['Popular', 'Newest']} grid="grid-cols-8" colSpan="col-span-6" marginFilter="mt-34" />
-                <div className="grid grid-cols-8 gap-6">
-                    <div className="col-span-2">
+                <FilterTop options={['Popular', 'Newest']} grid="hidden md:grid grid-cols-8" colSpan="col-span-6" marginFilter="mt-34" />
+                <div className="grid md:grid-cols-8 gap-6">
+                    <div className="hidden md:block col-span-2">
                         <FilterFragment>
                             <FilterCategories type="" />
                             <FilterRange />
@@ -16,7 +16,7 @@ const ShopSection = () => {
                             <FilterSaleProduct />
                         </FilterFragment>
                     </div>
-                    <div className="col-span-6">
+                    <div className="md:col-span-6">
                         <ShopProductFragment />
                     </div>
                 </div>

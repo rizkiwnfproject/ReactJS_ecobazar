@@ -3,7 +3,7 @@ const TabsCustom = ({
 }) => {
     return (
         <>
-            <div className="tabs tabs-border flex justify-center w-full mt-12">
+            <div className="tabs tabs-border flex flex-col md:flex-row justify-center w-full mt-12">
                 {tabs.map((item, index) => {
                     return (
                         <>

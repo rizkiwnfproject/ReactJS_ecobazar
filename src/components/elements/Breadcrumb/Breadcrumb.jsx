@@ -8,8 +8,8 @@ const Breadcrumb = () => {
     return (
         <>
         <div className="relative">
-            <ImageCustom path='breadcrumbs' image='image_1' name='breadcrumbs' />
-            <div className="absolute inset-0 flex items-center justify-start ml-30">
+            <ImageCustom path='breadcrumbs' image='image_1' name='breadcrumbs' classname='h-20 md:h-auto object-cover object-center' />
+            <div className="absolute inset-0 flex items-center justify-start ml-6 md:ml-30">
                 <nav className="text-white text-sm ">
                     <ol className="flex space-x-2">
                         <li>
