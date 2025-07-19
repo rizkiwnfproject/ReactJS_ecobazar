@@ -12,19 +12,20 @@ const TextIcon = ({
     reverse = false,
     justify,
     alignItems,
+    respText = ""
 }) => {
     if (reverse) {
         return (
             <FlexCenter gap="gap-2" justify={justify} alignItems={alignItems}>
-                <TextCustom type={textType} textColor={textColor}>{text}</TextCustom>
-                <TextCustom type={iconType} textColor={iconColor}><Icon size={iconSize} /></TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor}>{text}</TextCustom>
+                <TextCustom type={iconType} respText={respText} textColor={iconColor}><Icon size={iconSize} /></TextCustom>
             </FlexCenter >
         )
     } else {
         return (
             <FlexCenter gap="gap-2" justify={justify} alignItems={alignItems}>
-                <TextCustom type={iconType} textColor={iconColor}><Icon size={iconSize} /></TextCustom>
-                <TextCustom type={textType} textColor={textColor}>{text}</TextCustom>
+                <TextCustom type={iconType} respText={respText} textColor={iconColor}><Icon size={iconSize} /></TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor}>{text}</TextCustom>
             </FlexCenter >
         )
     }

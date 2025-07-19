@@ -13,10 +13,12 @@ const IconLabel = ({
     iconClassname = "",
     classname = "",
     typeTitleText = "body_md_600",
-    typeSubTitleText = "body_sm_400"
+    typeSubTitleText = "body_sm_400",
+    respText = "",
+    margin
 }) => {
     return (
-        <FlexCenter gap="gap-3" classname="relative">
+        <FlexCenter gap="gap-3" classname={`relative ${margin}`}>
             {typeof Icon === 'function' ? (
                 <div className={iconClassname}>
                     <Icon size={size} color={iconColor} />
@@ -32,8 +34,8 @@ const IconLabel = ({
             )}
 
             <FlexStart classname="flex-col" gap="gap-1">
-                <TextCustom type={typeTitleText}>{title}</TextCustom>
-                <TextCustom type={typeSubTitleText} textColor="text-gray-400" classname={classname}>
+                <TextCustom type={typeTitleText} respText={respText}>{title}</TextCustom>
+                <TextCustom type={typeSubTitleText} respText={respText} textColor="text-gray-400" classname={classname}>
                     {desc}
                 </TextCustom>
             </FlexStart>

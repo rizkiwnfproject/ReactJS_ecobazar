@@ -8,7 +8,7 @@ export const CountdownList = ({ data }) => (
             <React.Fragment key={index}>
                 <CountdownItem value={item.value} label={item.label} />
                 {index < data.length - 1 && (
-                    <h6 className="text-2xl text-white font-medium opacity-60">:</h6>
+                    <h6 className="text-lg md:text-2xl text-white font-medium opacity-60">:</h6>
                 )}
             </React.Fragment>
         ))}
@@ -21,7 +21,7 @@ export const CountdownItem = ({ value, label }) => (
             type="custom"
             texttransform="uppercase"
             textColor="text-white"
-            classname="text-2xl font-medium"
+            classname="text-lg md:text-2xl font-medium"
         >
             {value}
         </TextCustom>

@@ -9,9 +9,9 @@ import { CountdownList } from '../Countdown/Countdown'
 const BannerSmall = () => {
     return (
         <>
-            <FlexCenter gap="gap-6">
+            <FlexCenter gap="gap-6" classname='flex-col md:flex-row'>
                 {bannerData.map((item, index) => (
-                    <div key={index} className="relative w-1/3">
+                    <div key={index} className="relative md:w-1/3">
                         <ImageCustom
                             path="banner"
                             image={item.image}
@@ -22,6 +22,7 @@ const BannerSmall = () => {
                             classname="absolute top-0 left-0 w-full text-center flex-col py-7">
                             <TextCustom
                                 type="body_sm_500"
+                                respText='text-xs'
                                 textTransform="uppercase"
                                 textColor={`${index === 2 ? "text-black" : "text-white"}`}
                                 classname="tracking-[3%]">
@@ -29,12 +30,14 @@ const BannerSmall = () => {
                             </TextCustom>
                             <TextCustom
                                 type="heading_3_600"
+                                respText='text-2xl'
                                 textColor={`${index === 2 ? "text-black" : "text-white"}`}>
                                 {item.title}
                             </TextCustom>
                             {index !== 0 && <div>
                                 <TextCustom
                                     type="body_xxl_400"
+                                    respText='text-lg'
                                     textColor={`${index === 1 ? "text-white " : "text-black"} flex justify-center items-center gap-2`}
                                 > {item.text}
                                     <TextCustom
@@ -51,10 +54,11 @@ const BannerSmall = () => {
                             <Button
                                 typeButton="textIcon"
                                 iconSize='1.2rem'
-                                classname={`w-5/12 mx-auto mt-3 cursor-pointer ${index === 1 ? "mt-6" : ""}`}
+                                classname={`md:w-5/12 mx-auto mt-3 cursor-pointer ${index === 1 ? "mt-6" : ""}`}
                                 bgColor="bg-white"
                                 textColor="text-green-success"
                                 textType='body_sm_500'
+                                respText='text-sm'
                                 label='Shop Now'
                                 icon={BsArrowRight}
                                 justify='justify-center w-full'

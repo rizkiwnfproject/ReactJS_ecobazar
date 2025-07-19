@@ -20,9 +20,9 @@ const ProductCategories = ({
     const nextRef = useRef(null);
     return (
         <>
-            <TextCustom type="heading_3_600" classname="w-full text-center mb-10">Top Category</TextCustom>
-            <Button typeButton="icon" ref={prevRef} bgColor="bg-white" padding="" classname="absolute left-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowLeft} />
-            <Button typeButton="icon" ref={nextRef} bgColor="bg-white" padding="" classname="absolute right-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowRight} />
+            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-10">Top Category</TextCustom>
+            <Button typeButton="icon" ref={prevRef} bgColor="bg-green-success md:bg-white" iconColor="text-white md:text-gray-900" padding="" classname="absolute left-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowLeft} />
+            <Button typeButton="icon" ref={nextRef} bgColor="bg-green-success md:bg-white" iconColor="text-white md:text-gray-900" padding="" classname="absolute -right-1 md:right-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowRight} />
             <FlexStart classname="max-w-7xl mx-auto" gap="gap-0">
                 <SwiperCustom
                     prevRef={prevRef}
@@ -37,9 +37,10 @@ const ProductCategories = ({
                     }}
                     swiperProps={{
                         spaceBetween: 0,
-                        slidesPerView: 3,
+                        slidesPerView: 1,
                         loop: true,
                         breakpoints: {
+                            200: { slidesPerView: 1 },
                             768: { slidesPerView: 2 },
                             1024: { slidesPerView: 6 },
                         },

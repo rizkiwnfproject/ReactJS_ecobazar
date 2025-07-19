@@ -8,7 +8,7 @@ const MainLayouts = () => {
   const { isLandingPage } = useRouteInfo()
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-y-hidden ">
         <NavbarSection />
         <div className="flex flex-col max-w-screen w-full h-full">
           {

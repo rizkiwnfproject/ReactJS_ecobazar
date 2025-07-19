@@ -24,12 +24,13 @@ const Button = ({
     label = "",
     reverse = false,
     justify = "",
+    respText = "",
     elementHover = "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300"
 }) => {
     if (typeButton === "input") {
         return (
             <button className={`absolute top-0 right-0 ${height} ${classname} ${bgColor} ${rounded} ${padding}`} type={type} onClick={onClick}>
-                <TextCustom type={textType} textColor={textColor}>{children}</TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor}>{children}</TextCustom>
             </button>
         )
     } else if (typeButton === "textIcon") {
@@ -39,6 +40,7 @@ const Button = ({
                     justify={justify}
                     type={textType}
                     iconType={iconType}
+                    respText={respText}
                     textType={textType}
                     textColor={textColor}
                     iconSize={iconSize}
@@ -55,7 +57,7 @@ const Button = ({
                 onClick={onClick}
                 ref={ref}
                 className={`${classname} ${bgColor} ${textColor} ${rounded} ${padding} w-10 h-10 flex justify-center items-center ${hover ? `${elementHover}` : ""}`}>
-                <Icon size={iconSize} className="shrink-0" />
+                <Icon size={iconSize} className={`shrink-0 ${iconColor}`} />
             </button>
         )
     } else if (typeButton === "hoverButton") {
@@ -67,7 +69,7 @@ const Button = ({
     } else if (typeButton === "buttonBasic") {
         return (
             <button ref={ref} className={`${btn} ${classname} ${bgColor} ${rounded} ${padding} ${shadow}`} onClick={onClick}>
-                <TextCustom type={textType} textColor={textColor}>{label}</TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor}>{label}</TextCustom>
             </button>
         )
     }

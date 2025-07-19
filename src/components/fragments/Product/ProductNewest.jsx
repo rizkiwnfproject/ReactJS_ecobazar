@@ -1,4 +1,4 @@
-import { BsArrowRight, BsEye } from "react-icons/bs"
+import { BsArrowLeft, BsArrowRight, BsEye } from "react-icons/bs"
 import { FlexCenter, FlexStart } from "../../elements/Flex/Flex"
 import TextCustom from "../../elements/Text/Text"
 import { productsData } from "../../../constants/Constant"
@@ -9,43 +9,114 @@ import Button from "../../elements/Button/Button"
 import { HiOutlineHeart, HiOutlineShoppingBag } from "react-icons/hi2"
 import { Link } from "react-router"
 import ModalPreviewProduct from "../../elements/Modal/ModalPreviewProduct"
+import { useRef } from "react"
+import SwiperCustom from "../../elements/Swiper/Swiper"
+import { SwiperSlide } from "swiper/react"
 
 const ProductNewest = () => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
     return (
         <>
-            <FlexCenter classname=" w-full justify-between mb-10">
-                <TextCustom type="heading_3_600" classname="w-full">Newest Products</TextCustom>
-                <FlexCenter classname="text-green-success font-medium w-28 capitalize">
-                    view all
-                    <BsArrowRight />
+            <FlexCenter classname="w-full justify-between h-auto mb-5 md:mb-10">
+                <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full">Newest Products</TextCustom>
+                <FlexCenter classname="hidden md:flex text-green-success font-medium w-28 capitalize">
+                    <Button
+                        typeButton="icon"
+                        ref={prevRef}
+                        padding="p-3"
+                        bgColor="bg-white"
+                        shadow="shadow-md"
+                        classname='swiper-button-prev-custom border border-gray-100'
+                        iconSize="25px"
+                        icon={BsArrowLeft}
+                    />
+                    <Button
+                        typeButton="icon"
+                        ref={nextRef}
+                        padding="p-3"
+                        textColor="text-white"
+                        shadow="shadow-md"
+                        classname='swiper-button-prev-custom '
+                        iconSize="25px"
+                        icon={BsArrowRight}
+                    />
                 </FlexCenter>
             </FlexCenter>
-            <FlexStart classname="flex-wrap justify-between">
-                {productsData.filter(data => data.new === false).splice(0, 5).map((data, index) => (
-                    <Card type="flexStart" key={index} classname="group relative h-[339px] max-w-[240px] flex-col justify-start">
-                        <Link to="shop/produk-detail">
-                            <ImageCustom
-                                path="products"
-                                image={data.image}
-                                name={data.name}
-                                classname='w-[246px] h-[246px]' />
-                            <FlexCenter classname="justify-between px-3">
-                                <FlexStart classname="flex-col" gap="gap-1">
-                                    <TextCustom type="body_sm_400" textColor="text-gray-700">{data.name}</TextCustom>
-                                    <TextCustom type="body_md_500">{data.price}</TextCustom>
-                                    <Rating rate={data.rate} />
-                                </FlexStart>
-                                <Button typeButton="icon" bgColor="bg-gray-50" hover={true} iconSize="1.5rem" padding="" icon={HiOutlineShoppingBag} />
-                            </FlexCenter>
-                        </Link>
-                        <div className="absolute top-3 right-3 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <Button typeButton="icon" bgColor="bg-white" padding="" classname='border border-gray-100' hover={true} iconSize="1.5rem" icon={HiOutlineHeart} />
-                            <Button typeButton="icon" bgColor="bg-white" padding="" classname='z-10 border border-gray-100' hover={true} iconSize="1.5rem" icon={BsEye} onClick={() => document.getElementById('preview_product').showModal()} />
-                        </div>
-                    </Card>
-                ))}
+            <div className="md:relative w-full">
+                <SwiperCustom
+                    prevRef={prevRef}
+                    nextRef={nextRef}
+                    swiperProps={{
+                        spaceBetween: 5,
+                        slidesPerView: 1,
+                        loop: true,
+                        breakpoints: {
+                            // 200: { slidesPerView: 1 },
+                            768: { slidesPerView: 2 },
+                            1024: { slidesPerView: 5 },
+                        }
+                    }}
+                >
+                    {productsData.slice(0, 10).map((data, index) => (
+                        <SwiperSlide key={index} className="py-3 pl-2">
+                            <Card key={index} type="flexStart" classname="group relative h-[339px] md:max-w-[240px] flex-col justify-start p-3 md:p-0">
+                                <Link to="shop/produk-detail">
+                                    <ImageCustom
+                                        path="products"
+                                        image={data.image}
+                                        name={data.name}
+                                        classname='mx-auto w-[246px] h-[246px] rounded-lg' />
+                                    <FlexCenter classname="justify-between px-3">
+                                        <FlexStart classname="flex-col" gap="gap-1">
+                                            <TextCustom
+                                                type="body_sm_400"
+                                                textColor="text-gray-700">
+                                                {data.name}
+                                            </TextCustom>
+                                            <TextCustom
+                                                type="body_md_500">
+                                                {data.price}
+                                            </TextCustom>
+                                            <Rating rate={data.rate} />
+                                        </FlexStart>
+                                        <Button typeButton="icon" bgColor="bg-gray-50" hover={true} padding="" iconSize="1.5rem" classname="w-10 h-10" icon={HiOutlineShoppingBag} />
+                                    </FlexCenter>
+                                </Link>
+                                <div className="absolute top-3 right-3 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <Button typeButton="icon" bgColor="bg-white" padding="" classname='w-10 h-10 border border-gray-100' hover={true} iconSize="1.5rem" icon={HiOutlineHeart} />
+                                    <Button typeButton="icon" bgColor="bg-white" padding="" classname='z-10 border border-gray-100' hover={true} iconSize="1.5rem" icon={BsEye} onClick={() => document.getElementById('preview_product').showModal()} />
+                                </div>
+                            </Card>
+                        </SwiperSlide>
+                    ))}
+                </SwiperCustom>
+                <FlexCenter classname="flex md:hidden">
+                    <Button
+                        typeButton="icon"
+                        ref={prevRef}
+                        padding="p-3"
+                        bgColor="bg-green-success"
+                        shadow="shadow-md"
+                        iconColor="text-white"
+                        classname='swiper-prev-custom absolute top-1/2 -left-3 z-1 border border-gray-100'
+                        iconSize="25px"
+                        icon={BsArrowLeft}
+                    />
+                    <Button
+                        typeButton="icon"
+                        ref={nextRef}
+                        padding="p-3"
+                        bgColor="bg-green-success"
+                        shadow="shadow-md"
+                        iconColor="text-white"
+                        classname='swiper-next-custom absolute top-1/2 -right-5 z-1 border border-gray-100'
+                        iconSize="25px"
+                        icon={BsArrowRight}
+                    />
+                </FlexCenter>
                 <ModalPreviewProduct />
-            </FlexStart>
+            </div>
         </>
     )
 }

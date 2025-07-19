@@ -1,116 +1,16 @@
-import Button from "../../elements/Button/Button"
-import { FlexCenter } from "../../elements/Flex/Flex"
-import { HiOutlineMapPin, HiMagnifyingGlass, HiOutlineHeart, HiOutlineShoppingBag, HiMiniPhoneArrowUpRight } from "react-icons/hi2";
-import TextCustom from "../../elements/Text/Text";
-import { Link, useLocation } from "react-router";
-import { navbarData } from "../../../constants/Constant";
-import useRouteInfo from "../../../hooks/UseRouteInfo";
-import InputCustom from "../../elements/Input/Input";
-import ImageLogo from "../../elements/Image/ImageLogo";
-
-
-const NavbarFragment = (props) => {
-  const { children, height, color = "bg-white border-green-100" } = props
+const NavbarFragment = ({
+  children,
+  height,
+  color = "bg-white border-green-100",
+  classname = ""
+}) => {
   return (
-    <div className={`min-w-screen border-b ${color}`}>
-      <div className={`flex justify-between mx-auto w-7xl items-center ${height}`}>
+    <div className={`${classname} min-w-screen border-b ${color}`}>
+      <div className={`flex flex-col justify-start w-full mx-auto items-start md:flex-row md:justify-between md:w-7xl md:items-center ${height}`}>
         {children}
       </div>
     </div>
   )
 }
-
-const NavbarTop = () => {
-  return (
-    <>
-      <FlexCenter>
-        <HiOutlineMapPin color="#666666" size={"1rem"} />
-        <TextCustom type="body_xs_400">Store Location: Lincoln- 344, Illinois, Chicago, USA</TextCustom>
-      </FlexCenter>
-      <FlexCenter>
-        <FlexCenter classname="text-gray-700 text-xs">
-          <TextCustom type="body_xs_400"><Link to="/auth/login">Sign In</Link></TextCustom>
-          <TextCustom type="body_xs_400">/</TextCustom>
-          <TextCustom type="body_xs_400"><Link to="/auth/register">Sign Up</Link></TextCustom>
-        </FlexCenter>
-      </FlexCenter>
-    </>
-  )
-}
-
-const NavbarMiddle = () => {
-  return (
-    <>
-      <Link to="/"><ImageLogo /></Link>
-      <div className="navbar__middle_search w-[498px] relative">
-        <InputCustom classname="px-12 py-3" type="text" placeholder="Search" />
-        <div className="navbar__middle_icon absolute top-3.5 left-4">
-          <HiMagnifyingGlass size={"1.5rem"} color="" />
-        </div>
-        <Button typeButton="input" rounded="rounded-r-lg" height="h-full" padding="px-6" textType="body_sm_600" textColor="text-white">search</Button>
-      </div >
-      <FlexCenter classname="text-green-900">
-        <Link to="/user/wishlist">
-          <HiOutlineHeart size={"2rem"} color="#002603" />
-        </Link>
-        <Link to="/user/shopping-cart" >
-          <FlexCenter>
-            <div className="relative border-l-2 border-l-green-50 px-3 ml-3">
-              <HiOutlineShoppingBag size={"2rem"} color="#002603" />
-              <TextCustom type="span" textColor="text-white" classname="absolute top-0 right-3 bg-[#2C742F] border border-white w-4 h-4 rounded-full text-[10px] text-center ">2</TextCustom>
-            </div>
-            <div className="">
-              <TextCustom classname="text-[11px]" textColor="text-gray-700">Shopping cart:</TextCustom>
-              <TextCustom type="body_sm_500">$57.00</TextCustom>
-            </div>
-          </FlexCenter>
-        </Link>
-      </FlexCenter>
-    </>
-  )
-}
-
-const NavbarBottom = () => {
-  const { isLandingPage } = useRouteInfo()
-  const location = useLocation()
-  const currentPath = location.pathname
-
-  return (
-    <>
-      <div className="navbar__end_menu">
-        <ul className="flex gap-5 text-sm text-gray-400 font-medium">
-          {navbarData.map((item, index) => {
-            let isActive = currentPath.startsWith(item.link)
-            return (
-              <li
-                key={index}
-                className={`
-                ${isActive
-                    ? index
-                      ? "text-green-success"
-                      : "text-gray-400"
-                    : isLandingPage
-                      ? "text-white"
-                      : "text-gray-400"
-                  }
-              `}>
-                <Link to={item.link}>{item.title}</Link>
-              </li>)
-          })}
-        </ul>
-      </div>
-      <FlexCenter gap="gap-3" classname="justify-between text-white">
-        <HiMiniPhoneArrowUpRight size={"1.5rem"} />
-        <TextCustom type="body_sm_500" textColor="text-white">
-          (219) 555-0114
-        </TextCustom>
-      </FlexCenter>
-    </>
-  )
-}
-
-NavbarFragment.NavbarTop = NavbarTop;
-NavbarFragment.NavbarMiddle = NavbarMiddle;
-NavbarFragment.NavbarBottom = NavbarBottom;
 
 export default NavbarFragment

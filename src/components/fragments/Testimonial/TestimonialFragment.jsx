@@ -30,9 +30,9 @@ const TestimonialCard = () => {
     const nextRef = useRef(null);
     return (
         <>
-            <FlexCenter classname="w-full justify-between">
-                <TextCustom type="heading_3_600" classname="w-full">Client Testimonials</TextCustom>
-                <FlexCenter classname="text-green-success font-medium w-28 capitalize">
+            <FlexCenter classname="w-full justify-between h-auto">
+                <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full">Client Testimonials</TextCustom>
+                <FlexCenter classname="hidden md:flex text-green-success font-medium w-28 capitalize">
                     <Button
                         typeButton="icon"
                         ref={prevRef}
@@ -49,7 +49,7 @@ const TestimonialCard = () => {
                         padding="p-3"
                         textColor="text-white"
                         shadow="shadow-md"
-                        classname='swiper-button-prev-custom '
+                        classname='swiper-button-next-custom '
                         iconSize="25px"
                         icon={BsArrowRight}
                     />
@@ -91,6 +91,28 @@ const TestimonialCard = () => {
                     ))}
                 </SwiperCustom>
             </div >
+            <FlexCenter classname="flex md:hidden text-green-success font-medium w-28 mx-auto capitalize">
+                <Button
+                    typeButton="icon"
+                    ref={prevRef}
+                    padding="p-3"
+                    bgColor="bg-white"
+                    shadow="shadow-md"
+                    classname='swiper-button-prev-custom border border-gray-100'
+                    iconSize="25px"
+                    icon={BsArrowLeft}
+                />
+                <Button
+                    typeButton="icon"
+                    ref={nextRef}
+                    padding="p-3"
+                    textColor="text-white"
+                    shadow="shadow-md"
+                    classname='swiper-button-next-custom'
+                    iconSize="25px"
+                    icon={BsArrowRight}
+                />
+            </FlexCenter>
         </>
     )
 }

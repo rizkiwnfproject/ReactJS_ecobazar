@@ -15,8 +15,8 @@ const LandingPage = () => {
 
   return (
     <>
-      <ModalNewsLetter />
-      <SectionWrapper maxWidth="max-w-11/12" padding="pt-24">
+      {/* <ModalNewsLetter /> */}
+      <SectionWrapper maxWidth="max-w-11/12" padding="pt-24 md:pt-56">
         <Banner type="big" />
       </SectionWrapper>
 
@@ -24,7 +24,7 @@ const LandingPage = () => {
         <FeaturedProducts />
       </SectionWrapper>
 
-      <SectionWrapper maxWidth="max-w-11/12">
+      <SectionWrapper maxWidth="max-w-11/12" padding="md:py-15">
         <CategoriesProducts />
       </SectionWrapper>
 

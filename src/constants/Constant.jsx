@@ -447,16 +447,16 @@ const footerCopyright = [
         name: "Icon",
         data: [
             {
-                icon: <FaFacebookF />
+                icon: FaFacebookF
             },
             {
-                icon: <FaXTwitter />
+                icon: FaXTwitter
             },
             {
-                icon: <FaPinterestP />
+                icon: FaPinterestP
             },
             {
-                icon: <FaInstagram />
+                icon: FaInstagram
             },
         ]
     },

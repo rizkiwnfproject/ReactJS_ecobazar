@@ -2,11 +2,11 @@ import TextCustom from '../Text/Text'
 import ImageCustom from './Image'
 import { FlexCenter } from '../Flex/Flex'
 
-const ImageLogo = () => {
+const ImageLogo = ({textColor, respText}) => {
   return (
     <FlexCenter>
       <ImageCustom path="logo" image="logo" name="ecobazar" classname="w-10 h-10" />
-      <TextCustom type="heading_5_600">Ecobazar</TextCustom>
+      <TextCustom type="heading_5_600" respText={respText} textColor={textColor}>Ecobazar</TextCustom>
     </FlexCenter>
   )
 }
