@@ -36,7 +36,7 @@ export const FeaturedProducts = () => {
 export const NewestProducts = () => {
   return (
     <>
-      <ProductFragment classname="relative mt-8">
+      <ProductFragment classname="relative">
         <ProductNewest />
       </ProductFragment>
     </>

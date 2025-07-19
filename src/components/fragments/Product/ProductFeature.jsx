@@ -63,31 +63,7 @@ const ProductFeature = () => {
     const nextRef = useRef(null);
     return (
         <>
-            <FlexCenter classname="w-full justify-between h-auto mb-5 md:mb-10">
-                <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full">Featured Products</TextCustom>
-                <FlexCenter classname="hidden md:flex text-green-success font-medium w-28 capitalize">
-                    <Button
-                        typeButton="icon"
-                        ref={prevRef}
-                        padding="p-3"
-                        bgColor="bg-white"
-                        shadow="shadow-md"
-                        classname='swiper-button-prev-custom border border-gray-100'
-                        iconSize="25px"
-                        icon={BsArrowLeft}
-                    />
-                    <Button
-                        typeButton="icon"
-                        ref={nextRef}
-                        padding="p-3"
-                        textColor="text-white"
-                        shadow="shadow-md"
-                        classname='swiper-button-prev-custom '
-                        iconSize="25px"
-                        icon={BsArrowRight}
-                    />
-                </FlexCenter>
-            </FlexCenter>
+            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center">Featured Products</TextCustom>
             <div className="md:relative w-full">
                 <SwiperCustom
                     prevRef={prevRef}
@@ -97,7 +73,7 @@ const ProductFeature = () => {
                         slidesPerView: 1,
                         loop: true,
                         breakpoints: {
-                            // 200: { slidesPerView: 1 },
+                            200: { slidesPerView: 1 },
                             768: { slidesPerView: 2 },
                             1024: { slidesPerView: 5 },
                         }
@@ -136,7 +112,7 @@ const ProductFeature = () => {
                         </SwiperSlide>
                     ))}
                 </SwiperCustom>
-                <FlexCenter classname="flex md:hidden">
+                <FlexCenter classname="flex">
                     <Button
                         typeButton="icon"
                         ref={prevRef}
@@ -144,7 +120,7 @@ const ProductFeature = () => {
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-prev-custom absolute top-1/10 -left-3 z-1 border border-gray-100'
+                        classname='swiper-prev-ft-mob absolute top-1/10 md:top-2/5 -left-3 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowLeft}
                     />
@@ -155,7 +131,7 @@ const ProductFeature = () => {
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-next-custom absolute top-1/10 -right-5 z-1 border border-gray-100'
+                        classname='swiper-next-ft-mob absolute top-1/10 md:top-2/5 -right-5 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowRight}
                     />

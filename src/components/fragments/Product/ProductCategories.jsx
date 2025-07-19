@@ -5,8 +5,6 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { FlexStart } from "../../elements/Flex/Flex";
 import SwiperCustom from "../../elements/Swiper/Swiper";
 import { SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/navigation';
 import { categoriesData } from "../../../constants/Constant";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
@@ -21,8 +19,26 @@ const ProductCategories = ({
     return (
         <>
             <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-10">Top Category</TextCustom>
-            <Button typeButton="icon" ref={prevRef} bgColor="bg-green-success md:bg-white" iconColor="text-white md:text-gray-900" padding="" classname="absolute left-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowLeft} />
-            <Button typeButton="icon" ref={nextRef} bgColor="bg-green-success md:bg-white" iconColor="text-white md:text-gray-900" padding="" classname="absolute right-2 md:right-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100" shadow="shadow" icon={BsArrowRight} />
+            <Button
+                typeButton="icon"
+                ref={prevRef}
+                bgColor="bg-green-success md:bg-white"
+                iconColor="text-white md:text-gray-900"
+                padding=""
+                classname="swiper-prev-category absolute left-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100"
+                shadow="shadow"
+                icon={BsArrowLeft}
+            />
+            <Button
+                typeButton="icon"
+                ref={nextRef}
+                bgColor="bg-green-success md:bg-white"
+                iconColor="text-white md:text-gray-900"
+                padding=""
+                classname="swiper-next-category absolute right-2 md:right-0 top-2/3 -translate-y-1/2 z-10 border border-gray-100"
+                shadow="shadow"
+                icon={BsArrowRight}
+            />
             <FlexStart classname="max-w-7xl mx-auto" gap="gap-0">
                 <SwiperCustom
                     prevRef={prevRef}

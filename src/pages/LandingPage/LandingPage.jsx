@@ -32,15 +32,15 @@ const LandingPage = () => {
         <Banner type="small" />
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper padding="md:py-15">
         <NewestProducts />
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper >
         <Banner type="medium" />
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper padding="md:py-15">
         <NewsSection />
       </SectionWrapper>
 
@@ -49,7 +49,7 @@ const LandingPage = () => {
         <TestimonialSection />
       </SectionWrapper>
 
-      <SectionWrapper padding="py-15">
+      <SectionWrapper>
         <SupportSection />
       </SectionWrapper>
     </>

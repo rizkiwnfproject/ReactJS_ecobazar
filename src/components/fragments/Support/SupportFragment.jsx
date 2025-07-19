@@ -1,5 +1,6 @@
 import { supportData } from '../../../constants/Constant'
 import { FlexCenter } from '../../elements/Flex/Flex'
+import Grid from '../../elements/Grid/Grid'
 import ImageCustom from '../../elements/Image/Image'
 
 const SupportFragment = (props) => {
@@ -13,17 +14,13 @@ const SupportFragment = (props) => {
 
 const SupportCompany = () => {
     return (
-        <FlexCenter classname="justify-between">
+        <Grid cols="grid-cols-2 md:grid-cols-6" gap='gap-5'>
             {supportData.map((data, index) => (
-                <FlexCenter key={index} classname={`
-                    px-6 
-                    ${index !== supportData.length - 1 ? 'border-r border-gray-200 w-40' : ''}
-                    ${index === 0 ? 'justify-start' : index === supportData.length - 1 ? 'justify-end w-56' : 'w-56 justify-center'}
-                    `}>
-                    <ImageCustom path="supports" image={data.image} name={data.name}/>
-                </FlexCenter>
+                <div key={index} className="w-full flex items-center justify-center border border-green-50 rounded-lg py-4">
+                    <ImageCustom path="supports" image={data.image} name={data.name} />
+                </div>
             ))}
-        </FlexCenter>
+        </Grid>
     )
 }
 SupportFragment.SupportCompany = SupportCompany

@@ -18,31 +18,7 @@ const ProductNewest = () => {
     const nextRef = useRef(null);
     return (
         <>
-            <FlexCenter classname="w-full justify-between h-auto mb-5 md:mb-10">
-                <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full">Newest Products</TextCustom>
-                <FlexCenter classname="hidden md:flex text-green-success font-medium w-28 capitalize">
-                    <Button
-                        typeButton="icon"
-                        ref={prevRef}
-                        padding="p-3"
-                        bgColor="bg-white"
-                        shadow="shadow-md"
-                        classname='swiper-button-prev-custom border border-gray-100'
-                        iconSize="25px"
-                        icon={BsArrowLeft}
-                    />
-                    <Button
-                        typeButton="icon"
-                        ref={nextRef}
-                        padding="p-3"
-                        textColor="text-white"
-                        shadow="shadow-md"
-                        classname='swiper-button-prev-custom '
-                        iconSize="25px"
-                        icon={BsArrowRight}
-                    />
-                </FlexCenter>
-            </FlexCenter>
+            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-10">Newest Products</TextCustom>
             <div className="md:relative w-full">
                 <SwiperCustom
                     prevRef={prevRef}
@@ -91,26 +67,26 @@ const ProductNewest = () => {
                         </SwiperSlide>
                     ))}
                 </SwiperCustom>
-                <FlexCenter classname="flex md:hidden">
+                <FlexCenter classname="flex">
                     <Button
                         typeButton="icon"
                         ref={prevRef}
-                        padding="p-3"
+                        padding="p-3 md:p-6"
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-prev-custom absolute top-1/2 -left-3 z-1 border border-gray-100'
+                        classname='swiper-prev-nw-mob absolute top-1/2 md:top-2/5 -left-3 md:-left-12 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowLeft}
                     />
                     <Button
                         typeButton="icon"
                         ref={nextRef}
-                        padding="p-3"
+                        padding="p-3 md:p-6"
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-next-custom absolute top-1/2 -right-5 z-1 border border-gray-100'
+                        classname='swiper-next-nw-mob absolute top-1/2 md:top-2/5 -right-5 md:-right-13 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowRight}
                     />

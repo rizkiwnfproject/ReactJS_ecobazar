@@ -9,11 +9,11 @@ const FooterTop = () => {
         <>
             <Grid cols="grid-cols-1 md:grid-cols-5" gap="gap-4" classname="" >
                 <div className="">
-                    <ImageLogo />
+                    <ImageLogo respText="text-3xl"/>
                 </div>
                 <FlexStart classname="w-full md:col-span-2 flex-col text-left pl-0 md:pl-10" align="items-start">
-                    <TextCustom type="body_xxl_500" classname='text-left'>Subcribe our Newsletter</TextCustom >
-                    <TextCustom type="body_sm_400" textColor="text-gray-400">Pellentesque eu nibh eget mauris congue mattis matti.</TextCustom>
+                    <TextCustom type="body_xxl_500" respText="text-xl" classname='text-left'>Subcribe our Newsletter</TextCustom >
+                    <TextCustom type="body_sm_400" respText="text-sm" textColor="text-gray-400">Pellentesque eu nibh eget mauris congue mattis matti.</TextCustom>
                 </FlexStart>
                 <div className="md:col-span-2 md:w-[535px] md:h-13 relative">
                     <InputCustom classname="text-xs md:text-base px-6 py-3" rounded="rounded-full" type="text" placeholder="Your email address" name="subscribe" />
