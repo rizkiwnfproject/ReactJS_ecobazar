@@ -11,7 +11,7 @@ export const CategoriesProducts = () => {
         <ProductCategories
           width="md:w-[77px]"
           gap="gap-4"
-          classname="h-50 w-[350px] ml-2 md:ml-0 md:w-50 flex-col justify-center"
+          classname="h-50 w-9/10 ml-2 md:ml-0 md:w-50 flex-col justify-center"
         />
       </ProductFragment>
     </>
