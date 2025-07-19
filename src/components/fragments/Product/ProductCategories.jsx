@@ -18,7 +18,7 @@ const ProductCategories = ({
     const nextRef = useRef(null);
     return (
         <>
-            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-10">Top Category</TextCustom>
+            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-5 md:mb-10">Top Category</TextCustom>
             <Button
                 typeButton="icon"
                 ref={prevRef}

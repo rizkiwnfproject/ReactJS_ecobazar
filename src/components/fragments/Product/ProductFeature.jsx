@@ -63,7 +63,7 @@ const ProductFeature = () => {
     const nextRef = useRef(null);
     return (
         <>
-            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center">Featured Products</TextCustom>
+            <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-5 md:mb-10">Featured Products</TextCustom>
             <div className="md:relative w-full">
                 <SwiperCustom
                     prevRef={prevRef}
@@ -120,7 +120,7 @@ const ProductFeature = () => {
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-prev-ft-mob absolute top-1/10 md:top-2/5 -left-3 z-1 border border-gray-100'
+                        classname='swiper-prev-ft-mob absolute top-1/10 md:top-2/5 -left-3 md:-left-12 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowLeft}
                     />
@@ -131,7 +131,7 @@ const ProductFeature = () => {
                         bgColor="bg-green-success"
                         shadow="shadow-md"
                         iconColor="text-white"
-                        classname='swiper-next-ft-mob absolute top-1/10 md:top-2/5 -right-5 z-1 border border-gray-100'
+                        classname='swiper-next-ft-mob absolute top-1/10 md:top-2/5 -right-5 md:-right-13 z-1 border border-gray-100'
                         iconSize="25px"
                         icon={BsArrowRight}
                     />
