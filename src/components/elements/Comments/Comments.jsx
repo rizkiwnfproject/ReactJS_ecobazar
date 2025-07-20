@@ -19,7 +19,7 @@ const Comments = () => {
                     <TextCustom type="body_sm_400" respText="text-xs" textColor='text-gray-600'>In a nisi commodo, porttitor ligula consequat, tincidunt dui. Nulla volutpat, metus eu aliquam malesuada, elit libero venenatis urna, consequat maximus arcu diam non diam.</TextCustom>
                 </FlexStart>
             </FlexStart>
-            <Button typeButton='buttonBasic' classname="md:w-1/5 border-2 border-green-success" bgColor='bg-white' shadow='' textType='body_md_600' textColor='text-green-success' padding='py-5' label="Load More" />
+            <Button typeButton='buttonBasic' classname="md:w-1/3 lg:w-1/5 border-2 border-green-success" bgColor='bg-white' shadow='' textType='body_md_600' textColor='text-green-success' padding='py-5' label="Load More" />
         </>
     )
 }

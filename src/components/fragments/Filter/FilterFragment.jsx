@@ -245,7 +245,7 @@ export const FilterRecentlyAdd = () => {
     ];
     return (
         <>
-            <div className="hidden md:block">
+            <div className="hidden xl:block">
                 <FlexStart gap="gap-4" classname="flex-col">
                     <TextCustom type="body_xl_500">Popular Tag</TextCustom>
                     {blogPosts.map((item, index) => (

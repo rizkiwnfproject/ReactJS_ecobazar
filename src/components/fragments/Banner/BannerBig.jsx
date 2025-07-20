@@ -11,8 +11,8 @@ const BannerBig = ({
         <>
             <>
                 <div className="relative bg-green-50 mb-5 md:mb-15 rounded-lg p-5 md:p-0">
-                    <FlexCenter classname="flex-col md:flex-row w-full md:min-h-[705px] justify-start md:pl-20">
-                        <div className="max-w-xl order-2 md:order-1">
+                    <FlexCenter classname="flex-col md:flex-row w-full md:min-h-[570px] lg:min-h-[600px] xl:min-h-[705px] justify-start md:pl-20">
+                        <div className="max-w-60 lg:max-w-xs xl:max-w-xl order-2 md:order-1">
                             <TextCustom
                                 type="body_sm_500"
                                 respText='text-sm'
@@ -23,7 +23,7 @@ const BannerBig = ({
                             </TextCustom>
                             <TextCustom
                                 type="title_semibold"
-                                respText='text-3xl'
+                                respText='text-3xl lg:text-4xl'
                                 leading="leading-[120%]">
                                 Fresh & Healthy Organic Food
                             </TextCustom>
@@ -31,7 +31,7 @@ const BannerBig = ({
                                 type="heading_5_400"
                                 respText='text-lg'
                                 leading="leading-[120%]"
-                                classname="mt-4 md:mt-9 flex gap-3 items-center">Sale up to
+                                classname="mt-4 xl:mt-9 flex gap-3 items-center">Sale up to
                                 <span className="text-orange-warning font-semibold">30% OFF</span>
                             </TextCustom>
                             <TextCustom
@@ -46,18 +46,18 @@ const BannerBig = ({
                                 textColor="text-white"
                                 textType='body_md_500'
                                 respText='text-sm'
-                                classname="md:w-4/12 mt-4 md:mt-10"
+                                classname="xl:w-4/12 mt-4 md:mt-10"
                                 label='Shop Now'
                                 icon={BsArrowRight}
                                 justify='justify-center w-full'
                                 reverse={true}
                             />
                         </div>
-                        <div className="md:absolute right-0 w-[350px] md:w-[800px] order-1 md:order-2">
+                        <div className="md:absolute md:top-1/4 lg:top-1/8 right-0 max-w-[800px] w-full md:w-1/2 lg:w-3/5 xl:w-full order-1 md:order-2">
                             <ImageCustom path="banner" image="Image" name="banner" />
                         </div>
                     </FlexCenter>
-                    <div className="w-11/12 hidden md:flex md:absolute -bottom-15 translate-x-1/22 h-[128px] justify-between items-center mt-6 p-10 shadow-sm rounded-xl bg-white">
+                    <div className="w-11/12 hidden md:flex md:absolute -bottom-15 translate-x-1/22 min-h-[128px] justify-between items-center mt-6  pt-10 pb-4 xl:pb-10 px-10 shadow-sm rounded-xl bg-white">
                         {children}
                     </div>
                 </div>

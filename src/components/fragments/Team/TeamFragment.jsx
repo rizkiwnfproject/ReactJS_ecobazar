@@ -24,8 +24,8 @@ const TeamFragment = () => {
                     <TextCustom type="body_md_400" respText="text-sm" textColor="text-gray-600">Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.</TextCustom>
                 </FlexCenter>
                 <div className="relative w-full max-w-7xl">
-                    <Button typeButton="icon" ref={prevRef} padding="" bgColor="bg-white" classname="absolute left-3 md:-left-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowLeft} />
-                    <Button typeButton="icon" ref={nextRef} padding="" bgColor="bg-white" classname="absolute right-3 md:-right-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowRight} />
+                    <Button typeButton="icon" ref={prevRef} padding="" bgColor="bg-white" classname="absolute left-3 md:-left-2 lg:-left-3 xl:-left-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowLeft} />
+                    <Button typeButton="icon" ref={nextRef} padding="" bgColor="bg-white" classname="absolute right-3 md:-right-2 lg:-right-3 xl:-right-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowRight} />
                     <SwiperCustom
                         prevRef={prevRef}
                         nextRef={nextRef}
@@ -36,13 +36,14 @@ const TeamFragment = () => {
                             loop: true,
                             breakpoints: {
                                 768: { slidesPerView: 2 },
-                                1024: { slidesPerView: 4 },
+                                1024: { slidesPerView: 3 },
+                                1280: { slidesPerView: 4 },
                             },
                         }}
                     >
                         {teamData.map((item, index) => (
                             <SwiperSlide key={index} className="py-3">
-                                <Card type="flexStart" classname="group relative flex-col w-[306px] mx-auto" padding="" rounded="rounded-lg">
+                                <Card type="flexStart" classname="group relative flex-col w-[250px] md:w-[320px] lg:w-[290px] xl:w-[306px] mx-auto" padding="" rounded="rounded-lg">
                                     <div className="group relative">
                                         <ImageCustom path="team" image={item.image} classname="max-h-[280px] w-full object-cover" />
                                         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" />

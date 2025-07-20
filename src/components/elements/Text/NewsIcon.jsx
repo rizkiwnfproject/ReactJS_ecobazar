@@ -9,11 +9,11 @@ const NewsIcon = ({
 }) => {
     return (
         <>
-            <FlexStart classname="flex-wrap" gap="gap-3">
-                <TextIcon icon={BsTag} respText='text-sm' text={category} />
-                <TextIcon icon={BsPerson} respText='text-sm' text={<><span className="text-gray-500">by </span>{writter}</>}>
+            <FlexStart classname="flex-wrap" gap="gap-1 xl:gap-3">
+                <TextIcon icon={BsTag} respText='text-xs xl:text-sm' text={category} />
+                <TextIcon icon={BsPerson} respText='text-xs xl:text-sm' text={<><span className="text-gray-500">by </span>{writter}</>}>
                 </TextIcon>
-                <TextIcon icon={BsChatSquare} respText='text-sm' text={comments} />
+                <TextIcon icon={BsChatSquare} respText='text-xs xl:text-sm' text={comments} />
             </FlexStart>
         </>
     )

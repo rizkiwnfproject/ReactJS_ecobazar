@@ -15,7 +15,7 @@ const BannerMedium = () => {
                 />
                 <FlexStart
                     gap="gap-4"
-                    classname="absolute top-0 right-0 md:right-16 w-3/5 md:w-[441px] h-full flex-col md:text-left justify-center px-2 md:px-10 text-white">
+                    classname="absolute top-0 right-0 md:right-0 xl:right-16 w-3/5 md:w-2/5 xl:w-[441px] h-full flex-col md:text-left justify-center px-2 md:px-5 lg:px-10 text-white">
                     <FlexStart classname="flex-col" gap="gap-1">
                         <TextCustom
                             type="body_sm_500"
@@ -34,7 +34,7 @@ const BannerMedium = () => {
                                 type="span"
                                 textTransform="uppercase"
                                 textColor="text-white"
-                                classname="text-20px md:text-[56px]"
+                                classname="text-20px xl:text-[56px]"
                             > off</TextCustom>
                         </TextCustom>
                     </FlexStart>
@@ -48,7 +48,7 @@ const BannerMedium = () => {
                         respText='text-xs'
                         bgColor="bg-green-success"
                         icon={BsArrowRight}
-                        classname="w-3/4 md:w-6/12 mt-3 cursor-pointer"
+                        classname="w-3/4 xl:w-6/12 mt-3 cursor-pointer"
                         justify='justify-center w-full'
                         padding='px-4 md:px-8 py-3.5'
                         iconSize='1rem'

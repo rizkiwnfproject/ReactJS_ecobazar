@@ -10,7 +10,7 @@ const FooterMiddle = () => {
             {/* <FlexStart align="items-start" classname="flex-col md:flex-row justify-between">
                 
             </FlexStart> */}
-            <Grid cols="grid-cols-2 md:grid-cols-7" gap="gap-y-10">
+            <Grid cols="grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7" gap="gap-y-10">
                 <FlexStart align="items-start" classname="col-span-2 max-w-84 flex-col" gap="gap-2 md:gap-4">
                     <TextCustom type="body_xl_500" respText="text-xl" textColor="text-white">About Ecobazar</TextCustom>
                     <TextCustom type="body_sm_400" respText="text-sm" textColor="text-gray-500" leading="leading-[150%]" classname="pt-3">Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</TextCustom>
@@ -32,9 +32,9 @@ const FooterMiddle = () => {
                         </ul>
                     </FlexStart>
                 ))}
-                <FlexStart classname="md:col-span-2 max-w-[312px] flex-col" gap="gap-2 md:gap-5">
+                <FlexStart classname="xl:col-span-2 max-w-[312px] flex-col" gap="gap-2 md:gap-5">
                     <TextCustom type="body_xl_500" textColor="text-white">Download our Mobile App</TextCustom>
-                    <FlexStart classname="flex-col md:flex-row pt-3" gap="gap-1">
+                    <FlexStart classname="flex-col lg:flex-row pt-3" gap="gap-1">
                         <img src="assets/images/footers/image_1.png" alt="" />
                         <img src="assets/images/footers/image_2.png" alt="" />
                     </FlexStart>

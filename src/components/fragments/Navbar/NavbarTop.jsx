@@ -7,7 +7,7 @@ const NavbarTop = () => {
         <>
             <FlexCenter>
                 <HiOutlineMapPin color="#666666" size={"1rem"} />
-                <TextCustom type="body_xs_400" >Store Location: Lincoln- 344, Illinois, Chicago, USA</TextCustom>
+                <TextCustom type="body_xs_400" respText="text-xs xl:text-base">Store Location: Lincoln- 344, Illinois, Chicago, USA</TextCustom>
             </FlexCenter>
             <FlexCenter>
                 <FlexCenter classname="text-gray-700 text-xs">

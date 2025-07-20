@@ -42,7 +42,8 @@ const TestimonialCard = () => {
                             loop: true,
                             breakpoints: {
                                 768: { slidesPerView: 2 },
-                                1024: { slidesPerView: 3 },
+                                1024: { slidesPerView: 2 },
+                                1280: { slidesPerView: 3 }
                             }
                         }}
                     >
@@ -50,17 +51,17 @@ const TestimonialCard = () => {
                             <SwiperSlide key={index}>
                                 <FlexStart gap="gap-4" classname="flex-col bg-white max-w-[415px] min-h-[200px] p-6 my-2 rounded-lg shadow">
                                     <BiSolidQuoteAltRight size={32} className="text-green-success opacity-30" />
-                                    <TextCustom type="body_sm_400" textColor="text-gray-700">{data.comment}</TextCustom>
+                                    <TextCustom type="body_sm_400" respText='text-sm' textColor="text-gray-700">{data.comment}</TextCustom>
                                     <FlexCenter classname="w-full justify-between">
                                         <FlexCenter gap="gap-3" classname="justify-start">
-                                            <ImageCustom path="users" image={data.image} name="user" classname="w-14" />
+                                            <ImageCustom path="users" image={data.image} name="user" classname="w-10 xl:w-14" />
                                             <FlexStart gap="gap-0.5" classname="flex-col">
-                                                <TextCustom type="body_md_500">{data.name}</TextCustom>
-                                                <TextCustom type="body_sm_400" textColor="text-gray-400">{data.role}</TextCustom>
+                                                <TextCustom type="body_md_500" respText='text-sm'>{data.name.slice(0,8)}..</TextCustom>
+                                                <TextCustom type="body_sm_400" respText='text-xs' textColor="text-gray-400">{data.role}</TextCustom>
                                             </FlexStart>
                                         </FlexCenter>
                                         <FlexStart gap="gap-0.5" classname="text-orange-warning text-lg">
-                                            <Rating fontSize="text-sm" rate={data.rating} />
+                                            <Rating fontSize="text-xs xl:text-sm" rate={data.rating} />
                                         </FlexStart>
                                     </FlexCenter>
                                 </FlexStart>

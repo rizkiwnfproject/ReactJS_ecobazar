@@ -24,7 +24,7 @@ const LandingPage = () => {
         <FeaturedProducts />
       </SectionWrapper>
 
-      <SectionWrapper maxWidth="max-w-11/12" padding="md:py-15">
+      <SectionWrapper maxWidth="max-w-11/12" padding="xl:py-15">
         <CategoriesProducts />
       </SectionWrapper>
 
@@ -32,7 +32,7 @@ const LandingPage = () => {
         <Banner type="small" />
       </SectionWrapper>
 
-      <SectionWrapper padding="md:py-15">
+      <SectionWrapper padding="xl:py-15">
         <NewestProducts />
       </SectionWrapper>
 

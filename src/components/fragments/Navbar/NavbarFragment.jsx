@@ -6,7 +6,7 @@ const NavbarFragment = ({
 }) => {
   return (
     <div className={`${classname} min-w-screen border-b ${color}`}>
-      <div className={`flex flex-col justify-start w-full mx-auto items-start md:flex-row md:justify-between md:w-7xl md:items-center ${height}`}>
+      <div className={`flex flex-col justify-start w-full mx-auto items-start md:flex-row md:justify-between md:w-2xl lg:w-4xl xl:w-7xl md:items-center ${height}`}>
         {children}
       </div>
     </div>

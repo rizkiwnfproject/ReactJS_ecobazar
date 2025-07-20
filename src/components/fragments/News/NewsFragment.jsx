@@ -5,7 +5,6 @@ import TextCustom from "../../elements/Text/Text";
 import Card from "../../elements/Card/Card";
 import ImageCustom from "../../elements/Image/Image";
 import Button from "../../elements/Button/Button";
-import TextIcon from "../../elements/Text/TextIcon";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
 import NewsIcon from "../../elements/Text/NewsIcon";
@@ -26,10 +25,12 @@ const NewsCard = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth >= 768) {
-                setItemsToShow(3); // md ke atas
+            if (window.innerWidth >= 1023) {
+                setItemsToShow(3);
+            } else if (window.innerWidth >= 768 && window.innerWidth < 1024) {
+                setItemsToShow(2);
             } else {
-                setItemsToShow(1); // sm
+                setItemsToShow(1);
             }
         };
         handleResize();
@@ -46,9 +47,9 @@ const NewsCard = () => {
             </FlexCenter>
             <FlexStart classname="justify-between">
                 {newsData.slice(0, itemsToShow).map((data, index) => (
-                    <Card key={index} type="flexStart" classname="max-w-[350px] md:max-w-[415px] md:min-h-[494px] flex-col rounded-xl" padding="p-0">
+                    <Card key={index} type="flexStart" classname="w-[350px] xl:w-[415px] xl:h-[494px] flex-col rounded-xl" padding="p-0">
                         <div className="relative">
-                            <ImageCustom path="news" image={data.image} alt={data.title} />
+                            <ImageCustom path="news" image={data.image} alt={data.title} classname="w-full"/>
                             <button className="absolute bottom-5 left-5 bg-white rounded text-center w-[58px] h-[58px] flex flex-col justify-center">
                                 <TextCustom
                                     type="body_xl_500"
@@ -64,12 +65,12 @@ const NewsCard = () => {
                                     {data.date.month}</TextCustom>
                             </button>
                         </div>
-                        <FlexStart classname="flex-col p-6" gap="gap-4">
+                        <FlexStart classname="flex-col p-6 h-full justify-between" gap="gap-4">
                             <FlexStart classname="flex-col">
                                 <FlexStart classname="flex-col justify-between" gap="gap-6">
                                     <NewsIcon comments='190 comments' category='food' writter='carolina' />
                                     <TextCustom type="body_lg_500" textColor="text-green-success-dark" leading="leading-6">
-                                        {data.title}
+                                        {data.title.slice(0,50)} ... 
                                     </TextCustom>
                                 </FlexStart>
                             </FlexStart>

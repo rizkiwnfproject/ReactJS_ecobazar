@@ -14,7 +14,7 @@ const SupportFragment = (props) => {
 
 const SupportCompany = () => {
     return (
-        <Grid cols="grid-cols-2 md:grid-cols-6" gap='gap-5'>
+        <Grid cols="grid-cols-2 md:grid-cols-3 lg:grid-cols-6" gap='gap-5'>
             {supportData.map((data, index) => (
                 <div key={index} className="w-full flex items-center justify-center border border-green-50 rounded-lg py-4">
                     <ImageCustom path="supports" image={data.image} name={data.name} />

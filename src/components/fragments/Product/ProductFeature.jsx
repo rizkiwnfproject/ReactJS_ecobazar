@@ -46,7 +46,7 @@ export const ProductDeal = ({
 }) => {
     return (
         <>
-            <Grid cols="grid-cols-1 md:grid-cols-4 pl-2 mt-3" gap="gap-6">
+            <Grid cols="grid-cols-1 md:grid-cols-2 xl:grid-cols-4 pl-2 mt-3" gap="gap-6">
                 <ProductFeatureGroup title="Hot Deals" category="hot_deals" limit={3} />
                 <ProductFeatureGroup title="Best Seller" category="best_sellers" limit={3} />
                 <ProductFeatureGroup title="Top Rated" category="top_rated" limit={3} />
@@ -74,8 +74,9 @@ const ProductFeature = () => {
                         loop: true,
                         breakpoints: {
                             200: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 5 },
+                            768: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
+                            1280: { slidesPerView: 5 }
                         }
                     }}
                 >
@@ -88,20 +89,23 @@ const ProductFeature = () => {
                                         image={data.image}
                                         name={data.name}
                                         classname='mx-auto w-[246px] h-[246px] rounded-lg' />
-                                    <FlexCenter classname="justify-between px-3">
+                                    <FlexCenter classname="relative justify-between px-3">
                                         <FlexStart classname="flex-col" gap="gap-1">
                                             <TextCustom
                                                 type="body_sm_400"
+                                                respText="text-sm"
                                                 textColor="text-gray-700">
                                                 {data.name}
                                             </TextCustom>
                                             <TextCustom
-                                                type="body_md_500">
+                                                type="body_md_500"
+                                                respText="text-sm"
+                                                >
                                                 {data.price}
-                                                <TextCustom type="span" textColor='text-gray-400' classname='text-base line-through'>$20.99</TextCustom></TextCustom>
+                                                <TextCustom type="span" textColor='text-gray-400' classname='text-sm xl:text-base line-through'>$20.99</TextCustom></TextCustom>
                                             <Rating rate={data.rate} />
                                         </FlexStart>
-                                        <Button typeButton="icon" bgColor="bg-gray-50" hover={true} padding="" iconSize="1.5rem" classname="w-10 h-10" icon={HiOutlineShoppingBag} />
+                                        <Button typeButton="icon" bgColor="bg-gray-50" hover={true} padding="" iconSize="1.5rem" classname="absolute right-3 w-10 h-10" icon={HiOutlineShoppingBag} />
                                     </FlexCenter>
                                 </Link>
                                 <div className="absolute top-3 right-3 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

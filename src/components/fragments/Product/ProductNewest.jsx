@@ -28,35 +28,39 @@ const ProductNewest = () => {
                         slidesPerView: 1,
                         loop: true,
                         breakpoints: {
-                            // 200: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 5 },
+                            200: { slidesPerView: 1 },
+                            768: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
+                            1280: { slidesPerView: 5 }
                         }
                     }}
                 >
                     {productsData.slice(0, 10).map((data, index) => (
                         <SwiperSlide key={index} className="py-3 pl-2">
-                            <Card key={index} type="flexStart" classname="group relative h-[339px] md:max-w-[240px] flex-col justify-start p-3 md:p-0">
+                            <Card key={index} type="flexStart" classname="group relative min-h-[339px] md:max-w-[240px] flex-col justify-start p-3 md:p-0">
                                 <Link to="shop/produk-detail">
                                     <ImageCustom
                                         path="products"
                                         image={data.image}
                                         name={data.name}
                                         classname='mx-auto w-[246px] h-[246px] rounded-lg' />
-                                    <FlexCenter classname="justify-between px-3">
+                                    <FlexCenter classname="relative justify-between px-3">
                                         <FlexStart classname="flex-col" gap="gap-1">
                                             <TextCustom
                                                 type="body_sm_400"
+                                                respText="text-sm"
                                                 textColor="text-gray-700">
                                                 {data.name}
                                             </TextCustom>
                                             <TextCustom
-                                                type="body_md_500">
+                                                type="body_md_500"
+                                                respText="text-sm"
+                                                >
                                                 {data.price}
                                             </TextCustom>
                                             <Rating rate={data.rate} />
                                         </FlexStart>
-                                        <Button typeButton="icon" bgColor="bg-gray-50" hover={true} padding="" iconSize="1.5rem" classname="w-10 h-10" icon={HiOutlineShoppingBag} />
+                                        <Button typeButton="icon" bgColor="bg-gray-50" hover={true} padding="" iconSize="1.5rem" classname="absolute right-3 w-10 h-10" icon={HiOutlineShoppingBag} />
                                     </FlexCenter>
                                 </Link>
                                 <div className="absolute top-3 right-3 flex flex-col gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

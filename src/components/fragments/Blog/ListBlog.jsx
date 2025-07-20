@@ -12,9 +12,9 @@ import NewsIcon from "../../elements/Text/NewsIcon"
 const ListBlog = ({ isFilterOpen }) => {
     return (
         <div className="">
-            <div className={`grid ${isFilterOpen ? "md:grid-cols-2" : "md:grid-cols-3"} gap-3 md:gap-6`}>
+            <div className={`grid ${isFilterOpen ? "lg:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"} gap-3 md:gap-6`}>
                 {newsData.map((data, index) => (
-                    <Card key={index} type="flexStart" classname="md:min-w-[390px] md:min-h-[494px] flex-col rounded-xl" padding="p-0">
+                    <Card key={index} type="flexStart" classname="xl:min-w-[390px] xl:min-h-[494px] flex-col rounded-xl" padding="p-0">
                         <div className="relative">
                             <ImageCustom path="news" image={data.image} alt={data.title} classname="md:w-full" />
                             <button className="absolute bottom-5 left-5 bg-white rounded text-center w-[58px] h-[58px] flex flex-col justify-center">
@@ -34,12 +34,12 @@ const ListBlog = ({ isFilterOpen }) => {
                                 </TextCustom>
                             </button>
                         </div>
-                        <FlexStart classname="flex-col p-6 h-full justify-between" gap="gap-4">
+                        <FlexStart classname="flex-col p-6 h-full justify-between" gap="gap-2 xl:gap-4">
                             <FlexStart classname="flex-col">
-                                <FlexStart classname="flex-col" gap="gap-6">
+                                <FlexStart classname="flex-col" gap="gap-3 xl:gap-6">
                                     <NewsIcon comments='190 comments' category='food' writter='carolina' />
-                                    <TextCustom type="body_lg_500" leading="leading-6">
-                                        {data.title}
+                                    <TextCustom type="body_lg_500" respText="text-sm" leading="leading-6">
+                                        {data.title.slice(0, 50)}...
                                     </TextCustom>
                                 </FlexStart>
                             </FlexStart>
@@ -48,6 +48,7 @@ const ListBlog = ({ isFilterOpen }) => {
                                     typeButton="textIcon"
                                     iconSize='1.2rem'
                                     textType='body_sm_500'
+                                    respText="text-xs"
                                     textColor="text-green-success"
                                     label='read more'
                                     classname={`cursor-pointer`}

@@ -30,19 +30,19 @@ const BannerSmall = () => {
                             </TextCustom>
                             <TextCustom
                                 type="heading_3_600"
-                                respText='text-2xl'
+                                respText='text-base lg:text-2xl'
                                 textColor={`${index === 2 ? "text-black" : "text-white"}`}>
                                 {item.title}
                             </TextCustom>
                             {index !== 0 && <div>
                                 <TextCustom
                                     type="body_xxl_400"
-                                    respText='text-lg'
+                                    respText='text-base lg:text-lg'
                                     textColor={`${index === 1 ? "text-white " : "text-black"} flex justify-center items-center gap-2`}
                                 > {item.text}
                                     <TextCustom
                                         type="span"
-                                        classname={`text-xl`}
+                                        classname={`text-base lg:text-xl`}
                                         bgColor={`${index === 1 ? "" : "bg-black px-3 py-1 rounded"}`}
                                         textColor={`${index === 1 ? "text-orange-warning" : "text-[#FCC900]"}`}>{item.span}
                                     </TextCustom>
@@ -54,7 +54,7 @@ const BannerSmall = () => {
                             <Button
                                 typeButton="textIcon"
                                 iconSize='1.2rem'
-                                classname={`md:w-5/12 mx-auto mt-3 cursor-pointer ${index === 1 ? "mt-6" : ""}`}
+                                classname={`xl:w-5/12 mx-auto mt-3 cursor-pointer ${index === 1 ? "mt-6" : ""}`}
                                 bgColor="bg-white"
                                 textColor="text-green-success"
                                 textType='body_sm_500'
