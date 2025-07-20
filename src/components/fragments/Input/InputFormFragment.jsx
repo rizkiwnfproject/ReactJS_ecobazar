@@ -11,15 +11,17 @@ const InputFormFragment = ({
     direction = "flex-col",
     span,
     ref,
-    textColor
+    textColor,
+    respText,
+    classname
 }) => {
     return (
         <FlexStart gap="gap-1" classname={`${direction} w-full`}>
             {!(type === "checkbox") &&
                 <LabelForm htmlFor={name}>
-                    <TextCustom type="body_sm_400" textColor={textColor}>{label} <span className="text-gray-400">{span}</span> </TextCustom>
+                    <TextCustom type="body_sm_400" respText={respText} textColor={textColor}>{label} <span className={`text-gray-400 ${classname}`}>{span}</span> </TextCustom>
                 </LabelForm>}
-            <InputCustom name={name} type={type} placeholder={placeholder} ref={ref} label={label} />
+            <InputCustom name={name} type={type} classname={classname} placeholder={placeholder} ref={ref} label={label} />
         </FlexStart>
     )
 }

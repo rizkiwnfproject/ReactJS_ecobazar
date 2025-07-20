@@ -36,7 +36,7 @@ const Button = ({
         )
     } else if (typeButton === "textIcon") {
         return (
-            <button className={`${classname} ${bgColor} ${textColor} ${rounded} ${padding}`}>
+            <button className={`${classname} ${bgColor} ${textColor} ${rounded} ${padding}`} onClick={onClick}>
                 <TextIcon
                     justify={justify}
                     type={textType}

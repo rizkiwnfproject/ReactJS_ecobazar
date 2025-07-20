@@ -1,11 +1,10 @@
-import React from 'react'
 import SectionWrapper from '../../components/fragments/Wrapper/Wrapper'
-import BlogSection from '../../components/sections/Blog/BlogSection'
+import SingleBlogSection from '../../components/sections/Blog/SingleBlogSection'
 
 const SingleBlogPage = () => {
     return (
-        <SectionWrapper padding='py-15'>
-            <BlogSection type="" />
+        <SectionWrapper bgColor='' padding='py-15'>
+            <SingleBlogSection/>
         </SectionWrapper>
     )
 }

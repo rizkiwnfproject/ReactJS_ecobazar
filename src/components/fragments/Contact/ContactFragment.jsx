@@ -8,19 +8,20 @@ import { HiOutlineEnvelopeOpen, HiOutlineMapPin, HiOutlinePhoneArrowUpRight } fr
 const ContactFragment = () => {
     return (
         <>
-            <div className="grid md:grid-cols-4 gap-3" >
+            <div className="flex flex-col md:grid md:grid-cols-4 gap-3" >
                 <Card type="flexCenter" shadow="shadow-md" classname="flex-col" padding=''>
-                    <FlexCenter width='max-w-[270px] w-full' justify='justify-center' classname="flex-col p-6 mx-auto text-center" gap='gap-4'>
+                    <FlexCenter width='md:max-w-[270px] w-full' justify='justify-center' classname="flex-col p-6 mx-auto text-center" gap='gap-4'>
                         <HiOutlineMapPin size="50px" className='text-green-success-dark' />
-                        <TextCustom type="body_md_400" textColor='text-gray-800'>2715 Ash Dr. San Jose, South Dakota 83475</TextCustom>
+                        <TextCustom type="body_md_400" respText='text-sm' textColor='text-gray-800' classname='flex flex-col'>2715 Ash Dr. San Jose,
+                            <span> South Dakota 83475</span></TextCustom>
                     </FlexCenter>
-                    <FlexCenter classname="w-full flex-col justify-center p-6 max-w-[270px] mx-auto text-center border-y border-gray-100" gap='gap-4'>
+                    <FlexCenter classname="w-full flex-col justify-center p-6 md:max-w-[270px] mx-auto text-center border-y border-gray-100" gap='gap-4'>
                         <HiOutlineEnvelopeOpen size="50px" className='text-green-success-dark' />
-                        <TextCustom type="body_md_400" textColor='text-gray-800' classname="flex flex-col">Proxy@gmail.com <span>Help.proxy@gmail.com</span> </TextCustom>
+                        <TextCustom type="body_md_400" respText='text-sm' textColor='text-gray-800' classname="flex flex-col">Proxy@gmail.com <span>Help.proxy@gmail.com</span> </TextCustom>
                     </FlexCenter>
-                    <FlexCenter classname="w-full flex-col justify-center p-6 max-w-[270px] mx-auto text-center" gap='gap-4'>
+                    <FlexCenter classname="w-full flex-col justify-center p-6 md:max-w-[270px] mx-auto text-center" gap='gap-4'>
                         <HiOutlinePhoneArrowUpRight size="50px" className='text-green-success-dark' />
-                        <TextCustom type="body_md_400" textColor='text-gray-800' classname="flex flex-col">(219) 555-0114 <span>(164) 333-0487</span></TextCustom>
+                        <TextCustom type="body_md_400" respText='text-sm' textColor='text-gray-800' classname="flex flex-col">(219) 555-0114 <span>(164) 333-0487</span></TextCustom>
                     </FlexCenter>
                 </Card>
                 <div className="md:col-span-3">

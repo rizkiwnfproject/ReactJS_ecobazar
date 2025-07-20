@@ -18,6 +18,8 @@ const InputCustom = ({
     textColor = "text-gray-600",
     textType = "body_sm_400",
     label = "",
+    respText,
+    alignItems
 }) => {
     const [visible, setVisible] = useState(false);
 
@@ -32,12 +34,12 @@ const InputCustom = ({
                     type="checkbox"
                     className={`${classname} ${padding} checkbox w-4 h-4 rounded-xs checked:border-green-success-dark checked:bg-green-success checked:text-white`}
                 />
-                <TextCustom type={textType} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
             </FlexCenter>
         )
     } else if (type === "radio") {
         return (
-            <FlexCenter gap="gap-1">
+            <FlexCenter gap="gap-1" alignItems={alignItems}>
                 <input type="radio" name="radio-5" className="radio radio-xs border-green-400 checked:text-green-success" />
                 <TextCustom type={textType} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
             </FlexCenter>

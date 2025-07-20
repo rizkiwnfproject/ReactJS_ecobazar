@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { DropdownCustom } from "../../elements/Dropdown/Dropdown";
-import { FlexStart } from "../../elements/Flex/Flex";
+import { FlexCenter, FlexStart } from "../../elements/Flex/Flex";
 import TextCustom from "../../elements/Text/Text"
-import { LuCalendar, LuSettings2 } from "react-icons/lu";
+import { LuCalendar, LuSettings2, LuX } from "react-icons/lu";
 import InputCustom from "../../elements/Input/Input";
 import { HiMagnifyingGlass } from "react-icons/hi2";
 import Button from "../../elements/Button/Button";
@@ -22,15 +22,19 @@ const FilterFragment = ({ children }) => {
         </>
     )
 }
-export const FilterTop = ({ options, marginFilter, grid = "grid-cols-6", colSpan = "col-span-4" }) => {
+export const FilterTop = ({
+    toggleOpen,
+    options,
+    marginFilter,
+    grid = "grid-cols-2 md:grid-cols-6",
+    colSpan = "md:col-span-4"
+}) => {
     const [sort, setSort] = useState("")
     return (
         <>
             <div className={`grid ${grid} mb-8`}>
-                <div className="col-span-2">
-                    <div className="w-32 bg-green-success px-8 py-3.5 rounded-full ">
-                        <TextCustom type="body_sm_600" textColor="text-white" classname="flex items-center justify-between">filter <LuSettings2 size="20px" /></TextCustom>
-                    </div>
+                <div className="md:col-span-2">
+                    <Button typeButton="textIcon" icon={LuSettings2} textColor="text-white" textType="body_sm_500" padding="px-8 py-3" label="filter" reverse={true} onClick={toggleOpen} />
                 </div>
                 <div className={`${colSpan} flex justify-between items-center`}>
                     <DropdownCustom
@@ -44,20 +48,25 @@ export const FilterTop = ({ options, marginFilter, grid = "grid-cols-6", colSpan
                         flexDirection="flex flex-row items-center gap-x-2"
                         margin={marginFilter}
                     />
-                    <TextCustom type="body_md_400" textColor="text-gray-600"> <span className="font-semibold text-gray-900">52</span> Results Found</TextCustom>
+                    <TextCustom type="body_md_400" textColor="text-gray-600" classname="hidden md:block"> <span className="font-semibold text-gray-900">52</span> Results Found</TextCustom>
                 </div>
             </div>
         </>
     )
 }
 
-export const FilterSearch = () => {
+export const FilterSearch = ({ toggleOpen }) => {
     return (
         <>
-            <div className="relative pb-7 border-b border-gray-100">
-                <InputCustom padding="px-10 py-2" type="text" placeholder="Search" />
-                <div className="navbar__middle_icon absolute top-3 left-4">
-                    <HiMagnifyingGlass size={"18px"} color="" />
+            <div className="grid grid-cols-7 md:grid-cols-1 w-full border-b border-gray-100">
+                <div className="relative col-span-6 pb-7">
+                    <InputCustom padding="px-10 py-2" type="text" placeholder="Search" />
+                    <div className="navbar__middle_icon absolute top-3 left-4">
+                        <HiMagnifyingGlass size={"18px"} color="" />
+                    </div>
+                </div>
+                <div className="flex justify-center w-full md:hidden">
+                    <Button typeButton="icon" icon={LuX} padding="" bgColor="" classname="border border-gray-100" onClick={toggleOpen} />
                 </div>
             </div>
         </>
@@ -73,7 +82,7 @@ export const FilterCategories = ({ type }) => {
                     {filterTopCategories.map((item, index) => {
                         if (type === "blog") {
                             return (
-                                <TextCustom key={index} type="body_sm_400" classname={flexFilter}>
+                                <TextCustom key={index} type="body_sm_400" respText="text-xs" classname={flexFilter}>
                                     {item.name}
                                     <span className="text-gray-500">({item.count})</span>
                                 </TextCustom>
@@ -183,8 +192,6 @@ export const FilterRating = () => {
 
 export const FilterTags = () => {
     const [tag, setTag] = useState("")
-    console.log(tag)
-    console.log(setTag)
     return (
         <>
             <div className=" pb-7 border-b border-gray-100">
@@ -193,9 +200,6 @@ export const FilterTags = () => {
                     <FlexStart classname="flex-wrap">
                         {blogTagCategories.map((item, index) => {
                             let isActive = tag === item.name;
-                            console.log("clicked:", item.name)
-                            console.log("isActive:", isActive)
-                            console.log("selected tag:", tag)
                             return (
                                 <Button
                                     typeButton="buttonBasic"
@@ -207,6 +211,7 @@ export const FilterTags = () => {
                                     onClick={() => setTag(item.name)} label={item.name}
                                     textColor={`${isActive ? "text-white" : "text-gray-900"}`}
                                     textType="body_sm_400"
+                                    respText="text-xs"
                                 />
                             )
                         })}
@@ -223,7 +228,7 @@ export const FilterRecentlyAdd = () => {
             id: 1,
             title: "Curabitur porttitor orci eget neque accumsan.",
             date: "Apr 25, 2021",
-            image: "image_1", 
+            image: "image_1",
         },
         {
             id: 2,
@@ -240,7 +245,7 @@ export const FilterRecentlyAdd = () => {
     ];
     return (
         <>
-            <div className="">
+            <div className="hidden md:block">
                 <FlexStart gap="gap-4" classname="flex-col">
                     <TextCustom type="body_xl_500">Popular Tag</TextCustom>
                     {blogPosts.map((item, index) => (
