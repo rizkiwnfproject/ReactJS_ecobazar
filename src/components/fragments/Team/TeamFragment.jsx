@@ -20,24 +20,19 @@ const TeamFragment = () => {
         <>
             <FlexCenter classname="flex-col" gap="gap-10">
                 <FlexCenter classname="flex-col justify-center max-w-[640px] mx-auto text-center" gap="gap-3">
-                    <TextCustom type="heading_2_600">Our Awesome Team</TextCustom>
-                    <TextCustom type="body_md_400" textColor="text-gray-600">Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.</TextCustom>
+                    <TextCustom type="heading_2_600" respText="text-2xl">Our Awesome Team</TextCustom>
+                    <TextCustom type="body_md_400" respText="text-sm" textColor="text-gray-600">Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi.</TextCustom>
                 </FlexCenter>
                 <div className="relative w-full max-w-7xl">
-                    <Button ref={prevRef} color="bg-white" classname="absolute -left-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow">
-                        <BsArrowLeft />
-                    </Button>
-                    <Button ref={nextRef} color="bg-white" classname="absolute -right-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow">
-                        <BsArrowRight />
-                    </Button>
-
+                    <Button typeButton="icon" ref={prevRef} padding="" bgColor="bg-white" classname="absolute left-3 md:-left-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowLeft} />
+                    <Button typeButton="icon" ref={nextRef} padding="" bgColor="bg-white" classname="absolute right-3 md:-right-15 top-1/2 -translate-y-1/2 z-10 border border-gray-100 shadow" icon={BsArrowRight} />
                     <SwiperCustom
                         prevRef={prevRef}
                         nextRef={nextRef}
                         withPagination={false}
                         swiperProps={{
                             spaceBetween: 0,
-                            slidesPerView: 1.2,
+                            slidesPerView: 1,
                             loop: true,
                             breakpoints: {
                                 768: { slidesPerView: 2 },
@@ -47,12 +42,12 @@ const TeamFragment = () => {
                     >
                         {teamData.map((item, index) => (
                             <SwiperSlide key={index} className="py-3">
-                                <Card type="start" classname="group relative flex-col w-[306px] mx-auto"  padding="" rounded="rounded-lg">
+                                <Card type="flexStart" classname="group relative flex-col w-[306px] mx-auto" padding="" rounded="rounded-lg">
                                     <div className="group relative">
                                         <ImageCustom path="team" image={item.image} classname="max-h-[280px] w-full object-cover" />
                                         <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity duration-300 rounded-lg" />
                                     </div>
-                                    <FlexStart classname="flex-col pb-3 px-4" gap="">
+                                    <FlexStart classname="flex-col py-3 px-4" gap="">
                                         <TextCustom type="body_lg_500">{item.name}</TextCustom>
                                         <TextCustom type="body_sm_400" textColor="text-gray-400">{item.role}</TextCustom>
                                     </FlexStart>

@@ -25,6 +25,7 @@ const Button = ({
     reverse = false,
     justify = "",
     respText = "",
+    alignItems,
     elementHover = "hover:text-white hover:bg-green-success hover:drop-shadow-green-success hover:shadow-lg transition-all duration-300"
 }) => {
     if (typeButton === "input") {
@@ -48,6 +49,7 @@ const Button = ({
                     icon={Icon}
                     text={label}
                     reverse={reverse}
+                    alignItems={alignItems}
                 />
             </button>
         )
