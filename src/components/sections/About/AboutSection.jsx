@@ -9,7 +9,9 @@ const AboutSection = () => {
             <SectionWrapper padding='py-15'>
                 <AboutFirst />
             </SectionWrapper>
-            <AboutSecond />
+            <SectionWrapper maxWidth='max-w-10/12 md:max-w-screen' padding='pb-15'>
+                <AboutSecond />
+            </SectionWrapper>
             <SectionWrapper padding=''>
                 <AboutThird />
             </SectionWrapper>

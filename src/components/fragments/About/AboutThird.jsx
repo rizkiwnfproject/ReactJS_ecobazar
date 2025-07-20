@@ -7,8 +7,8 @@ import Button from '../../elements/Button/Button'
 const AboutThird = () => {
     return (
         <>
-            <div className="grid grid-cols-5 items-center">
-                <div className="col-span-2">
+            <div className="grid md:grid-cols-5 items-center">
+                <div className="md:col-span-2">
                     <FlexStart classname='flex-col justify-center max-w-[500px] h-full' gap='gap-6'>
                         <TextCustom type="heading_2_600" leading="leading-18">
                             We Delivered, You Enjoy Your Order.

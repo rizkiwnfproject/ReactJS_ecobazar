@@ -10,10 +10,10 @@ const AboutPage = () => {
             <SectionWrapper maxWidth="max-w-screen" padding="">
                 <AboutSection />
             </SectionWrapper>
-            <SectionWrapper bg="bg-linear-to-b from-[#F2F2F2] to-white" padding="py-10" maxWidth="max-w-11/12">
+            <SectionWrapper bgColor="bg-linear-to-b from-[#F2F2F2] to-white" padding="py-10" maxWidth="max-w-11/12">
                 <TeamSection />
             </SectionWrapper>
-            <SectionWrapper bg="bg-gray-50" padding="py-10">
+            <SectionWrapper bgColor="bg-gray-50" padding="py-10">
                 <TestimonialSection />
             </SectionWrapper>
             <SectionWrapper>

@@ -3,12 +3,13 @@ import NavbarSection from "../components/sections/Navbar/NavbarSection"
 import FooterSection from "../components/sections/Footer/FooterSection"
 import useRouteInfo from "../hooks/UseRouteInfo"
 import Breadcrumb from "../components/elements/Breadcrumb/Breadcrumb";
+import StickyNavbar from "../components/fragments/Navbar/StickyNavbar";
 
 const MainLayouts = () => {
   const { isLandingPage } = useRouteInfo()
   return (
     <>
-      <div className="flex flex-col min-h-screen overflow-y-hidden ">
+      <div className="flex flex-col min-h-screen">
         <NavbarSection />
         <div className="flex flex-col max-w-screen w-full h-full">
           {
@@ -22,9 +23,11 @@ const MainLayouts = () => {
         <main className="flex-grow">
           <Outlet />
         </main>
-
         <div className="pt-0">
           <FooterSection />
+        </div>
+        <div className="fixed bottom-5 left-7/8 w-screen z-50 md:hidden">
+          <StickyNavbar />
         </div>
       </div>
     </>

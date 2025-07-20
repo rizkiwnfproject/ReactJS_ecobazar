@@ -3,6 +3,7 @@ import NavbarBottom from "../../fragments/Navbar/NavbarBottom";
 import NavbarFragment from "../../fragments/Navbar/NavbarFragment";
 import NavbarMiddle from "../../fragments/Navbar/NavbarMiddle";
 import NavbarTop from "../../fragments/Navbar/NavbarTop";
+import StickyNavbar from "../../fragments/Navbar/StickyNavbar";
 
 const NavbarSection = () => {
   const { isLandingPage } = useRouteInfo()
@@ -19,6 +20,7 @@ const NavbarSection = () => {
           <NavbarBottom />
         </NavbarFragment>
       </div>
+
     </>
   )
 }
