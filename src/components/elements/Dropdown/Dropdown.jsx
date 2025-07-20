@@ -21,7 +21,7 @@ export const DropdownCustom = ({
         <div className={`dropdown relative ${flexDirection} ${gap} ${widthClass}`}>
             {label && (
                 <label htmlFor={name} className="label mb-0">
-                    <TextCustom type="body_sm_400" textColor=''>{label}</TextCustom>
+                    <TextCustom type="body_sm_400" respText='text-xs' textColor=''>{label}</TextCustom>
                 </label>
             )}
             <div

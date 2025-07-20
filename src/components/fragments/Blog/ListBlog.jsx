@@ -7,11 +7,12 @@ import ImageCustom from "../../elements/Image/Image"
 import TextCustom from "../../elements/Text/Text"
 import TextIcon from "../../elements/Text/TextIcon"
 import { Link } from "react-router"
+import NewsIcon from "../../elements/Text/NewsIcon"
 
 const ListBlog = ({ isFilterOpen }) => {
     return (
         <div className="">
-            <div className={`grid ${isFilterOpen ? "md:grid-cols-2"  : "md:grid-cols-3"} gap-3 md:gap-6`}>
+            <div className={`grid ${isFilterOpen ? "md:grid-cols-2" : "md:grid-cols-3"} gap-3 md:gap-6`}>
                 {newsData.map((data, index) => (
                     <Card key={index} type="flexStart" classname="md:min-w-[390px] md:min-h-[494px] flex-col rounded-xl" padding="p-0">
                         <div className="relative">
@@ -20,7 +21,7 @@ const ListBlog = ({ isFilterOpen }) => {
                                 <TextCustom
                                     type="body_xl_500"
                                     respText="text-lg"
-                                    >
+                                >
                                     {data.date.day}
                                 </TextCustom>
                                 <TextCustom
@@ -36,12 +37,7 @@ const ListBlog = ({ isFilterOpen }) => {
                         <FlexStart classname="flex-col p-6 h-full justify-between" gap="gap-4">
                             <FlexStart classname="flex-col">
                                 <FlexStart classname="flex-col" gap="gap-6">
-                                    <FlexStart gap="gap-3">
-                                        <TextIcon icon={BsTag} respText="text-sm" text={data.category} />
-                                        <TextIcon icon={BsPerson} respText="text-sm" text={<><span className="text-gray-500">by </span>{data.user}</>}>
-                                        </TextIcon>
-                                        <TextIcon icon={BsChatSquare} respText="text-sm" text={`${data.comments} comments`} />
-                                    </FlexStart>
+                                    <NewsIcon comments='190 comments' category='food' writter='carolina' />
                                     <TextCustom type="body_lg_500" leading="leading-6">
                                         {data.title}
                                     </TextCustom>

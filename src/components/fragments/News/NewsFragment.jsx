@@ -8,6 +8,7 @@ import Button from "../../elements/Button/Button";
 import TextIcon from "../../elements/Text/TextIcon";
 import { Link } from "react-router";
 import { useEffect, useState } from "react";
+import NewsIcon from "../../elements/Text/NewsIcon";
 
 const NewsFragment = (props) => {
     const { children } = props
@@ -66,12 +67,7 @@ const NewsCard = () => {
                         <FlexStart classname="flex-col p-6" gap="gap-4">
                             <FlexStart classname="flex-col">
                                 <FlexStart classname="flex-col justify-between" gap="gap-6">
-                                    <FlexStart gap="gap-3" width="w-full" justify="justify-start">
-                                        <TextIcon icon={BsTag} respText="text-sm" text={data.category} />
-                                        <TextIcon icon={BsPerson} respText="text-sm" text={<><span className="text-gray-500">by </span>{data.user}</>}>
-                                        </TextIcon>
-                                        <TextIcon icon={BsChatSquare} respText="text-sm" text={`${data.comments} comments`} />
-                                    </FlexStart>
+                                    <NewsIcon comments='190 comments' category='food' writter='carolina' />
                                     <TextCustom type="body_lg_500" textColor="text-green-success-dark" leading="leading-6">
                                         {data.title}
                                     </TextCustom>
