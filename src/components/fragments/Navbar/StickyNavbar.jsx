@@ -1,15 +1,12 @@
 import { useRef, useState } from "react"
 import { sidebarData } from "../../../constants/Constant"
 import { LuUser } from "react-icons/lu"
-import useRouteInfo from "../../../hooks/UseRouteInfo"
-import { FlexStart } from "../../elements/Flex/Flex"
 import TextCustom from "../../elements/Text/Text";
 import { Link } from "react-router";
 import Button from "../../elements/Button/Button";
 import useClickOutside from "../../../hooks/UseClickOutside"
 
 const StickyNavbar = () => {
-    const { isLandingPage } = useRouteInfo()
     const [userOpen, setUserOpen] = useState(false)
     const dropdownRef = useRef(null)
 

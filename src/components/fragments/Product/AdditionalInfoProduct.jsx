@@ -1,87 +1,55 @@
+import { FlexStart } from "../../elements/Flex/Flex";
 import TextCustom from "../../elements/Text/Text";
 import InfoOnTab from "./InfoOnTab";
 
 const AdditionalInfoProduct = () => {
+    const productDetails = [
+        {
+            label: "Weight",
+            value: "03",
+        },
+        {
+            label: "Color",
+            value: "Green",
+        },
+        {
+            label: "Type",
+            value: "Organic",
+        },
+        {
+            label: "Category",
+            value: "Vegetables",
+        },
+        {
+            label: "Stock Status",
+            value: (
+                <>
+                    Available <span className="text-gray-400">(5,413)</span>
+                </>
+            ),
+        },
+        {
+            label: "Tags",
+            value: "Vegetables, Healthy, Chinese, Cabbage, Green Cabbage",
+        },
+    ];
     return (
         <>
-            <div className="grid grid-cols-1 md:grid-cols-8 mx-auto">
-                <table className="col-span-4 table-auto text-left h-[200px]">
-                    <tbody >
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Weight:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    03
-                                </TextCustom>
-                            </td>
-                        </tr>
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Color:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    Green
-                                </TextCustom>
-                            </td>
-                        </tr>
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Type:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    Organic
-                                </TextCustom>
-                            </td>
-                        </tr>
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Category:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    Vegetables
-                                </TextCustom>
-                            </td>
-                        </tr>
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Stock Status:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    Available <span className="text-gray-400">(5,413)</span>
-                                </TextCustom>
-                            </td>
-                        </tr>
-                        <tr className="h-9 md:h-5">
-                            <td className="">
-                                <TextCustom type="body_sm_400" classname="pr-4">
-                                    Tags:
-                                </TextCustom>
-                            </td>
-                            <td>
-                                <TextCustom type="body_sm_400" textColor="text-gray-600">
-                                    Vegetables, Healthy, Chinese, Cabbage, Green Cabbage
-                                </TextCustom>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div className=""></div>
+            <div className="grid grid-cols-1 lg:grid-cols-8 mx-auto">
+                <FlexStart classname="lg:col-span-4 col-span-5 grid grid-cols-4 items-start h-1/2 ">
+                    {productDetails.map((item, index) => {
+                        return (
+                            <>
+                                <div key={index} className="col-span-1">
+                                    <TextCustom type="body_sm_400" respText="text-sm">{item.label}</TextCustom>
+                                </div>
+                                <div key={index} className="col-span-3">
+                                    <TextCustom type="body_sm_400" respText="text-sm">: {item.value}</TextCustom>
+                                </div>
+                            </>
+                        )
+                    })}
+                </FlexStart>
                 <InfoOnTab />
             </div>
         </>

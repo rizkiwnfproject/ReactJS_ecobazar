@@ -37,9 +37,9 @@ const UserShoppingCart = () => {
     return (
         <SectionWrapper>
             <TextCustom type="body_xxl_600" classname="text-center pb-8" >My Wishlist</TextCustom>
-            <div className="grid grid-cols-8 gap-5">
-                <FlexStart gap="gap-5" classname="col-span-6 flex-col">
-                    <Card type="flexStart" hover={false} classname="overflow-hidden">
+            <div className="grid xl:grid-cols-8 gap-5 ">
+                <FlexStart gap="gap-5" classname="order-2 xl:order-1 xl:col-span-6 flex-col hidden lg:flex">
+                    <div className="border rounded-lg border-gray-100 overflow-hidden hidden lg:block">
                         <table className="table w-full">
                             <thead>
                                 <tr className="text-left border-b text-gray-500 text-sm uppercase ">
@@ -75,9 +75,9 @@ const UserShoppingCart = () => {
                                         </td>
                                         <td>
                                             {item.stock ? (
-                                                <TextCustom type="body_sm_400" textColor="text-green-success-dark" classname="w-3/5 bg-[rgba(0,178,7,0.2)] px-3 py-1 rounded">In Stock</TextCustom>
+                                                <TextCustom type="body_sm_400" textColor="text-green-success-dark" classname="w-3/4 xl:w-3/7 bg-[rgba(0,178,7,0.2)] px-3 py-1 rounded">In Stock</TextCustom>
                                             ) : (
-                                                <TextCustom type="body_sm_400" textColor="text-red-error" classname="w-6/7 bg-[rgba(234,75,72,0.2)] px-3 py-1 rounded">Out of Stock</TextCustom>
+                                                <TextCustom type="body_sm_400" textColor="text-red-error" classname="xl:w-3/5 bg-[rgba(234,75,72,0.2)] px-3 py-1 rounded">Out of Stock</TextCustom>
                                             )}
                                         </td>
                                         <td>
@@ -144,7 +144,7 @@ const UserShoppingCart = () => {
                                 </tr>
                             </tbody>
                         </table>
-                    </Card>
+                    </div>
                     <Card type="flexCenter" hover={false} padding="px-5 py-5" classname="w-full" gap="gap-5">
                         <TextCustom type="body_xl_500" classname="w-46">Coupon Code</TextCustom>
                         <div className="w-full h-13 relative">
@@ -153,7 +153,7 @@ const UserShoppingCart = () => {
                         </div>
                     </Card>
                 </FlexStart>
-                <Card hover={false} type="flexStart" classname="col-span-2 flex-col max-h-[300px]" padding="px-3 py-5" gap="gap-0">
+                <Card hover={false} type="flexStart" classname="order-1 xl:order-2 xl:col-span-2 flex-col lg:max-h-[300px]" padding="px-3 py-5" gap="gap-0">
                     <TextCustom type="body_xl_500" classname="pb-4" >cart total</TextCustom>
                     <FlexCenter classname="justify-between border-b border-b-gray-100 py-3">
                         <TextCustom type="body_sm_400" textColor="text-gray-800">sub total: </TextCustom>
@@ -171,7 +171,90 @@ const UserShoppingCart = () => {
                         <Button typeButton="buttonBasic" padding="py-6" classname="w-full mt-8" textColor="text-white" label="Proceed to checkout" />
                     </Link>
                 </Card>
+            </div>
+            {/* Mobile & Tablet - Card layout */}
+            <div className="flex flex-col gap-4 lg:hidden">
+                {wishlistData.map((item, index) => (
+                    <Card type="flexStart" key={index} classname="p-4">
+                        <div className="flex items-center gap-4 md:gap-10">
+                            <ImageCustom
+                                path="products"
+                                image={item.image}
+                                name={item.name}
+                                classname="w-[100px] md:w-[150px] h-[100px] md:h-[150px] object-cover rounded"
+                            />
+                            <div className="flex flex-col gap-2 w-full">
+                                <TextCustom type="body_sm_500">{item.name}</TextCustom>
+                                <div className="text-sm text-gray-500">Price</div>
+                                <FlexCenter gap="gap-2">
+                                    <TextCustom type="body_md_500">${item.price.toFixed(2)}</TextCustom>
+                                    {item.priceOld && (
+                                        <TextCustom
+                                            type="body_md_400"
+                                            textColor="text-gray-400"
+                                            classname="line-through"
+                                        >
+                                            ${item.priceOld.toFixed(2)}
+                                        </TextCustom>
+                                    )}
+                                </FlexCenter>
 
+                                <div className="text-sm text-gray-500">Stock</div>
+                                {item.stock ? (
+                                    <TextCustom
+                                        type="body_sm_400"
+                                        textColor="text-green-success-dark"
+                                        classname="w-fit bg-[rgba(0,178,7,0.2)] px-3 py-1 rounded"
+                                    >
+                                        In Stock
+                                    </TextCustom>
+                                ) : (
+                                    <TextCustom
+                                        type="body_sm_400"
+                                        textColor="text-red-error"
+                                        classname="w-fit bg-[rgba(234,75,72,0.2)] px-3 py-1 rounded"
+                                    >
+                                        Out of Stock
+                                    </TextCustom>
+                                )}
+
+                                <div className="flex justify-between pt-2">
+                                    <Button
+                                        typeButton="buttonBasic"
+                                        bgColor={item.stock ? "bg-green-success" : "bg-gray-50"}
+                                        textColor={item.stock ? "text-white" : "text-gray-400"}
+                                        padding="px-5 py-2"
+                                        shadow=""
+                                        classname=""
+                                        textType="body_sm_600"
+                                        label="Add to Cart"
+                                        rounded="rounded-lg"
+                                    />
+                                    <Button
+                                        typeButton="icon"
+                                        bgColor="hover:bg-red-error"
+                                        padding=""
+                                        classname="border border-gray-50"
+                                        textColor="text-gray-400 hover:text-white"
+                                        icon={HiOutlineX}
+                                        iconSize="18px"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </Card>
+                ))}
+
+                {/* Share Buttons */}
+                <div className="px-2 pt-2">
+                    <FlexCenter gap="gap-2">
+                        <TextCustom type="body_sm_400">Share:</TextCustom>
+                        <Button typeButton="icon" bgColor="" padding="" icon={LuFacebook} iconSize="22px" />
+                        <Button typeButton="icon" bgColor="" padding="" icon={LuTwitter} iconSize="22px" />
+                        <Button typeButton="icon" bgColor="" padding="" icon={FaPinterestP} iconSize="22px" />
+                        <Button typeButton="icon" bgColor="" padding="" icon={FaInstagram} iconSize="22px" />
+                    </FlexCenter>
+                </div>
             </div>
         </SectionWrapper>
     )

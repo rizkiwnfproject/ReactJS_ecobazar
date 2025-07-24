@@ -8,13 +8,13 @@ const UserProfileFragment = ({type}) => {
     if(type === "dashboard"){
         return (
             <>
-                <Card type="flexCenter" classname='w-1/2 justify-center flex-col' padding="py-7">
+                <Card type="flexCenter" classname='lg:w-1/2 justify-center flex-col' padding="py-7">
                     <ImageCustom path='users' image='image_4' classname="w-32" />
                     <FlexCenter classname="flex-col" gap="gap-0.5">
-                        <TextCustom type="body_xl_400" >dianne russel</TextCustom>
-                        <TextCustom type="body_sm_400" textColor="text-gray-500">customer</TextCustom>
+                        <TextCustom type="body_xl_400" respText="text-base" >dianne russel</TextCustom>
+                        <TextCustom type="body_sm_400" respText="text-sm" textColor="text-gray-500">customer</TextCustom>
                     </FlexCenter>
-                    <Link to=""><TextCustom type="body_md_600" textColor="text-green-success" classname="">edit profile</TextCustom></Link>
+                    <Link to=""><TextCustom type="body_md_600" respText="text-sm" textColor="text-green-success" classname="">edit profile</TextCustom></Link>
                 </Card>
             </>
         )

@@ -41,7 +41,7 @@ const InputCustom = ({
         return (
             <FlexCenter gap="gap-1" alignItems={alignItems}>
                 <input type="radio" name="radio-5" className="radio radio-xs border-green-400 checked:text-green-success" />
-                <TextCustom type={textType} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
+                <TextCustom type={textType} respText={respText} textColor={textColor} classname="pt-0.5">{label}</TextCustom>
             </FlexCenter>
         )
     } else if (type === "range") {

@@ -53,9 +53,13 @@ const NavbarBottom = () => {
                                     </li>)
                             })}
                             <li>
-                                <FlexStart classname="flex md:hidden">
-                                    <Button typeButton="buttonBasic" textType="body_md_500" textColor="text-white" label="Sign In" shadow="" classname="w-1/2" rounded="rounded-lg" />
-                                    <Button typeButton="buttonBasic" textType="body_md_500" textColor="text-white" label="Sign Up" shadow="" classname="w-1/2" rounded="rounded-lg" />
+                                <FlexStart classname="flex md:hidden w-[250px]">
+                                    <Link to="auth/login" className="w-1/2">
+                                        <Button  typeButton="buttonBasic" textType="body_md_500" textColor="text-white" label="Sign In" shadow="" classname="w-full" rounded="rounded-lg" />
+                                    </Link>
+                                    <Link to="auth/register" className="w-1/2">
+                                        <Button typeButton="buttonBasic" textType="body_md_500" textColor="text-white" label="Sign Up" shadow="" classname="w-full" rounded="rounded-lg" />
+                                    </Link>
                                 </FlexStart>
                             </li>
                         </ul>

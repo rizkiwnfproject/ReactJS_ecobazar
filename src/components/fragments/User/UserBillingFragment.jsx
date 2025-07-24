@@ -7,15 +7,15 @@ const UserBillingFragment = ({type}) => {
     if(type === "dashboard"){
         return (
             <>
-                <Card type="flexStart" classname='w-1/2 max-h-[278px] flex-col justify-between text-left' padding="py-7 px-4">
+                <Card type="flexStart" classname='lg:w-1/2 max-h-[278px] flex-col justify-between text-left' padding="py-7 px-4">
                     <TextCustom type="body_sm_500" textColor="text-gray-400" textTransform="uppercase" classname="tracking-wide">Billing Address</TextCustom>
                     <FlexStart classname="pt-2 flex-col w-[264px]">
-                        <TextCustom type="body_lg_500">dainne russel</TextCustom>
-                        <TextCustom type="body_sm_400" textColor="text-gray-600" classname="">4140 Parker Rd. Allentown, New Mexico 31134</TextCustom>
-                        <TextCustom type="body_md_400">dainne.ressell@gmail.com</TextCustom>
-                        <TextCustom type="body_md_400">(671) 555-0110</TextCustom>
+                        <TextCustom type="body_lg_500" respText="text-base">dainne russel</TextCustom>
+                        <TextCustom type="body_sm_400" respText="text-sm" textColor="text-gray-600" classname="">4140 Parker Rd. Allentown, New Mexico 31134</TextCustom>
+                        <TextCustom type="body_md_400" respText="text-sm">dainne.ressell@gmail.com</TextCustom>
+                        <TextCustom type="body_md_400" respText="text-sm">(671) 555-0110</TextCustom>
                     </FlexStart>
-                    <Link to=""><TextCustom type="body_md_600" textColor="text-green-success" classname="pt-2">edit address</TextCustom></Link>
+                    <Link to=""><TextCustom type="body_md_600" respText="text-sm" textColor="text-green-success" classname="pt-2">edit address</TextCustom></Link>
                 </Card>
             </>
         )

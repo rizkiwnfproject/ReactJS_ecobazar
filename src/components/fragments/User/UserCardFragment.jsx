@@ -27,8 +27,8 @@ const CardNavigation = ({ type }) => {
         return (
             <>
                 <div className="p-5">
-                    <FlexCenter classname="" gap='gap-[112px]'>
-                        <FlexStart classname='w-[512px] flex-col' gap='gap-4'>
+                    <FlexCenter classname="flex-col-reverse xl:flex-row" gap='gap-5 xl:gap-[112px]'>
+                        <FlexStart classname='w-full xl:w-[512px] flex-col' gap='gap-4'>
                             <InputFormFragment label="first name" type="text" name="first_name" placeholder="John" />
                             <InputFormFragment label="last name" type="text" name="last_name" placeholder="Doe" />
                             <InputFormFragment label="email" type="email" name="email" placeholder="example@gmail.com" />
@@ -37,7 +37,7 @@ const CardNavigation = ({ type }) => {
                         </FlexStart>
                         <FlexCenter classname="flex-col justify-center" gap='gap-4'>
                             <ImageCustom path="users" image="image_4" alt="user" />
-                            <Button typeButton='buttonBasic' classname="w-1/5" padding='py-6' textType='body_sm_500' textColor='text-white' label='save changes' />
+                            <Button typeButton='buttonBasic' classname="" padding='py-6' textType='body_sm_500' textColor='text-white' label='save changes' />
                         </FlexCenter>
                     </FlexCenter>
                 </div>
@@ -49,13 +49,13 @@ const CardNavigation = ({ type }) => {
             <>
                 <div className="p-5">
                     <FlexStart classname='w-full flex-col' gap='gap-4'>
-                        <FlexStart>
+                        <FlexStart classname='flex-col xl:flex-row'>
                             <InputFormFragment label="first name" type="text" name="first_name" placeholder="John" />
                             <InputFormFragment label="last name" type="text" name="last_name" placeholder="Doe" />
                             <InputFormFragment label="company name" span="(optional)" type="text" name="company_name" placeholder="Microsoft" />
                         </FlexStart>
                         <InputFormFragment label="Street Address" type="text" name="address" placeholder="4140 Par|" />
-                        <FlexCenter>
+                        <FlexCenter classname='flex-col xl:flex-row'>
                             <DropdownCustom
                                 label="Country / Region"
                                 options={["United States", "United Kingdom", "Indonesia", "Singapore"]}
@@ -72,11 +72,11 @@ const CardNavigation = ({ type }) => {
                             />
                             <InputFormFragment label="ZIP code" type="number" name="zip" placeholder="20033" />
                         </FlexCenter>
-                        <FlexStart>
+                        <FlexStart classname='flex-col lg:flex-row'>
                             <InputFormFragment label="email" type="email" name="email" placeholder="example@gmail.com" />
                             <InputFormFragment label="phone number" type="number" name="phone_number" placeholder="625894756122" />
                         </FlexStart>
-                        <Button classname="w-1/5 text-white font-medium text-sm">save changes</Button>
+                        <Button typeButton='buttonBasic' textColor='text-white' textType='body_sm_500' classname="md:w-3/5 lg:w-1/3 xl:w-1/4" label="save changes"/>
                     </FlexStart>
                 </div>
             </>
@@ -87,11 +87,11 @@ const CardNavigation = ({ type }) => {
                 <div className="p-5">
                     <FlexStart classname='w-full flex-col' gap='gap-4'>
                         <InputFormFragment label="Current Password" type="password" name="password" placeholder="Password" />
-                        <FlexStart>
+                        <FlexStart classname='flex-col lg:flex-row'>
                             <InputFormFragment label="New Password" type="password" name="password" placeholder="Password" />
                             <InputFormFragment label="Confirm Password" type="password" name="password" placeholder="Password" />
                         </FlexStart>
-                        <Button classname="w-1/5 text-white font-medium text-sm">Change Password</Button>
+                        <Button typeButton='buttonBasic' textColor='text-white' textType='body_sm_500' classname="md:w-3/5 lg:w-1/3 xl:w-1/4" label='Change Password'/>
                     </FlexStart>
                 </div>
             </>

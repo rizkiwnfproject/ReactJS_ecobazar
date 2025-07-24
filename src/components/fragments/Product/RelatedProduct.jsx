@@ -29,15 +29,16 @@ const RelatedProduct = () => {
                         loop: true,
                         breakpoints: {
                             200: { slidesPerView: 1 },
-                            768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 5 },
+                            768: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
+                            1280: { slidesPerView: 5 }
                         }
                     }}
                 >
                     {productsData.slice(0, 10).map((data, index) => (
                         <SwiperSlide key={index} className="py-3 pl-2">
                             <Card key={index} type="flexStart" classname="group relative h-[339px] md:max-w-[240px] flex-col justify-start p-3 md:p-0">
-                                <Link to="shop/produk-detail">
+                                <Link to="/shop/produk-detail">
                                     <ImageCustom
                                         path="products"
                                         image={data.image}
