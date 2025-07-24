@@ -75,8 +75,8 @@ const CheckoutFragment = () => {
                                         <ImageCustom path='products' image='image_1' classname='w-15 h-15' />
                                         <TextCustom type='body_sm_400' respText='text-sm' classname='max-w-15 flex-wrap'>Green Capsicum</TextCustom>
                                     </FlexCenter>
-                                    <TextCustom respText='text-sm' type='body_sm_400'>x 5</TextCustom>
-                                    <TextCustom respText='text-sm' type="body_sm_500">$70.00</TextCustom>
+                                    <TextCustom respText='text-sm' type='body_sm_400' classname='flex justify-center'>x 5</TextCustom>
+                                    <TextCustom respText='text-sm' type="body_sm_500" classname='flex justify-end'>$70.00</TextCustom>
                                 </div>
                             </FlexStart>
                             <FlexStart classname='flex-col'>
