@@ -18,7 +18,7 @@ const TestimonialFragment = (props) => {
     const { children } = props
     return (
         <>
-            <div className="">
+            <div className="" data-aos="zoom-in-up">
                 {children}
             </div>
         </>

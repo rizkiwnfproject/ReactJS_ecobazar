@@ -13,7 +13,7 @@ const NewsFragment = (props) => {
     const { children } = props
     return (
         <>
-            <div className="mb-10">
+            <div className="mb-10" data-aos="fade-down">
                 {children}
             </div>
         </>

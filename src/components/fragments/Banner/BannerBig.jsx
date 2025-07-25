@@ -57,11 +57,11 @@ const BannerBig = ({
                             <ImageCustom path="banner" image="Image" name="banner" />
                         </div>
                     </FlexCenter>
-                    <div className="w-11/12 hidden md:flex md:absolute -bottom-15 translate-x-1/22 min-h-[128px] justify-between items-center mt-6  pt-10 pb-4 xl:pb-10 px-10 shadow-sm rounded-xl bg-white">
+                    <div data-aos="fade-up"  className="w-11/12 hidden md:flex md:absolute -bottom-15 translate-x-1/22 min-h-[128px] justify-between items-center mt-6  pt-10 pb-4 xl:pb-10 px-10 shadow-sm rounded-xl bg-white">
                         {children}
                     </div>
                 </div>
-                <div className="w-full flex flex-col md:hidden justify-between items-center pt-10 pb-5 px-10 border border-gray-50 md:border-0 shadow-sm rounded-xl bg-white">
+                <div data-aos="fade-up"  className="w-full flex flex-col md:hidden justify-between items-center pt-10 pb-5 px-10 border border-gray-50 md:border-0 shadow-sm rounded-xl bg-white">
                     {children}
                 </div>
 

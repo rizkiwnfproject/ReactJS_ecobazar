@@ -19,7 +19,7 @@ const ProductNewest = () => {
     return (
         <>
             <TextCustom type="heading_3_600" respText='text-3xl' classname="w-full md:text-center mb-5 md:mb-10">Newest Products</TextCustom>
-            <div className="md:relative w-full">
+            <div className="md:relative w-full" data-aos="fade-down">
                 <SwiperCustom
                     prevRef={prevRef}
                     nextRef={nextRef}

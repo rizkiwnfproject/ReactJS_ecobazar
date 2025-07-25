@@ -6,7 +6,7 @@ import TextCustom from '../../elements/Text/Text'
 const BannerMedium = () => {
     return (
         <>
-            <div className="relative">
+            <div className="relative" data-aos="fade-up" >
                 <ImageCustom
                     path="banner"
                     image="Discount_Bannar"

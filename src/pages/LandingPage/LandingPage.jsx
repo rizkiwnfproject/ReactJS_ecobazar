@@ -6,16 +6,24 @@ import { CategoriesProducts, FeaturedProducts, NewestProducts } from "../../comp
 import SupportSection from "../../components/sections/Support/SupportSection"
 import TestimonialSection from "../../components/sections/Testimonial/TestimonialSection"
 import ModalNewsLetter from "../../components/elements/Modal/ModalNewsLetter"
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const LandingPage = () => {
   useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      once: false,
+    });
+
     const modal = document.getElementById("newsletter");
     if (modal) modal.showModal();
   }, []);
 
   return (
     <>
-      {/* <ModalNewsLetter /> */}
+      <ModalNewsLetter />
       <SectionWrapper maxWidth="max-w-11/12" padding="pt-24 md:pt-56">
         <Banner type="big" />
       </SectionWrapper>

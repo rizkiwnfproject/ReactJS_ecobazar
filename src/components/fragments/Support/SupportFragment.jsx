@@ -6,7 +6,7 @@ import ImageCustom from '../../elements/Image/Image'
 const SupportFragment = (props) => {
     const { children } = props
     return (
-        <div>
+        <div data-aos="fade-down">
             {children}
         </div>
     )
